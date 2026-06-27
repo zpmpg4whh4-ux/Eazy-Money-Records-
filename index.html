@@ -477,15 +477,16 @@
         <div class="contact-container">
             <h2 class="section-title">Envía tu <span>Demo</span></h2>
             <p>¿Tienes el sonido de Eazy Money Records? Queremos escucharte.</p>
-            <form onsubmit="event.preventDefault(); alert('¡Demo enviado con éxito!');">
+            <!-- FORMULARIO CONFIGURADO CON TU CORREO -->
+            <form action="https://formspree.io/f/eazymoneyrec@gmail.com" method="POST">
                 <div class="form-group">
-                    <input type="text" placeholder="Tu Nombre / AKA" required>
+                    <input type="text" name="nombre" placeholder="Tu Nombre / AKA" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="Correo Electrónico" required>
+                    <input type="email" name="email" placeholder="Correo Electrónico" required>
                 </div>
                 <div class="form-group">
-                    <input type="url" placeholder="Link de tu track (SoundCloud, Drive, etc.)" required>
+                    <input type="url" name="demo_link" placeholder="Link de tu track (SoundCloud, Drive, etc.)" required>
                 </div>
                 <button type="submit" class="btn-submit">Enviar Material</button>
             </form>
@@ -498,3 +499,4 @@
 
 </body>
 </html>
+

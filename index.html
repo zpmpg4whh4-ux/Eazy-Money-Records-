@@ -32,8 +32,6 @@
         .hero h1 { font-size: 3.2rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 10px; }
         .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; }
 
-        .player-link { text-decoration: none; width: 100%; max-width: 380px; display: block; transition: transform 0.2s; }
-        .player-link:hover { transform: scale(1.02); }
         .player-widget { background: rgba(20, 20, 22, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border-radius: 24px; padding: 16px; display: flex; align-items: center; gap: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
         .player-cover { width: 60px; height: 60px; border-radius: 12px; overflow: hidden; }
         .player-cover img { width: 100%; height: 100%; object-fit: cover; }
@@ -88,15 +86,20 @@
         </div>
         <h1>Eazy <span class="txt-pink">Money</span> <span class="txt-split">Records</span></h1>
         <p>Prod by: @ibiwis.chk — <3$</p>
-        <a href="https://music.apple.com/mx/album/sexy-nasty-and-pretty-ep/6775915800" target="_blank" class="player-link">
-            <div class="player-widget">
+        
+        <div style="width: 100%; max-width: 380px; margin-top: 20px;">
+            <div class="player-widget" style="margin-bottom: 15px;">
                 <div class="player-cover"><img src="https://i.ibb.co/6cZ9PZkz/IMG-4295.jpg" alt="Cover"></div>
                 <div class="player-info">
                     <div class="player-title">Sexy, Nasty and Pretty - EP</div>
-                    <div class="player-artist">Último Lanzamiento</div>
+                    <div class="player-artist">Escúchalo ahora:</div>
                 </div>
             </div>
-        </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="https://open.spotify.com/album/2Qe6BTJBSt9mzkMfmuetUC?si=HxF-BqBETEmz2nRHpByW5A" target="_blank" class="btn-back" style="flex: 1; background: #1DB954; color: #000;"><i class="fa-brands fa-spotify"></i> Spotify</a>
+                <a href="https://music.apple.com/mx/album/sexy-nasty-and-pretty-ep/6775915800" target="_blank" class="btn-back" style="flex: 1; background: #fc3c44; color: #fff;"><i class="fa-brands fa-apple"></i> Apple</a>
+            </div>
+        </div>
     </section>
 
     <section class="artists-section" id="artistas">
@@ -105,9 +108,7 @@
             
             <div class="flip-card">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="https://i.ibb.co/hxV8HK52/E150-AE62-B5-D2-4740-84-DA-EBD2518-BC2-DE.jpg" class="artist-img">
-                    </div>
+                    <div class="flip-card-front"><img src="https://i.ibb.co/hxV8HK52/E150-AE62-B5-D2-4740-84-DA-EBD2518-BC2-DE.jpg" class="artist-img"></div>
                     <div class="flip-card-back">
                         <h3>@ibiwis.chk</h3>
                         <div class="music-links-vertical">
@@ -121,9 +122,7 @@
 
             <div class="flip-card">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="https://i.ibb.co/1YP8hVNh/B979548-B-FAC7-42-A0-8-CDE-3-C6-BAC9-AB1-FE.jpg" class="artist-img">
-                    </div>
+                    <div class="flip-card-front"><img src="https://i.ibb.co/1YP8hVNh/B979548-B-FAC7-42-A0-8-CDE-3-C6-BAC9-AB1-FE.jpg" class="artist-img"></div>
                     <div class="flip-card-back">
                         <h3>@inzxmnia</h3>
                         <div class="music-links-vertical">

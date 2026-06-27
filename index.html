@@ -1,3 +1,6 @@
+Aquí tienes el código completo y final. He integrado el formulario con tu nueva URL de Formspree (https://formspree.io/f/xaqgokvv) directamente en la estructura.
+Puedes copiar y pegar esto tal cual en tu index.html de GitHub:
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -39,30 +42,28 @@
         .player-info { flex-grow: 1; text-align: left; }
         .player-title { font-size: 0.95rem; font-weight: 600; color: var(--text-main); }
         .player-artist { font-size: 0.85rem; color: var(--text-muted); }
+        .player-controls { display: flex; gap: 14px; font-size: 1.1rem; color: var(--text-main); }
 
-        /* Estilos Flip Cards */
         .artists-section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
         .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 50px; text-align: center; }
         .section-title span { color: var(--neon-pink); }
         .artists-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; justify-content: center; }
-        
-        .flip-card { background-color: transparent; width: 100%; height: 360px; perspective: 1000px; cursor: pointer; }
-        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
-        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
-        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 20px; overflow: hidden; }
-        .flip-card-front { background-color: #141416; }
-        .flip-card-back { background-color: var(--neon-pink); color: white; transform: rotateY(180deg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; padding: 20px; }
-        .artist-img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .music-links-vertical { display: flex; flex-direction: column; gap: 10px; width: 100%; }
-        .btn-back { background: rgba(0,0,0,0.3); color: white; padding: 12px; border-radius: 10px; text-decoration: none; font-size: 0.9rem; transition: background 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600; }
-        .btn-back:hover { background: rgba(0,0,0,0.5); }
+        .artist-card { background-color: var(--card-bg); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.03); transition: transform 0.3s; position: relative; }
+        .artist-card:hover { transform: translateY(-5px); border-color: rgba(255, 0, 183, 0.3); }
+        .artist-img-container { width: 100%; height: 360px; position: relative; }
+        .artist-img-container img { width: 100%; height: 100%; object-fit: cover; }
+        .artist-badge { position: absolute; bottom: 15px; left: 15px; background: var(--neon-pink); color: #fff; padding: 4px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 20px; text-transform: uppercase; }
+        .artist-content { padding: 25px; }
+        .artist-name { font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; }
+        .btn-stream { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px; border-radius: 10px; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+        .btn-spotify { background: #1DB954; color: #000; }
+        .btn-apple { background: #fc3c44; color: #fff; }
 
-        /* Contacto */
         .contact-section { padding: 100px 5%; background: linear-gradient(180deg, var(--bg-color) 0%, #141416 100%); text-align: center; }
         .contact-container { max-width: 500px; margin: 0 auto; }
         .form-group { margin-bottom: 20px; text-align: left; }
         input { width: 100%; padding: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; color: #fff; outline: none; }
+        input:focus { border-color: var(--neon-pink); }
         .btn-submit { width: 100%; padding: 14px; background: var(--text-main); color: #000; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: background 0.3s; }
         .btn-submit:hover { background: var(--neon-pink); color: #fff; }
 
@@ -101,39 +102,20 @@
     <section class="artists-section" id="artistas">
         <h2 class="section-title">Nuestro <span>Roster</span></h2>
         <div class="artists-grid">
-            
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="https://i.ibb.co/hxV8HK52/E150-AE62-B5-D2-4740-84-DA-EBD2518-BC2-DE.jpg" class="artist-img">
-                    </div>
-                    <div class="flip-card-back">
-                        <h3>@ibiwis.chk</h3>
-                        <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/ibiwis.chk" target="_blank" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                            <a href="#" target="_blank" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                            <a href="https://music.apple.com/mx/artist/ibiwis-chk/1763376591" target="_blank" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a>
-                        </div>
-                    </div>
+            <div class="artist-card">
+                <div class="artist-img-container"><img src="https://i.ibb.co/hxV8HK52/E150-AE62-B5-D2-4740-84-DA-EBD2518-BC2-DE.jpg" alt="ibiwis chk"><span class="artist-badge">Producer</span></div>
+                <div class="artist-content">
+                    <div class="artist-name">ibiwis chk</div>
+                    <div class="music-links"><a href="https://music.apple.com/mx/artist/ibiwis-chk/1763376591" target="_blank" class="btn-stream btn-apple"><i class="fa-brands fa-apple"></i> Apple Music</a></div>
                 </div>
             </div>
-
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="https://i.ibb.co/1YP8hVNh/B979548-B-FAC7-42-A0-8-CDE-3-C6-BAC9-AB1-FE.jpg" class="artist-img">
-                    </div>
-                    <div class="flip-card-back">
-                        <h3>@inzxmnia</h3>
-                        <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/inzxmnia" target="_blank" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                            <a href="#" target="_blank" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                            <a href="https://music.apple.com/mx/artist/inzxmnia/1759769780" target="_blank" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a>
-                        </div>
-                    </div>
+            <div class="artist-card">
+                <div class="artist-img-container"><img src="https://i.ibb.co/1YP8hVNh/B979548-B-FAC7-42-A0-8-CDE-3-C6-BAC9-AB1-FE.jpg" alt="Inzxmnia!"><span class="artist-badge">Artist</span></div>
+                <div class="artist-content">
+                    <div class="artist-name">Inzxmnia!</div>
+                    <div class="music-links"><a href="https://music.apple.com/mx/artist/inzxmnia/1759769780" target="_blank" class="btn-stream btn-apple"><i class="fa-brands fa-apple"></i> Apple Music</a></div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -153,3 +135,5 @@
 
 </body>
 </html>
+
+```

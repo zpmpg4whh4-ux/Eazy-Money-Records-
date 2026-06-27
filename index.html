@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eazy Money Records <3$</title>
-    <!-- Iconos de FontAwesome para las redes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -16,375 +15,48 @@
             --text-muted: #a1a1aa;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+        /* Header & Hero */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; position: fixed; width: 100%; top: 0; z-index: 100; background: rgba(11, 11, 12, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 0, 183, 0.1); }
+        .logo-txt { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.5px; color: var(--text-main); text-transform: capitalize; }
+        .txt-pink { color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-glow); }
+        .txt-split { background: linear-gradient(to right, #ffffff 50%, var(--neon-pink) 50%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+        nav a { color: var(--text-muted); text-decoration: none; margin-left: 25px; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover { color: var(--neon-pink); }
 
-        /* --- Header --- */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background: rgba(11, 11, 12, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 0, 183, 0.1);
-        }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 20px 60px 20px; }
+        .logo-container { width: 180px; height: 180px; border-radius: 50%; border: 3px solid var(--neon-pink); box-shadow: 0 0 25px var(--neon-glow); margin-bottom: 30px; background: #000; overflow: hidden; display: flex; justify-content: center; align-items: center; }
+        .logo-container img { width: 100%; height: 100%; object-fit: cover; }
+        .hero h1 { font-size: 3.2rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; }
 
-        .logo-txt {
-            font-weight: 800;
-            font-size: 1.3rem;
-            letter-spacing: -0.5px;
-            color: var(--text-main);
-            text-transform: capitalize;
-        }
+        /* Artistas (Flip Cards) */
+        .artists-section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 50px; text-align: center; }
+        .section-title span { color: var(--neon-pink); }
+        .artists-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; justify-content: center; }
+        
+        .flip-card { background-color: transparent; width: 100%; height: 360px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 20px; overflow: hidden; }
+        .flip-card-front { background-color: #141416; }
+        .flip-card-back { background-color: var(--neon-pink); color: white; transform: rotateY(180deg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; }
+        .artist-img { width: 100%; height: 100%; object-fit: cover; }
+        .insta-link { color: white; font-size: 4rem; text-decoration: none; }
 
-        /* Clases específicas para los colores del logo */
-        .txt-pink {
-            color: var(--neon-pink);
-            text-shadow: 0 0 10px var(--neon-glow);
-        }
+        /* Contacto */
+        .contact-section { padding: 100px 5%; background: linear-gradient(180deg, var(--bg-color) 0%, #141416 100%); text-align: center; }
+        .contact-container { max-width: 500px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        input { width: 100%; padding: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; color: #fff; outline: none; }
+        .btn-submit { width: 100%; padding: 14px; background: var(--text-main); color: #000; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; }
+        .btn-submit:hover { background: var(--neon-pink); color: #fff; }
 
-        .txt-split {
-            background: linear-gradient(to right, #ffffff 50%, var(--neon-pink) 50%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--neon-pink);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 120px 20px 60px 20px;
-            position: relative;
-        }
-
-        .logo-container {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 3px solid var(--neon-pink);
-            box-shadow: 0 0 25px var(--neon-glow);
-            margin-bottom: 30px;
-            background: #000;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-            margin-bottom: 10px;
-            text-transform: capitalize;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-
-        /* --- Reproductor de Música Estilo iOS --- */
-        .player-link {
-            text-decoration: none;
-            width: 100%;
-            max-width: 380px;
-            display: block;
-            transition: transform 0.2s;
-        }
-
-        .player-link:hover {
-            transform: scale(1.02);
-        }
-
-        .player-widget {
-            background: rgba(20, 20, 22, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            padding: 16px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        .player-cover {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .player-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .player-info {
-            flex-grow: 1;
-            text-align: left;
-        }
-
-        .player-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .player-artist {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .player-controls {
-            display: flex;
-            gap: 14px;
-            font-size: 1.1rem;
-            color: var(--text-main);
-        }
-
-        .player-link:hover .player-controls {
-            color: var(--neon-pink);
-        }
-
-        /* --- Sección Artistas --- */
-        .artists-section {
-            padding: 100px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 50px;
-            text-align: center;
-            letter-spacing: -0.5px;
-        }
-
-        .section-title span {
-            color: var(--neon-pink);
-        }
-
-        .artists-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            justify-content: center;
-        }
-
-        .artist-card {
-            background-color: var(--card-bg);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            transition: transform 0.3s, border-color 0.3s;
-            position: relative;
-        }
-
-        .artist-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 0, 183, 0.3);
-        }
-
-        .artist-img-container {
-            width: 100%;
-            height: 360px;
-            background: #141416;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .artist-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .artist-badge {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            background: var(--neon-pink);
-            color: #fff;
-            padding: 4px 12px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            border-radius: 20px;
-            text-transform: uppercase;
-            box-shadow: 0 0 10px var(--neon-glow);
-            z-index: 2;
-        }
-
-        .artist-content {
-            padding: 25px;
-        }
-
-        .artist-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .music-links {
-            display: flex;
-            gap: 12px;
-        }
-
-        .btn-stream {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 10px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .btn-spotify {
-            background: #1DB954;
-            color: #000;
-        }
-
-        .btn-spotify:hover {
-            background: #1ed760;
-        }
-
-        .btn-apple {
-            background: #fc3c44;
-            color: #fff;
-        }
-
-        .btn-apple:hover {
-            background: #ff4f56;
-        }
-
-        /* --- Demos / Contacto --- */
-        .contact-section {
-            padding: 100px 5%;
-            background: linear-gradient(180deg, var(--bg-color) 0%, #141416 100%);
-            text-align: center;
-        }
-
-        .contact-container {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .contact-section p {
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 14px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px;
-            color: #fff;
-            font-size: 0.95rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        input:focus, textarea:focus {
-            border-color: var(--neon-pink);
-        }
-
-        .btn-submit {
-            width: 100%;
-            padding: 14px;
-            background: var(--text-main);
-            color: #000;
-            border: none;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .btn-submit:hover {
-            background: var(--neon-pink);
-            color: #fff;
-            box-shadow: 0 0 15px var(--neon-glow);
-        }
-
-        /* --- Footer --- */
-        footer {
-            padding: 40px 5%;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255,255,255,0.03);
-            background-color: #141416;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            nav { display: none; }
-        }
+        footer { padding: 40px 5%; text-align: center; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.03); background-color: #141416; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } nav { display: none; } }
     </style>
 </head>
 <body>
@@ -400,30 +72,10 @@
 
     <section class="hero" id="inicio">
         <div class="logo-container">
-            <!-- LOGO ROSA ORIGINAL REGRESADO AQUÍ -->
-            <img src="https://i.ibb.co/907TsVF/AF875-DFB-FA38-4-C28-873-F-EBE202-C606-CF.jpg" alt="Eazy Money Records Logo">
+            <img src="https://i.ibb.co/907TsVF/AF875-DFB-FA38-4-C28-873-F-EBE202-C606-CF.jpg" alt="Logo">
         </div>
         <h1>Eazy <span class="txt-pink">Money</span> <span class="txt-split">Records</span></h1>
         <p>Prod by: @ibiwis.chk — <3$</p>
-
-        <!-- Dynamic iOS Mini Player Link -->
-        <a href="https://music.apple.com/mx/album/sexy-nasty-and-pretty-ep/6775915800" target="_blank" class="player-link">
-            <div class="player-widget">
-                <div class="player-cover">
-                    <!-- NUEVO LOGO METÁLICO PUESTO COMO PORTADA DE LA CANCIÓN -->
-                    <img src="https://i.ibb.co/6cZ9PZkz/IMG-4295.jpg" alt="Sexy, Nasty and Pretty Cover">
-                </div>
-                <div class="player-info">
-                    <div class="player-title">Sexy, Nasty and Pretty - EP</div>
-                    <div class="player-artist">Último Lanzamiento</div>
-                </div>
-                <div class="player-controls">
-                    <i class="fa-solid fa-backward-step"></i>
-                    <i class="fa-solid fa-play"></i>
-                    <i class="fa-solid fa-forward-step"></i>
-                </div>
-            </div>
-        </a>
     </section>
 
     <section class="artists-section" id="artistas">
@@ -431,41 +83,27 @@
         <div class="artists-grid">
             
             <!-- Artista 1: ibiwis chk -->
-            <div class="artist-card">
-                <div class="artist-img-container">
-                    <!-- FOTO CON LENTES -->
-                    <img src="https://i.ibb.co/hxV8HK52/E150-AE62-B5-D2-4740-84-DA-EBD2518-BC2-DE.jpg" alt="ibiwis chk">
-                    <span class="artist-badge">Producer / Artist</span>
-                </div>
-                <div class="artist-content">
-                    <div class="artist-name">ibiwis chk</div>
-                    <div class="music-links">
-                        <a href="#" target="_blank" class="btn-stream btn-spotify">
-                            <i class="fa-brands fa-spotify"></i> Spotify
-                        </a>
-                        <a href="https://music.apple.com/mx/artist/ibiwis-chk/1763376591" target="_blank" class="btn-stream btn-apple">
-                            <i class="fa-brands fa-apple"></i> Apple Music
-                        </a>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://i.ibb.co/hxV8HK52/E150-AE62-B5-D2-4740-84-DA-EBD2518-BC2-DE.jpg" class="artist-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <a href="https://www.instagram.com/ibiwis.chk" target="_blank" class="insta-link"><i class="fa-brands fa-instagram"></i></a>
+                        <h3>@ibiwis.chk</h3>
                     </div>
                 </div>
             </div>
 
             <!-- Artista 2: Inzxmnia! -->
-            <div class="artist-card">
-                <div class="artist-img-container">
-                    <!-- FOTO EN LA PLAYA -->
-                    <img src="https://i.ibb.co/1YP8hVNh/B979548-B-FAC7-42-A0-8-CDE-3-C6-BAC9-AB1-FE.jpg" alt="Inzxmnia!">
-                    <span class="artist-badge">Artist</span>
-                </div>
-                <div class="artist-content">
-                    <div class="artist-name">Inzxmnia!</div>
-                    <div class="music-links">
-                        <a href="#" target="_blank" class="btn-stream btn-spotify">
-                            <i class="fa-brands fa-spotify"></i> Spotify
-                        </a>
-                        <a href="https://music.apple.com/mx/artist/inzxmnia/1759769780" target="_blank" class="btn-stream btn-apple">
-                            <i class="fa-brands fa-apple"></i> Apple Music
-                        </a>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://i.ibb.co/1YP8hVNh/B979548-B-FAC7-42-A0-8-CDE-3-C6-BAC9-AB1-FE.jpg" class="artist-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <a href="https://www.instagram.com/inzxmnia" target="_blank" class="insta-link"><i class="fa-brands fa-instagram"></i></a>
+                        <h3>@inzxmnia</h3>
                     </div>
                 </div>
             </div>
@@ -476,26 +114,16 @@
     <section class="contact-section" id="demos">
         <div class="contact-container">
             <h2 class="section-title">Envía tu <span>Demo</span></h2>
-            <p>¿Tienes el sonido de Eazy Money Records? Queremos escucharte.</p>
-            <!-- FORMULARIO CONFIGURADO CON TU CORREO -->
-            <form action="https://formspree.io/f/eazymoneyrec@gmail.com" method="POST">
-                <div class="form-group">
-                    <input type="text" name="nombre" placeholder="Tu Nombre / AKA" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Correo Electrónico" required>
-                </div>
-                <div class="form-group">
-                    <input type="url" name="demo_link" placeholder="Link de tu track (SoundCloud, Drive, etc.)" required>
-                </div>
+            <form action="https://formspree.io/f/xaqgokvv" method="POST">
+                <div class="form-group"><input type="text" name="nombre" placeholder="Tu Nombre / AKA" required></div>
+                <div class="form-group"><input type="email" name="email" placeholder="Correo Electrónico" required></div>
+                <div class="form-group"><input type="url" name="demo_link" placeholder="Link de tu track" required></div>
                 <button type="submit" class="btn-submit">Enviar Material</button>
             </form>
         </div>
     </section>
 
-    <footer>
-        <p>© 2026 Eazy Money Records <3$. Todos los derechos reservados.</p>
-    </footer>
+    <footer><p>© 2026 Eazy Money Records <3$. Todos los derechos reservados.</p></footer>
 
 </body>
 </html>

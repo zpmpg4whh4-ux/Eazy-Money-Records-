@@ -208,13 +208,7 @@
         </div>
     </section>
 
-    <footer><p>© 2026 Eazy Money Records <3$. Todos los derechos reservados. Thia shit was made by Inzxmnia!, Ibiwis Chk and d3m.alt
-    </p></footer>
+    <footer><p>© 2026 Eazy Money Records <3$. Todos los derechos reservados.</p></footer>
 
 </body>
-</html> 
-
-
-
-
-
+</html>

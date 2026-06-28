@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eazy Money Records <3$</title>
+    <!-- Ícono del sello en la pestaña -->
     <link rel="icon" href="https://i.ibb.co/907TsVF/AF875-DFB-FA38-4-C28-873-F-EBE202-C606-CF.jpg" type="image/jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -39,8 +40,17 @@
         .player-info { flex-grow: 1; text-align: left; }
         .player-title { font-size: 0.95rem; font-weight: 600; color: var(--text-main); }
         
+        /* Timeline Section */
+        .history-section { padding: 80px 5% 40px 5%; max-width: 900px; margin: 0 auto; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 30px; border-left: 2px solid rgba(255, 0, 183, 0.3); }
+        .timeline-item { position: relative; margin-bottom: 40px; }
+        .timeline-item::before { content: ''; position: absolute; left: -39px; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: var(--neon-pink); box-shadow: 0 0 10px var(--neon-glow); border: 3px solid var(--bg-color); }
+        .timeline-date { font-size: 0.85rem; font-weight: 700; color: var(--neon-pink); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .timeline-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: var(--text-main); }
+        .timeline-desc { color: var(--text-muted); font-size: 0.95rem; }
+
         /* Flip Cards */
-        .artists-section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
+        .artists-section { padding: 60px 5% 100px 5%; max-width: 1200px; margin: 0 auto; }
         .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 50px; text-align: center; }
         .section-title span { color: var(--neon-pink); }
         .artists-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; justify-content: center; }
@@ -75,6 +85,7 @@
         <div class="logo-txt">Eazy <span class="txt-pink">Money</span> <span class="txt-split">Records</span></div>
         <nav>
             <a href="#inicio">Inicio</a>
+            <a href="#historia">Historia</a>
             <a href="#artistas">Artistas</a>
             <a href="#demos">Demos</a>
         </nav>
@@ -99,6 +110,44 @@
                 <a href="https://open.spotify.com/album/2Qe6BTJBSt9mzkMfmuetUC?si=HxF-BqBETEmz2nRHpByW5A" target="_blank" class="btn-back" style="flex: 1; background: #1DB954; color: #000;"><i class="fa-brands fa-spotify"></i> Spotify</a>
                 <a href="https://music.apple.com/mx/album/sexy-nasty-and-pretty-ep/6775915800" target="_blank" class="btn-back" style="flex: 1; background: #fc3c44; color: #fff;"><i class="fa-brands fa-apple"></i> Apple</a>
             </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NUESTRA HISTORIA -->
+    <section class="history-section" id="historia">
+        <h2 class="section-title">Nuestra <span>Historia</span></h2>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="timeline-date">Fines de 2025</div>
+                <div class="timeline-title">Los Orígenes: VVS Sound</div>
+                <div class="timeline-desc">El proyecto da sus primeros pasos bajo el nombre original de VVS Sound, sentando las bases musicales y la visión del sello.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Enero 2026</div>
+                <div class="timeline-title">El Nacimiento de Eazy Money Records</div>
+                <div class="timeline-desc">De la mano de @ibiwis.chk, el sello adopta oficialmente la identidad y la energía de Eazy Money Records para liderar la nueva escena.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Febrero - Marzo 2026</div>
+                <div class="timeline-title">Expansión del Roster</div>
+                <div class="timeline-desc">Se une al equipo @inzxmnia!, aportando un sonido fresco y consolidando la fuerza del sello.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">10 de Abril 2026</div>
+                <div class="timeline-title">Love, Death and Sexness (Deluxe)</div>
+                <div class="timeline-desc">@inzxmnia! rompe las plataformas con el lanzamiento de la versión deluxe de su álbum bajo el catálogo oficial de Eazy Money Records.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">22 de Junio 2026</div>
+                <div class="timeline-title">Sexy, Nasty and Pretty EP</div>
+                <div class="timeline-desc">@ibiwis.chk firma el más reciente lanzamiento del sello con su contundente EP, marcando una pauta alta en la trayectoria del proyecto.</div>
+            </div>
+
         </div>
     </section>
 
@@ -159,7 +208,13 @@
         </div>
     </section>
 
-    <footer><p>© 2026 Eazy Money Records <3$. Todos los derechos reservados. This Shit was made by Inzxmnia!, Ibiwis and d3m.alt</p></footer>
+    <footer><p>© 2026 Eazy Money Records <3$. Todos los derechos reservados. Thia shit was made by Inzxmnia!, Ibiwis Chk and d3m.alt
+    </p></footer>
 
 </body>
-</html>
+</html> 
+
+
+
+
+

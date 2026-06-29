@@ -94,29 +94,90 @@
             padding: 140px 20px 60px 20px; 
         }
         
-        .logo-container { 
-            width: 180px; 
-            height: 180px; 
-            border-radius: 50%; 
-            border: 3px solid var(--neon-pink); 
-            box-shadow: 0 0 25px var(--neon-glow); 
-            margin-bottom: 30px; 
-            background: #000; 
-            overflow: hidden; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            transition: transform 0.5s ease;
+        /* NUEVA ESTRUCTURA: CARD DEL LOGO PRINCIPAL */
+        .logo-flip-card {
+            background-color: transparent;
+            width: 180px;
+            height: 180px;
+            perspective: 1000px;
+            margin-bottom: 30px;
+            cursor: pointer;
         }
 
-        .logo-container:hover {
-            transform: scale(1.05) rotate(3deg);
+        .logo-flip-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
         }
 
-        .logo-container img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
+        /* Gira al pasar el mouse o al tocar en móviles */
+        .logo-flip-card:hover .logo-flip-inner,
+        .logo-flip-card:active .logo-flip-inner {
+            transform: rotateY(180deg);
+        }
+
+        .logo-front, .logo-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--neon-pink);
+            box-shadow: 0 0 25px var(--neon-glow);
+        }
+
+        .logo-front {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-back {
+            background: #141416;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .logo-insta-btn {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.8rem;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+            border-radius: 50%;
+        }
+
+        .logo-insta-btn:hover {
+            background: rgba(255, 0, 183, 0.15);
+        }
+
+        .logo-insta-btn span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--neon-pink);
         }
         
         .hero h1 { 
@@ -444,9 +505,20 @@
     </header>
 
     <section class="hero" id="inicio">
-        <div class="logo-container">
-            <img src="https://i.ibb.co/907TsVF/AF875-DFB-FA38-4-C28-873-F-EBE202-C606-CF.jpg" alt="Logo">
+        <div class="logo-flip-card">
+            <div class="logo-flip-inner">
+                <div class="logo-front">
+                    <img src="https://i.ibb.co/907TsVF/AF875-DFB-FA38-4-C28-873-F-EBE202-C606-CF.jpg" alt="Logo">
+                </div>
+                <div class="logo-back">
+                    <a href="https://www.instagram.com/eazymoneyrecords_?igsh=MWNlbXdjMnV1eWhqMA==" target="_blank" class="logo-insta-btn">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
         </div>
+
         <h1>Eazy <span class="txt-pink">Money</span> <span class="txt-split">Records</span></h1>
         <p>Prod by: @ibiwis.chk — <3$</p>
         
@@ -558,6 +630,7 @@
                 <div class="form-group"><input type="text" name="nombre" placeholder="Tu Nombre / AKA" required></div>
                 <div class="form-group"><input type="email" name="email" placeholder="Correo Electrónico" required></div>
                 <div class="form-group"><input type="url" name="demo_link" placeholder="Link de tu track (SoundCloud, Drive, etc.)" required></div>
+                <div style="display: none;"><input type="text" name="_gotcha"></div>
                 <button type="submit" class="btn-submit">Enviar Material</button>
             </form>
         </div>

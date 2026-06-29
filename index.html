@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eazy Money Records <3$</title>
+    <!-- Ícono del sello en la pestaña -->
     <link rel="icon" href="https://i.ibb.co/907TsVF/AF875-DFB-FA38-4-C28-873-F-EBE202-C606-CF.jpg" type="image/jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -94,7 +95,7 @@
             padding: 140px 20px 60px 20px; 
         }
         
-        /* NUEVA ESTRUCTURA: CARD DEL LOGO PRINCIPAL */
+        /* CARD DEL LOGO PRINCIPAL */
         .logo-flip-card {
             background-color: transparent;
             width: 180px;
@@ -113,7 +114,6 @@
             transform-style: preserve-3d;
         }
 
-        /* Gira al pasar el mouse o al tocar en móviles */
         .logo-flip-card:hover .logo-flip-inner,
         .logo-flip-card:active .logo-flip-inner {
             transform: rotateY(180deg);
@@ -188,9 +188,14 @@
         }
         
         .hero p { 
-            font-size: 1.2rem; 
+            font-size: 1.1rem; 
             color: var(--text-muted); 
             margin-bottom: 40px; 
+        }
+
+        .hero p span {
+            color: #ffffff;
+            font-weight: 600;
         }
 
         .player-widget { 
@@ -405,6 +410,20 @@
             border-color: var(--neon-pink);
         }
 
+        /* NUEVOS ESTILOS: SECCIÓN CRÉDITOS DEL CREADOR WEB */
+        .creator-section {
+            padding: 60px 5%;
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .creator-card-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
         /* Contacto */
         .contact-section { 
             padding: 100px 5%; 
@@ -505,6 +524,7 @@
     </header>
 
     <section class="hero" id="inicio">
+        <!-- LOGO GIRATORIO -->
         <div class="logo-flip-card">
             <div class="logo-flip-inner">
                 <div class="logo-front">
@@ -520,7 +540,7 @@
         </div>
 
         <h1>Eazy <span class="txt-pink">Money</span> <span class="txt-split">Records</span></h1>
-        <p>Prod by: @ibiwis.chk — <3$</p>
+        <p>Prod by: <span>@ibiwis.chk</span> — Created by: <span>@d3m.alt</span> — <3$</p>
         
         <div style="width: 100%; max-width: 380px; margin-top: 20px;">
             <div class="player-widget" style="margin-bottom: 15px;">
@@ -537,6 +557,7 @@
         </div>
     </section>
 
+    <!-- SECCIÓN NUESTRA HISTORIA -->
     <section class="history-section" id="historia">
         <h2 class="section-title">Nuestra <span>Historia</span></h2>
         <div class="timeline">
@@ -574,6 +595,7 @@
         </div>
     </section>
 
+    <!-- SECCIÓN ROSTER -->
     <section class="artists-section" id="artistas">
         <h2 class="section-title">Nuestro <span>Roster</span></h2>
         <div class="artists-grid">
@@ -623,6 +645,32 @@
         </div>
     </section>
 
+    <!-- NUEVA SECCIÓN: DESARROLLO WEB (ANTES DE DEMOS) -->
+    <section class="creator-section">
+        <h2 class="section-title">Desarrollo <span>Web</span></h2>
+        <div class="creator-card-container">
+            <div class="flip-card" style="max-width: 320px; height: 440px;">
+                <div class="flip-card-inner">
+                    <!-- Frente de tu tarjeta -->
+                    <div class="flip-card-front">
+                        <img src="https://i.ibb.co/7NyVnpk4/3-EE2660-C-2-FF8-49-CB-8197-0256071-CA1-BD.jpg" class="artist-img" alt="Diseñador Web">
+                    </div>
+                    <!-- Reverso de tu tarjeta -->
+                    <div class="flip-card-back">
+                        <h3>@d3m.alt</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">Web Designer & Developer</p>
+                        <div class="music-links-vertical">
+                            <a href="https://www.instagram.com/d3m.alt?igsh=MXQzZzlxZTB6ZnoyZQ%3D%3D&utm_source=qr" target="_blank" class="btn-back">
+                                <i class="fa-brands fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DEMOS -->
     <section class="contact-section" id="demos">
         <div class="contact-container">
             <h2 class="section-title">Envía tu <span>Demo</span></h2>

@@ -289,12 +289,6 @@
             font-size: 0.95rem; 
         }
 
-        .artists-section { 
-            padding: 100px 5% 100px 5%; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-        }
-        
         .section-title { 
             font-size: 2.2rem; 
             font-weight: 800; 
@@ -306,18 +300,25 @@
             color: var(--neon-pink); 
             text-shadow: 0 0 10px var(--neon-glow);
         }
+
+        /* SECCIÓN ROSTER */
+        .artists-section { 
+            padding: 100px 5% 60px 5%; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+        }
         
         .artists-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 40px; 
+            gap: 30px; 
             justify-content: center; 
         }
         
         .flip-card { 
             background-color: transparent; 
             width: 100%; 
-            height: 480px; 
+            height: 440px; 
             perspective: 1000px; 
             cursor: pointer; 
         }
@@ -405,6 +406,84 @@
             border-color: var(--neon-pink);
         }
 
+        /* SECCIÓN PRÓXIMAMENTE Y CONTADOR */
+        .upcoming-section {
+            padding: 60px 5% 100px 5%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .upcoming-container {
+            background: rgba(20, 20, 22, 0.6);
+            border: 1px solid rgba(255, 0, 183, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 24px;
+            padding: 40px 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 0, 183, 0.05);
+        }
+
+        .release-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0px;
+            color: var(--text-main);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .release-author {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            text-transform: none;
+        }
+
+        .release-date-sub {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--neon-pink);
+            text-shadow: 0 0 8px var(--neon-glow);
+            letter-spacing: 1px;
+            margin-bottom: 35px;
+        }
+
+        .countdown-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-box {
+            background: rgba(11, 11, 12, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            min-width: 90px;
+            padding: 16px 10px;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .countdown-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
         .creator-section {
             padding: 60px 5%;
             max-width: 400px;
@@ -479,6 +558,7 @@
         
         @media (max-width: 768px) { 
             .hero h1 { font-size: 2.2rem; } 
+            .release-title { font-size: 2.2rem; }
             
             header {
                 flex-direction: column;
@@ -512,6 +592,7 @@
             <a href="#inicio">Inicio</a>
             <a href="#historia">Historia</a>
             <a href="#artistas">Artistas</a>
+            <a href="#proximamente">Próximamente</a>
             <a href="#demos">Demos</a>
         </nav>
     </header>
@@ -532,7 +613,8 @@
         </div>
 
         <h1>Eazy <span class="txt-pink">Money</span> <span class="txt-split">Records</span></h1>
-        <p>Prod by: <span>@ibiwis.chk</span> — Created by: <span>@d3m.alt</span> — <3$</p>
+        <!-- TEXTO ACTUALIZADO AQUÍ -->
+        <p>Prod by: <span>@ibiwis.chk</span> — Web created by: <span>@d3m.alt</span> — <3$</p>
         
         <div style="width: 100%; max-width: 380px; margin-top: 20px;">
             <div class="player-widget" style="margin-bottom: 15px;">
@@ -592,46 +674,77 @@
         </div>
     </section>
 
+    <!-- SECCIÓN: NUESTRO ROSTER -->
     <section class="artists-section" id="artistas">
         <h2 class="section-title">Nuestro <span>Roster</span></h2>
         <div class="artists-grid">
             
+            <!-- Tarjeta de ibiwis -->
             <div class="flip-card">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front"><img src="https://i.ibb.co/gM4K3htq/5c07e44c-3f1e-4c8a-870a-b710b3070901.jpg" class="artist-img" alt="ibiwis.chk"></div>
+                    <div class="flip-card-front">
+                        <img src="https://i.ibb.co/gM4K3htq/5c07e44c-3f1e-4c8a-870a-b710b3070901.jpg" class="artist-img" alt="ibiwis.chk">
+                    </div>
                     <div class="flip-card-back">
                         <h3>@ibiwis.chk</h3>
                         <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/ibiwis.chk" target="_blank" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                            <a href="https://open.spotify.com/artist/5ufve6sBmwqI10dD7fF6c7?si=qm-J0Po1QZK9ZWvIkNlgRg" target="_blank" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                            <a href="https://music.apple.com/mx/artist/ibiwis-chk/1763376591" target="_blank" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a>
+                            <a href="https://www.instagram.com/ibiwis.chk" target="_blank" class="btn-back">
+                                <i class="fa-brands fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://open.spotify.com/artist/5ufve6sBmwqI10dD7fF6c7?si=qm-J0Po1QZK9ZWvIkNlgRg" target="_blank" class="btn-back">
+                                <i class="fa-brands fa-spotify"></i> Spotify
+                            </a>
+                            <a href="https://music.apple.com/mx/artist/ibiwis-chk/1763376591" target="_blank" class="btn-back">
+                                <i class="fa-brands fa-apple"></i> Apple Music
+                            </a>
                         </div>
                         <div style="margin-top: 10px; width: 100%;">
-                            <p style="font-size: 0.8rem; margin-bottom: 6px; font-weight: 700; color: var(--text-muted);">🔥 CANCIÓN MÁS ESCUCHADA</p>
+                            <p style="font-size: 0.8rem; margin-bottom: 6px; font-weight: 700; color: var(--text-muted);">
+                                🔥 CANCIÓN MÁS ESCUCHADA
+                            </p>
                             <div style="display: flex; gap: 6px;">
-                                <a href="https://open.spotify.com/track/4v1zRy1EFUj1WOLkdh0hdZ?si=2-bqYxy-T7iZJt6HihgzyQ" target="_blank" class="btn-back" style="flex: 1; font-size: 0.75rem;"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                                <a href="https://music.apple.com/mx/album/you-should-be-w-him/1823096369?i=1823096370" target="_blank" class="btn-back" style="flex: 1; font-size: 0.75rem;"><i class="fa-brands fa-apple"></i> Apple</a>
+                                <a href="https://open.spotify.com/track/4v1zRy1EFUj1WOLkdh0hdZ?si=2-bqYxy-T7iZJt6HihgzyQ" target="_blank" class="btn-back" style="flex: 1; font-size: 0.75rem;">
+                                    <i class="fa-brands fa-spotify"></i> Spotify
+                                </a>
+                                <a href="https://music.apple.com/mx/album/you-should-be-w-him/1823096369?i=1823096370" target="_blank" class="btn-back" style="flex: 1; font-size: 0.75rem;">
+                                    <i class="fa-brands fa-apple"></i> Apple
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Tarjeta de inzxmnia -->
             <div class="flip-card">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front"><img src="https://i.ibb.co/1YP8hVNh/B979548-B-FAC7-42-A0-8-CDE-3-C6-BAC9-AB1-FE.jpg" class="artist-img" alt="inzxmnia"></div>
+                    <div class="flip-card-front">
+                        <img src="https://i.ibb.co/1YP8hVNh/B979548-B-FAC7-42-A0-8-CDE-3-C6-BAC9-AB1-FE.jpg" class="artist-img" alt="inzxmnia">
+                    </div>
                     <div class="flip-card-back">
                         <h3>@inzxmnia</h3>
                         <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/inzxmnia" target="_blank" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                            <a href="https://open.spotify.com/artist/0OORgu1s7MwAgfckt9znnm?si=qdYfhSqKTxK0QwokP-U7Vw" target="_blank" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                            <a href="https://music.apple.com/mx/artist/inzxmnia/1759769780" target="_blank" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a>
+                            <a href="https://www.instagram.com/inzxmnia" target="_blank" class="btn-back">
+                                <i class="fa-brands fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://open.spotify.com/artist/0OORgu1s7MwAgfckt9znnm?si=qdYfhSqKTxK0QwokP-U7Vw" target="_blank" class="btn-back">
+                                <i class="fa-brands fa-spotify"></i> Spotify
+                            </a>
+                            <a href="https://music.apple.com/mx/artist/inzxmnia/1759769780" target="_blank" class="btn-back">
+                                <i class="fa-brands fa-apple"></i> Apple Music
+                            </a>
                         </div>
                         <div style="margin-top: 10px; width: 100%;">
-                            <p style="font-size: 0.8rem; margin-bottom: 6px; font-weight: 700; color: var(--text-muted);">🔥 CANCIÓN MÁS ESCUCHADA</p>
+                            <p style="font-size: 0.8rem; margin-bottom: 6px; font-weight: 700; color: var(--text-muted);">
+                                🔥 CANCIÓN MÁS ESCUCHADA
+                            </p>
                             <div style="display: flex; gap: 6px;">
-                                <a href="https://open.spotify.com/intl-es/track/60AfH9XqjGKSlfcy5PpFog?si=cf17dee81ce94683" target="_blank" class="btn-back" style="flex: 1; font-size: 0.75rem;"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                                <a href="https://music.apple.com/bo/song/ayer/1872615649" target="_blank" class="btn-back" style="flex: 1; font-size: 0.75rem;"><i class="fa-brands fa-apple"></i> Apple</a>
+                                <a href="https://open.spotify.com/intl-es/track/60AfH9XqjGKSlfcy5PpFog?si=cf17dee81ce94683" target="_blank" class="btn-back" style="flex: 1; font-size: 0.75rem;">
+                                    <i class="fa-brands fa-spotify"></i> Spotify
+                                </a>
+                                <a href="https://music.apple.com/bo/song/ayer/1872615649" target="_blank" class="btn-back" style="flex: 1; font-size: 0.75rem;">
+                                    <i class="fa-brands fa-apple"></i> Apple
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -641,6 +754,37 @@
         </div>
     </section>
 
+    <!-- SECCIÓN PRÓXIMAMENTE -->
+    <section class="upcoming-section" id="proximamente">
+        <h2 class="section-title">Próximamente</h2>
+        <div class="upcoming-container">
+            <div class="release-title">“Catarsis”</div>
+            <div class="release-author">By Inzxmnia!</div>
+            <div class="release-date-sub">9 de Noviembre, 2026</div>
+            
+            <!-- CONTADOR DIGITAL -->
+            <div class="countdown-grid">
+                <div class="countdown-box">
+                    <div class="countdown-number" id="dias">00</div>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-number" id="horas">00</div>
+                    <div class="countdown-label">Hrs</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-number" id="minutos">00</div>
+                    <div class="countdown-label">Min</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-number" id="segundos">00</div>
+                    <div class="countdown-label">Seg</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: DESARROLLO WEB -->
     <section class="creator-section">
         <h2 class="section-title">Desarrollo <span>Web</span></h2>
         <div class="creator-card-container">
@@ -677,6 +821,35 @@
     </section>
 
     <footer><p>© 2026 Eazy Money Records <3$. Todos los derechos reservados.</p></footer>
+
+    <!-- SCRIPT DEL CONTADOR EN TIEMPO REAL -->
+    <script>
+        const fechaObjetivo = new Date("Nov 9, 2026 00:00:00").getTime();
+
+        const cuentaRegresiva = setInterval(function() {
+            const ahora = new Date().getTime();
+            const diferencia = fechaObjetivo - ahora;
+
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerHTML = dias < 10 ? "0" + dias : dias;
+            document.getElementById("horas").innerHTML = horas < 10 ? "0" + horas : horas;
+            document.getElementById("minutos").innerHTML = minutos < 10 ? "0" + minutos : minutos;
+            document.getElementById("segundos").innerHTML = segundos < 10 ? "0" + segundos : segundos;
+
+            if (diferencia < 0) {
+                clearInterval(cuentaRegresiva);
+                document.getElementById("dias").innerHTML = "00";
+                document.getElementById("horas").innerHTML = "00";
+                document.getElementById("minutos").innerHTML = "00";
+                document.getElementById("segundos").innerHTML = "00";
+                document.querySelector(".release-date-sub").innerHTML = "¡YA DISPONIBLE!";
+            }
+        }, 1000);
+    </script>
 
 </body>
 </html>

@@ -704,12 +704,10 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: NUESTRO ROSTER -->
     <section class="artists-section" id="artistas">
         <h2 class="section-title">Nuestro <span>Roster</span></h2>
         <div class="artists-grid">
             
-            <!-- Tarjeta de ibiwis -->
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
@@ -745,7 +743,6 @@
                 </div>
             </div>
 
-            <!-- Tarjeta de inzxmnia -->
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
@@ -784,7 +781,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN PRÓXIMAMENTE -->
     <section class="upcoming-section" id="proximamente">
         <h2 class="section-title">Próximamente</h2>
         <div class="upcoming-container">
@@ -792,7 +788,6 @@
             <div class="release-author">By Inzxmnia!</div>
             <div class="release-date-sub">9 de Noviembre, 2026</div>
             
-            <!-- CONTADOR DIGITAL -->
             <div class="countdown-grid">
                 <div class="countdown-box">
                     <div class="countdown-number" id="dias">00</div>
@@ -814,7 +809,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: DESARROLLO WEB -->
     <section class="creator-section">
         <h2 class="section-title">Desarrollo <span>Web</span></h2>
         <div class="creator-card-container">
@@ -837,12 +831,10 @@
         </div>
     </section>
 
-    <!-- SECCIÓN ENVÍA TU DEMO (ACTUALIZADA CON APARTADO DELUXE) -->
     <section class="contact-section" id="demos">
         <div class="contact-container">
             <h2 class="section-title">Envía tu <span>Demo</span></h2>
             
-            <!-- NUEVO APARTADO: BÚSQUEDA ARTISTAS DELUXE -->
             <div class="deluxe-callout">
                 <h4>⚠️ ATENCIÓN ARTISTAS ⚠️</h4>
                 <p><strong>@ibiwis.chk</strong> está buscando talentos y colaboraciones exclusivas para el álbum <span>Sexy, Nasty and Pretty DELUXE</span>.</p>
@@ -852,7 +844,6 @@
                 <div class="form-group"><input type="text" name="nombre" placeholder="Tu Nombre / AKA" required></div>
                 <div class="form-group"><input type="email" name="email" placeholder="Correo Electrónico" required></div>
                 <div class="form-group"><input type="url" name="demo_link" placeholder="Link de tu track (SoundCloud, Drive, etc.)" required></div>
-                <div style="none;"><input type="text" name="_gotcha"></div>
                 <button type="submit" class="btn-submit">Enviar Material</button>
             </form>
         </div>
@@ -860,7 +851,6 @@
 
     <footer><p>© 2026 Eazy Money Records <3$. Todos los derechos reservados.</p></footer>
 
-    <!-- SCRIPT DEL CONTADOR EN TIEMPO REAL -->
     <script>
         const fechaObjetivo = new Date("Nov 9, 2026 00:00:00").getTime();
 
@@ -875,7 +865,7 @@
 
             document.getElementById("dias").innerHTML = dias < 10 ? "0" + dias : dias;
             document.getElementById("horas").innerHTML = horas < 10 ? "0" + horas : horas;
-            document.getElementById("minutos").innerHTML = minutos < 10 ? "0" + minutos : minutos;
+            document.getElementById("minutos").innerHTML = minutes < 10 ? "0" + minutos : minutos;
             document.getElementById("segundos").innerHTML = segundos < 10 ? "0" + segundos : segundos;
 
             if (diferencia < 0) {

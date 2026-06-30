@@ -507,6 +507,37 @@
             max-width: 500px; 
             margin: 0 auto; 
         }
+
+        /* ANUNCIO DELUXE CALLOUT */
+        .deluxe-callout {
+            background: rgba(255, 0, 183, 0.05);
+            border: 1px dashed var(--neon-pink);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 35px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 0, 183, 0.05);
+        }
+
+        .deluxe-callout h4 {
+            color: var(--neon-pink);
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-shadow: 0 0 8px var(--neon-glow);
+        }
+
+        .deluxe-callout p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .deluxe-callout p span {
+            font-weight: 700;
+            color: #fff;
+        }
         
         .form-group { 
             margin-bottom: 20px; 
@@ -613,7 +644,6 @@
         </div>
 
         <h1>Eazy <span class="txt-pink">Money</span> <span class="txt-split">Records</span></h1>
-        <!-- TEXTO ACTUALIZADO AQUÍ -->
         <p>Prod by: <span>@ibiwis.chk</span> — Web created by: <span>@d3m.alt</span> — <3$</p>
         
         <div style="width: 100%; max-width: 380px; margin-top: 20px;">
@@ -807,14 +837,22 @@
         </div>
     </section>
 
+    <!-- SECCIÓN ENVÍA TU DEMO (ACTUALIZADA CON APARTADO DELUXE) -->
     <section class="contact-section" id="demos">
         <div class="contact-container">
             <h2 class="section-title">Envía tu <span>Demo</span></h2>
+            
+            <!-- NUEVO APARTADO: BÚSQUEDA ARTISTAS DELUXE -->
+            <div class="deluxe-callout">
+                <h4>⚠️ ATENCIÓN ARTISTAS ⚠️</h4>
+                <p><strong>@ibiwis.chk</strong> está buscando talentos y colaboraciones exclusivas para el álbum <span>Sexy, Nasty and Pretty DELUXE</span>.</p>
+            </div>
+
             <form action="https://formspree.io/f/xaqgokvv" method="POST">
                 <div class="form-group"><input type="text" name="nombre" placeholder="Tu Nombre / AKA" required></div>
                 <div class="form-group"><input type="email" name="email" placeholder="Correo Electrónico" required></div>
                 <div class="form-group"><input type="url" name="demo_link" placeholder="Link de tu track (SoundCloud, Drive, etc.)" required></div>
-                <div style="display: none;"><input type="text" name="_gotcha"></div>
+                <div style="none;"><input type="text" name="_gotcha"></div>
                 <button type="submit" class="btn-submit">Enviar Material</button>
             </form>
         </div>

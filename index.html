@@ -408,7 +408,7 @@
 
         /* SECCIÓN PRÓXIMAMENTE Y CONTADOR */
         .upcoming-section {
-            padding: 60px 5% 100px 5%;
+            padding: 60px 5% 60px 5%;
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
@@ -623,6 +623,7 @@
             <a href="#inicio">Inicio</a>
             <a href="#historia">Historia</a>
             <a href="#artistas">Artistas</a>
+            <a href="#regreso">El Regreso</a>
             <a href="#proximamente">Próximamente</a>
             <a href="#demos">Demos</a>
         </nav>
@@ -781,6 +782,56 @@
         </div>
     </section>
 
+    <!-- SECCIÓN NUEVA: EL REGRESO -->
+    <section class="upcoming-section" id="regreso">
+        <h2 class="section-title">El Próximo <span>Capítulo</span></h2>
+
+        <div class="upcoming-container" style="border-color: rgba(255, 255, 255, 0.2); background: rgba(30, 30, 35, 0.4);">
+
+            <div class="release-title" style="
+                font-size: 2.8rem;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                margin-bottom: 15px;
+                color: #fff;
+                text-shadow: 0 0 20px rgba(255,255,255,0.15);
+            ">
+                WE WILL RETURN...
+            </div>
+
+            <div class="release-date-sub" style="
+                color: var(--neon-pink);
+                font-weight: 700;
+                margin-bottom: 35px;
+            ">
+                5 de Agosto, 2026
+            </div>
+
+            <div class="countdown-grid">
+                <div class="countdown-box">
+                    <div class="countdown-number" id="regreso-dias">00</div>
+                    <div class="countdown-label">Días</div>
+                </div>
+
+                <div class="countdown-box">
+                    <div class="countdown-number" id="regreso-horas">00</div>
+                    <div class="countdown-label">Hrs</div>
+                </div>
+
+                <div class="countdown-box">
+                    <div class="countdown-number" id="regreso-minutos">00</div>
+                    <div class="countdown-label">Min</div>
+                </div>
+
+                <div class="countdown-box">
+                    <div class="countdown-number" id="regreso-segundos">00</div>
+                    <div class="countdown-label">Seg</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section class="upcoming-section" id="proximamente">
         <h2 class="section-title">Próximamente</h2>
         <div class="upcoming-container">
@@ -852,29 +903,56 @@
     <footer><p>© 2026 Eazy Money Records <3$. Todos los derechos reservados.</p></footer>
 
     <script>
-        const fechaObjetivo = new Date("Nov 9, 2026 00:00:00").getTime();
+        // CONFIGURACIÓN DE FECHAS OBJETIVO (Año 2026)
+        const fechaRegresivaRegreso = new Date("Aug 5, 2026 00:00:00").getTime();
+        const fechaObjetivoCatarsis = new Date("Nov 9, 2026 00:00:00").getTime();
 
         const cuentaRegresiva = setInterval(function() {
             const ahora = new Date().getTime();
-            const diferencia = fechaObjetivo - ahora;
 
-            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+            // 1. Contador para el Regreso (5 de Agosto)
+            const difRegreso = fechaRegresivaRegreso - ahora;
+            const rDias = Math.floor(difRegreso / (1000 * 60 * 60 * 24));
+            const rHoras = Math.floor((difRegreso % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const rMinutos = Math.floor((difRegreso % (1000 * 60 * 60)) / (1000 * 60));
+            const rSegundos = Math.floor((difRegreso % (1000 * 60)) / 1000);
+
+            document.getElementById("regreso-dias").innerHTML = rDias < 10 ? "0" + rDias : rDias;
+            document.getElementById("regreso-horas").innerHTML = rHoras < 10 ? "0" + rHoras : rHoras;
+            document.getElementById("regreso-minutos").innerHTML = rMinutos < 10 ? "0" + rMinutos : rMinutos;
+            document.getElementById("regreso-segundos").innerHTML = rSegundos < 10 ? "0" + rSegundos : rSegundos;
+
+            if (difRegreso < 0) {
+                document.getElementById("regreso-dias").innerHTML = "00";
+                document.getElementById("regreso-horas").innerHTML = "00";
+                document.getElementById("regreso-minutos").innerHTML = "00";
+                document.getElementById("regreso-segundos").innerHTML = "00";
+                document.querySelector("#regreso .release-date-sub").innerHTML = "¡EL REGRESO HA COMENZADO!";
+            }
+
+            // 2. Contador para Catarsis (9 de Noviembre)
+            const difCatarsis = fechaObjetivoCatarsis - ahora;
+            const dias = Math.floor(difCatarsis / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((difCatarsis % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((difCatarsis % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((difCatarsis % (1000 * 60)) / 1000);
 
             document.getElementById("dias").innerHTML = dias < 10 ? "0" + dias : dias;
             document.getElementById("horas").innerHTML = horas < 10 ? "0" + horas : horas;
             document.getElementById("minutos").innerHTML = minutos < 10 ? "0" + minutos : minutos;
             document.getElementById("segundos").innerHTML = segundos < 10 ? "0" + segundos : segundos;
 
-            if (diferencia < 0) {
-                clearInterval(cuentaRegresiva);
+            if (difCatarsis < 0) {
                 document.getElementById("dias").innerHTML = "00";
                 document.getElementById("horas").innerHTML = "00";
                 document.getElementById("minutos").innerHTML = "00";
                 document.getElementById("segundos").innerHTML = "00";
-                document.querySelector(".release-date-sub").innerHTML = "¡YA DISPONIBLE!";
+                document.querySelector("#proximamente .release-date-sub").innerHTML = "¡YA DISPONIBLE!";
+            }
+
+            // Frenar intervalo si ambos ya expiraron
+            if (difRegreso < 0 && difCatarsis < 0) {
+                clearInterval(cuentaRegresiva);
             }
         }, 1000);
     </script>

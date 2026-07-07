@@ -16,602 +16,121 @@
             --text-muted: #a1a1aa;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
 
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-        }
-        
-        body { 
-            background-color: var(--bg-color); 
-            color: var(--text-main); 
-            overflow-x: hidden; 
-            line-height: 1.6; 
-        }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; position: fixed; width: 100%; top: 0; z-index: 100; background: rgba(11, 11, 12, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 0, 183, 0.15); }
+        .logo-txt { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.5px; color: var(--text-main); }
+        .txt-pink { color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-glow); }
+        .txt-split { background: linear-gradient(to right, #ffffff 50%, var(--neon-pink) 50%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+        nav a { color: var(--text-muted); text-decoration: none; margin-left: 25px; font-weight: 500; font-size: 0.95rem; transition: color 0.3s, text-shadow 0.3s; }
+        nav a:hover { color: var(--neon-pink); text-shadow: 0 0 8px var(--neon-glow); }
 
-        header { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 20px 5%; 
-            position: fixed; 
-            width: 100%; 
-            top: 0; 
-            z-index: 100; 
-            background: rgba(11, 11, 12, 0.85); 
-            backdrop-filter: blur(12px); 
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 0, 183, 0.15); 
-        }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 140px 20px 60px 20px; }
+        .logo-flip-card { background-color: transparent; width: 180px; height: 180px; perspective: 1000px; margin-bottom: 30px; cursor: pointer; }
+        .logo-flip-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
+        .logo-flip-card:hover .logo-flip-inner, .logo-flip-card:active .logo-flip-inner { transform: rotateY(180deg); }
+        .logo-front, .logo-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 50%; overflow: hidden; border: 3px solid var(--neon-pink); box-shadow: 0 0 25px var(--neon-glow); }
+        .logo-front { background: #000; display: flex; justify-content: center; align-items: center; }
+        .logo-front img { width: 100%; height: 100%; object-fit: cover; }
+        .logo-back { background: #141416; transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10px; }
+        .logo-insta-btn { color: #fff; text-decoration: none; font-size: 1.8rem; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; transition: background 0.3s; border-radius: 50%; }
+        .logo-insta-btn:hover { background: rgba(255, 0, 183, 0.15); }
+        .logo-insta-btn span { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--neon-pink); }
         
-        .logo-txt { 
-            font-weight: 800; 
-            font-size: 1.3rem; 
-            letter-spacing: -0.5px; 
-            color: var(--text-main); 
-            text-transform: capitalize; 
-        }
-        
-        .txt-pink { 
-            color: var(--neon-pink); 
-            text-shadow: 0 0 10px var(--neon-glow); 
-        }
-        
-        .txt-split { 
-            background: linear-gradient(to right, #ffffff 50%, var(--neon-pink) 50%); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            display: inline-block; 
-        }
-        
-        nav a { 
-            color: var(--text-muted); 
-            text-decoration: none; 
-            margin-left: 25px; 
-            font-weight: 500; 
-            font-size: 0.95rem; 
-            transition: color 0.3s, text-shadow 0.3s; 
-        }
-        
-        nav a:hover { 
-            color: var(--neon-pink); 
-            text-shadow: 0 0 8px var(--neon-glow);
-        }
+        .hero h1 { font-size: 3.2rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; }
+        .hero p span { color: #ffffff; font-weight: 600; }
 
-        .hero { 
-            min-height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            text-align: center; 
-            padding: 140px 20px 60px 20px; 
-        }
-        
-        .logo-flip-card {
-            background-color: transparent;
-            width: 180px;
-            height: 180px;
-            perspective: 1000px;
-            margin-bottom: 30px;
-            cursor: pointer;
-        }
+        .ep-section { width: 100%; max-width: 380px; margin-top: 20px; }
+        .player-widget { background: rgba(20, 20, 22, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border-radius: 24px; padding: 16px; display: flex; align-items: center; gap: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); margin-bottom: 15px; }
+        .player-cover { width: 60px; height: 60px; border-radius: 12px; overflow: hidden; }
+        .player-cover img { width: 100%; height: 100%; object-fit: cover; }
+        .player-info { flex-grow: 1; text-align: left; }
+        .player-title { font-size: 0.95rem; font-weight: 600; color: var(--text-main); }
+        .player-artist { font-size: 0.85rem; color: var(--text-muted); }
 
-        .logo-flip-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-style: preserve-3d;
-        }
+        .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 50px; text-align: center; }
+        .section-title span { color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-glow); }
 
-        .logo-flip-card:hover .logo-flip-inner,
-        .logo-flip-card:active .logo-flip-inner {
-            transform: rotateY(180deg);
-        }
-
-        .logo-front, .logo-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid var(--neon-pink);
-            box-shadow: 0 0 25px var(--neon-glow);
-        }
-
-        .logo-front {
-            background: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo-front img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .logo-back {
-            background: #141416;
-            transform: rotateY(180deg);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-        }
-
-        .logo-insta-btn {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.8rem;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            transition: background 0.3s;
-            border-radius: 50%;
-        }
-
-        .logo-insta-btn:hover {
-            background: rgba(255, 0, 183, 0.15);
-        }
-
-        .logo-insta-btn span {
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--neon-pink);
-        }
+        /* SECCIÓN PREVIEWS/PLAYER */
+        .player-section { padding: 100px 5% 60px 5%; max-width: 1000px; margin: 0 auto; }
+        .custom-player-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 25px; }
+        .track-card { background: rgba(20, 20, 22, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 20px; display: flex; align-items: center; gap: 20px; transition: border-color 0.3s, box-shadow 0.3s; }
+        .track-card:hover { border-color: rgba(255, 0, 183, 0.2); box-shadow: 0 0 15px rgba(255, 0, 183, 0.1); }
+        .track-cover-wrapper { position: relative; width: 80px; height: 80px; border-radius: 12px; overflow: hidden; flex-shrink: 0; }
+        .track-cover-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        .play-btn { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); border: none; color: #fff; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s; }
+        .play-btn:hover { background: rgba(0,0,0,0.8); }
+        .track-info { flex-grow: 1; }
+        .track-info h4 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+        .track-info p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
+        .progress-container { width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; cursor: pointer; overflow: hidden; }
+        .progress-bar { width: 0%; height: 100%; background: var(--neon-pink); border-radius: 10px; transition: width 0.1s linear; }
         
-        .hero h1 { 
-            font-size: 3.2rem; 
-            font-weight: 900; 
-            letter-spacing: -1px; 
-            margin-bottom: 10px; 
-        }
-        
-        .hero p { 
-            font-size: 1.1rem; 
-            color: var(--text-muted); 
-            margin-bottom: 40px; 
-        }
-
-        .hero p span {
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        .player-widget { 
-            background: rgba(20, 20, 22, 0.7); 
-            border: 1px solid rgba(255, 255, 255, 0.08); 
-            backdrop-filter: blur(20px); 
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 24px; 
-            padding: 16px; 
-            display: flex; 
-            align-items: center; 
-            gap: 16px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
-        }
-        
-        .player-cover { 
-            width: 60px; 
-            height: 60px; 
-            border-radius: 12px; 
-            overflow: hidden; 
-        }
-        
-        .player-cover img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-        }
-        
-        .player-info { 
-            flex-grow: 1; 
-            text-align: left; 
-        }
-        
-        .player-title { 
-            font-size: 0.95rem; 
-            font-weight: 600; 
-            color: var(--text-main); 
-        }
-
-        .player-artist {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-        
-        .history-section { 
-            padding: 100px 5% 40px 5%; 
-            max-width: 900px; 
-            margin: 0 auto; 
-        }
-        
-        .timeline { 
-            position: relative; 
-            margin: 40px 0; 
-            padding-left: 30px; 
-            border-left: 2px solid rgba(255, 0, 183, 0.3); 
-        }
-        
-        .timeline-item { 
-            position: relative; 
-            margin-bottom: 40px; 
-        }
-        
-        .timeline-item::before { 
-            content: ''; 
-            position: absolute; 
-            left: -39px; 
-            top: 5px; 
-            width: 14px; 
-            height: 14px; 
-            border-radius: 50%; 
-            background: var(--neon-pink); 
-            box-shadow: 0 0 10px var(--neon-glow); 
-            border: 3px solid var(--bg-color); 
-        }
-        
-        .timeline-date { 
-            font-size: 0.85rem; 
-            font-weight: 700; 
-            color: var(--neon-pink); 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            margin-bottom: 5px; 
-        }
-        
-        .timeline-title { 
-            font-size: 1.2rem; 
-            font-weight: 700; 
-            margin-bottom: 8px; 
-            color: var(--text-main); 
-        }
-        
-        .timeline-desc { 
-            color: var(--text-muted); 
-            font-size: 0.95rem; 
-        }
-
-        .section-title { 
-            font-size: 2.2rem; 
-            font-weight: 800; 
-            margin-bottom: 50px; 
-            text-align: center; 
-        }
-        
-        .section-title span { 
-            color: var(--neon-pink); 
-            text-shadow: 0 0 10px var(--neon-glow);
-        }
+        /* SECCIÓN HISTORIA */
+        .history-section { padding: 100px 5% 40px 5%; max-width: 900px; margin: 0 auto; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 30px; border-left: 2px solid rgba(255, 0, 183, 0.3); }
+        .timeline-item { position: relative; margin-bottom: 40px; }
+        .timeline-item::before { content: ''; position: absolute; left: -39px; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: var(--neon-pink); box-shadow: 0 0 10px var(--neon-glow); border: 3px solid var(--bg-color); }
+        .timeline-date { font-size: 0.85rem; font-weight: 700; color: var(--neon-pink); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .timeline-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: var(--text-main); }
+        .timeline-desc { color: var(--text-muted); font-size: 0.95rem; }
 
         /* SECCIÓN ROSTER */
-        .artists-section { 
-            padding: 100px 5% 60px 5%; 
-            max-width: 1000px; 
-            margin: 0 auto; 
-        }
+        .artists-section { padding: 100px 5% 60px 5%; max-width: 1000px; margin: 0 auto; }
+        .artists-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .flip-card { background-color: transparent; width: 100%; height: 440px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .flip-card-front { background-color: #141416; }
+        .flip-card-back { background-color: #141416; border: 2px solid var(--neon-pink); box-shadow: inset 0 0 20px rgba(255, 0, 183, 0.2); color: white; transform: rotateY(180deg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 24px; }
+        .flip-card-back h3 { font-size: 1.4rem; letter-spacing: -0.5px; color: var(--neon-pink); text-shadow: 0 0 5px var(--neon-glow); margin-bottom: 5px; }
+        .artist-img { width: 100%; height: 100%; object-fit: cover; }
+        .music-links-vertical { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+        .btn-back { background: rgba(255, 255, 255, 0.05); color: white; padding: 10px; border-radius: 10px; text-decoration: none; font-size: 0.85rem; transition: background 0.3s, border-color 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; border: 1px solid rgba(255,255,255,0.08); }
+        .btn-back:hover { background: rgba(255, 0, 183, 0.15); border-color: var(--neon-pink); }
+
+        /* SECCIÓN PRÓXIMAMENTE */
+        .upcoming-section { padding: 60px 5% 60px 5%; max-width: 800px; margin: 0 auto; text-align: center; }
+        .upcoming-container { background: rgba(20, 20, 22, 0.6); border: 1px solid rgba(255, 0, 183, 0.2); backdrop-filter: blur(15px); border-radius: 24px; padding: 40px 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 0, 183, 0.05); }
+        .release-title { font-size: 3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0px; color: var(--text-main); text-shadow: 0 0 15px rgba(255, 255, 255, 0.1); }
+        .release-author { font-size: 1.1rem; font-weight: 700; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 12px; }
+        .release-date-sub { font-size: 1rem; font-weight: 600; color: var(--neon-pink); text-shadow: 0 0 8px var(--neon-glow); letter-spacing: 1px; margin-bottom: 35px; }
+        .countdown-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .countdown-box { background: rgba(11, 11, 12, 0.8); border: 1px solid rgba(255, 255, 255, 0.05); min-width: 90px; padding: 16px 10px; border-radius: 16px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
+        .countdown-number { font-size: 2.2rem; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 5px; }
+        .countdown-label { font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; font-weight: 700; }
+
+        .creator-section { padding: 60px 5%; max-width: 400px; margin: 0 auto; text-align: center; }
+        .creator-card-container { display: flex; justify-content: center; margin-top: 30px; }
+
+        .contact-section { padding: 100px 5%; background: linear-gradient(180deg, var(--bg-color) 0%, #141416 100%); text-align: center; }
+        .contact-container { max-width: 500px; margin: 0 auto; }
+        .deluxe-callout { background: rgba(255, 0, 183, 0.05); border: 1px dashed var(--neon-pink); border-radius: 16px; padding: 20px; margin-bottom: 35px; text-align: center; box-shadow: 0 0 15px rgba(255, 0, 183, 0.05); }
+        .deluxe-callout h4 { color: var(--neon-pink); font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; text-shadow: 0 0 8px var(--neon-glow); }
+        .deluxe-callout p { font-size: 0.95rem; color: var(--text-main); }
+        .deluxe-callout p span { font-weight: 700; color: #fff; }
         
-        .artists-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 30px; 
-            justify-content: center; 
-        }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        input { width: 100%; padding: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; color: #fff; outline: none; transition: border-color 0.3s, box-shadow 0.3s; }
+        input:focus { border-color: var(--neon-pink); box-shadow: 0 0 10px rgba(255, 0, 183, 0.2); }
         
-        .flip-card { 
-            background-color: transparent; 
-            width: 100%; 
-            height: 440px; 
-            perspective: 1000px; 
-            cursor: pointer; 
-        }
-        
-        .flip-card-inner { 
-            position: relative; 
-            width: 100%; 
-            height: 100%; 
-            text-align: center; 
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
-            transform-style: preserve-3d; 
-        }
-        
-        .flip-card:hover .flip-card-inner { 
-            transform: rotateY(180deg); 
-        }
-        
-        .flip-card-front, .flip-card-back { 
-            position: absolute; 
-            width: 100%; 
-            height: 100%; 
-            backface-visibility: hidden; 
-            border-radius: 20px; 
-            overflow: hidden; 
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .flip-card-front { 
-            background-color: #141416; 
-        }
-        
-        .flip-card-back { 
-            background-color: #141416; 
-            border: 2px solid var(--neon-pink);
-            box-shadow: inset 0 0 20px rgba(255, 0, 183, 0.2);
-            color: white; 
-            transform: rotateY(180deg); 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 12px; 
-            padding: 24px; 
-        }
-        
-        .flip-card-back h3 {
-            font-size: 1.4rem;
-            letter-spacing: -0.5px;
-            color: var(--neon-pink);
-            text-shadow: 0 0 5px var(--neon-glow);
-            margin-bottom: 5px;
-        }
+        .btn-submit { width: 100%; padding: 14px; background: var(--text-main); color: #000; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: background 0.3s, color 0.3s, box-shadow 0.3s; }
+        .btn-submit:hover { background: var(--neon-pink); color: #fff; box-shadow: 0 0 15px var(--neon-glow); }
 
-        .artist-img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-        }
-        
-        .music-links-vertical { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 8px; 
-            width: 100%; 
-        }
-        
-        .btn-back { 
-            background: rgba(255, 255, 255, 0.05); 
-            color: white; 
-            padding: 10px; 
-            border-radius: 10px; 
-            text-decoration: none; 
-            font-size: 0.85rem; 
-            transition: background 0.3s, border-color 0.3s; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 8px; 
-            font-weight: 600; 
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-        
-        .btn-back:hover { 
-            background: rgba(255, 0, 183, 0.15); 
-            border-color: var(--neon-pink);
-        }
-
-        /* SECCIÓN PRÓXIMAMENTE Y CONTADOR */
-        .upcoming-section {
-            padding: 60px 5% 60px 5%;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .upcoming-container {
-            background: rgba(20, 20, 22, 0.6);
-            border: 1px solid rgba(255, 0, 183, 0.2);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-radius: 24px;
-            padding: 40px 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 0, 183, 0.05);
-        }
-
-        .release-title {
-            font-size: 3rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0px;
-            color: var(--text-main);
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-        }
-
-        .release-author {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-            text-transform: none;
-        }
-
-        .release-date-sub {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--neon-pink);
-            text-shadow: 0 0 8px var(--neon-glow);
-            letter-spacing: 1px;
-            margin-bottom: 35px;
-        }
-
-        .countdown-grid {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .countdown-box {
-            background: rgba(11, 11, 12, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            min-width: 90px;
-            padding: 16px 10px;
-            border-radius: 16px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-        }
-
-        .countdown-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #fff;
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-
-        .countdown-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            font-weight: 700;
-        }
-
-        .creator-section {
-            padding: 60px 5%;
-            max-width: 400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .creator-card-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .contact-section { 
-            padding: 100px 5%; 
-            background: linear-gradient(180deg, var(--bg-color) 0%, #141416 100%); 
-            text-align: center; 
-        }
-        
-        .contact-container { 
-            max-width: 500px; 
-            margin: 0 auto; 
-        }
-
-        /* ANUNCIO DELUXE CALLOUT */
-        .deluxe-callout {
-            background: rgba(255, 0, 183, 0.05);
-            border: 1px dashed var(--neon-pink);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 35px;
-            text-align: center;
-            box-shadow: 0 0 15px rgba(255, 0, 183, 0.05);
-        }
-
-        .deluxe-callout h4 {
-            color: var(--neon-pink);
-            font-size: 1.1rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-            text-shadow: 0 0 8px var(--neon-glow);
-        }
-
-        .deluxe-callout p {
-            font-size: 0.95rem;
-            color: var(--text-main);
-        }
-
-        .deluxe-callout p span {
-            font-weight: 700;
-            color: #fff;
-        }
-        
-        .form-group { 
-            margin-bottom: 20px; 
-            text-align: left; 
-        }
-        
-        input { 
-            width: 100%; 
-            padding: 14px; 
-            background: rgba(255,255,255,0.04); 
-            border: 1px solid rgba(255,255,255,0.08); 
-            border-radius: 12px; 
-            color: #fff; 
-            outline: none; 
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        input:focus {
-            border-color: var(--neon-pink);
-            box-shadow: 0 0 10px rgba(255, 0, 183, 0.2);
-        }
-        
-        .btn-submit { 
-            width: 100%; 
-            padding: 14px; 
-            background: var(--text-main); 
-            color: #000; 
-            border: none; 
-            border-radius: 12px; 
-            font-weight: 700; 
-            cursor: pointer; 
-            transition: background 0.3s, color 0.3s, box-shadow 0.3s; 
-        }
-        
-        .btn-submit:hover { 
-            background: var(--neon-pink); 
-            color: #fff; 
-            box-shadow: 0 0 15px var(--neon-glow);
-        }
-
-        footer { 
-            padding: 40px 5%; 
-            text-align: center; 
-            color: var(--text-muted); 
-            font-size: 0.85rem; 
-            border-top: 1px solid rgba(255,255,255,0.03); 
-            background-color: #141416; 
-        }
+        footer { padding: 40px 5%; text-align: center; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.03); background-color: #141416; }
         
         @media (max-width: 768px) { 
             .hero h1 { font-size: 2.2rem; } 
             .release-title { font-size: 2.2rem; }
-            
-            header {
-                flex-direction: column;
-                gap: 10px;
-                padding: 15px 5%;
-            }
-            
-            nav {
-                display: flex;
-                gap: 15px;
-                justify-content: center;
-                width: 100%;
-            }
-            
-            nav a {
-                margin-left: 0;
-                font-size: 0.85rem;
-            }
-            
-            .hero {
-                padding-top: 180px;
-            }
+            header { flex-direction: column; gap: 10px; padding: 15px 5%; }
+            nav { display: flex; gap: 15px; justify-content: center; width: 100%; }
+            nav a { margin-left: 0; font-size: 0.85rem; }
+            .hero { padding-top: 180px; }
+            .custom-player-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -621,10 +140,10 @@
         <div class="logo-txt">Eazy <span class="txt-pink">Money</span> <span class="txt-split">Records</span></div>
         <nav>
             <a href="#inicio">Inicio</a>
+            <a href="#previews">Previews</a>
             <a href="#historia">Historia</a>
             <a href="#artistas">Artistas</a>
             <a href="#regreso">El Regreso</a>
-            <a href="#proximamente">Próximamente</a>
             <a href="#demos">Demos</a>
         </nav>
     </header>
@@ -647,8 +166,8 @@
         <h1>Eazy <span class="txt-pink">Money</span> <span class="txt-split">Records</span></h1>
         <p>Prod by: <span>@ibiwis.chk</span> — Web created by: <span>@d3m.alt</span> — <3$</p>
         
-        <div style="width: 100%; max-width: 380px; margin-top: 20px;">
-            <div class="player-widget" style="margin-bottom: 15px;">
+        <div class="ep-section">
+            <div class="player-widget">
                 <div class="player-cover"><img src="https://i.ibb.co/6cZ9PZkz/IMG-4295.jpg" alt="Cover"></div>
                 <div class="player-info">
                     <div class="player-title">Sexy, Nasty and Pretty - EP</div>
@@ -662,53 +181,83 @@
         </div>
     </section>
 
+    <!-- SECCIÓN PREVIEWS -->
+    <section class="player-section" id="previews">
+        <h2 class="section-title">Escucha <span>Nuestros Tracks</span></h2>
+        <div class="custom-player-container">
+            
+            <div class="track-card">
+                <div class="track-cover-wrapper">
+                    <img src="https://i.ibb.co/6cZ9PZkz/IMG-4295.jpg" alt="Sexy, Nasty and Pretty DELUXE">
+                    <button class="play-btn" onclick="togglePlay('audio1', this)" title="Reproducir"><i class="fa-solid fa-play"></i></button>
+                </div>
+                <div class="track-info">
+                    <h4>Sexy, Nasty and Pretty DELUXE</h4>
+                    <p>@ibiwis.chk</p>
+                    <div class="progress-container" onclick="setProgress(event, 'audio1')"><div class="progress-bar" id="progress-audio1"></div></div>
+                    <audio id="audio1" ontimeupdate="updateProgress('audio1')">
+                        <source src="./miranda%20khalifa.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="track-card">
+                <div class="track-cover-wrapper">
+                    <img src="https://i.ibb.co/670mPt0Q/a778d08e-febf-422f-9b3b-b4f86d385342.jpg" alt="Catarsis Teaser">
+                    <button class="play-btn" onclick="togglePlay('audio2', this)" title="Reproducir"><i class="fa-solid fa-play"></i></button>
+                </div>
+                <div class="track-info">
+                    <h4>Catarsis Teaser</h4>
+                    <p>@inzxmnia!</p>
+                    <div class="progress-container" onclick="setProgress(event, 'audio2')"><div class="progress-bar" id="progress-audio2"></div></div>
+                    <audio id="audio2" ontimeupdate="updateProgress('audio2')">
+                        <source src="./un%20beso.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section class="history-section" id="historia">
         <h2 class="section-title">Nuestra <span>Historia</span></h2>
         <div class="timeline">
-            
             <div class="timeline-item">
                 <div class="timeline-date">Fines de 2025</div>
                 <div class="timeline-title">Los Orígenes: VVS Sound</div>
                 <div class="timeline-desc">El proyecto da sus primeros pasos bajo el nombre original de VVS Sound, sentando las bases musicales y la visión del sello.</div>
             </div>
-
             <div class="timeline-item">
                 <div class="timeline-date">Enero 2026</div>
                 <div class="timeline-title">El Nacimiento de Eazy Money Records</div>
                 <div class="timeline-desc">De la mano de @ibiwis.chk, el sello adopta oficialmente la identidad y la energía de Eazy Money Records para liderar la nueva escena.</div>
             </div>
-
             <div class="timeline-item">
                 <div class="timeline-date">Febrero - Marzo 2026</div>
                 <div class="timeline-title">Expansión del Roster</div>
                 <div class="timeline-desc">Se une al equipo @inzxmnia!, aportando un sonido fresco y consolidando la fuerza del sello.</div>
             </div>
-
             <div class="timeline-item">
                 <div class="timeline-date">10 de Abril 2026</div>
                 <div class="timeline-title">Love, Death and Sexness (Deluxe)</div>
                 <div class="timeline-desc">@inzxmnia! rompe las plataformas con el lanzamiento de la versión deluxe de su álbum bajo el catálogo oficial de Eazy Money Records.</div>
             </div>
-
             <div class="timeline-item">
                 <div class="timeline-date">22 de Junio 2026</div>
                 <div class="timeline-title">Sexy, Nasty and Pretty EP</div>
                 <div class="timeline-desc">@ibiwis.chk firma el más reciente lanzamiento del sello con su contundente EP, marcando una pauta alta en la trayectoria del proyecto.</div>
             </div>
-
             <div class="timeline-item">
                 <div class="timeline-date">27 de Junio 2026</div>
                 <div class="timeline-title">Lanzamiento de la Plataforma Web</div>
                 <div class="timeline-desc">Se consolida el ecosistema digital del sello con el desarrollo y diseño oficial de la página web a cargo de @d3m.alt.</div>
             </div>
-
         </div>
     </section>
 
     <section class="artists-section" id="artistas">
         <h2 class="section-title">Nuestro <span>Roster</span></h2>
         <div class="artists-grid">
-            
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
@@ -717,15 +266,9 @@
                     <div class="flip-card-back">
                         <h3>@ibiwis.chk</h3>
                         <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/ibiwis.chk" target="_blank" class="btn-back">
-                                <i class="fa-brands fa-instagram"></i> Instagram
-                            </a>
-                            <a href="https://open.spotify.com/artist/5ufve6sBmwqI10dD7fF6c7?si=qm-J0Po1QZK9ZWvIkNlgRg" target="_blank" class="btn-back">
-                                <i class="fa-brands fa-spotify"></i> Spotify
-                            </a>
-                            <a href="https://music.apple.com/mx/artist/ibiwis-chk/1763376591" target="_blank" class="btn-back">
-                                <i class="fa-brands fa-apple"></i> Apple Music
-                            </a>
+                            <a href="https://www.instagram.com/ibiwis.chk" target="_blank" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                            <a href="https://open.spotify.com/artist/5ufve6sBmwqI10dD7fF6c7?si=qm-J0Po1QZK9ZWvIkNlgRg" target="_blank" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a>
+                            <a href="https://music.apple.com/mx/artist/ibiwis-chk/1763376591" target="_blank" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a>
                         </div>
                         <div style="margin-top: 10px; width: 100%;">
                             <p style="font-size: 0.8rem; margin-bottom: 6px; font-weight: 700; color: var(--text-muted);">
@@ -752,15 +295,9 @@
                     <div class="flip-card-back">
                         <h3>@inzxmnia</h3>
                         <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/inzxmnia" target="_blank" class="btn-back">
-                                <i class="fa-brands fa-instagram"></i> Instagram
-                            </a>
-                            <a href="https://open.spotify.com/artist/0OORgu1s7MwAgfckt9znnm?si=qdYfhSqKTxK0QwokP-U7Vw" target="_blank" class="btn-back">
-                                <i class="fa-brands fa-spotify"></i> Spotify
-                            </a>
-                            <a href="https://music.apple.com/mx/artist/inzxmnia/1759769780" target="_blank" class="btn-back">
-                                <i class="fa-brands fa-apple"></i> Apple Music
-                            </a>
+                            <a href="https://www.instagram.com/inzxmnia" target="_blank" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                            <a href="https://open.spotify.com/artist/0OORgu1s7MwAgfckt9znnm?si=qdYfhSqKTxK0QwokP-U7Vw" target="_blank" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a>
+                            <a href="https://music.apple.com/mx/artist/inzxmnia/1759769780" target="_blank" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a>
                         </div>
                         <div style="margin-top: 10px; width: 100%;">
                             <p style="font-size: 0.8rem; margin-bottom: 6px; font-weight: 700; color: var(--text-muted);">
@@ -778,84 +315,34 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- SECCIÓN NUEVA: EL REGRESO -->
     <section class="upcoming-section" id="regreso">
         <h2 class="section-title">El Próximo <span>Capítulo</span></h2>
-
         <div class="upcoming-container" style="border-color: rgba(255, 255, 255, 0.2); background: rgba(30, 30, 35, 0.4);">
-
-            <div class="release-title" style="
-                font-size: 2.8rem;
-                text-transform: uppercase;
-                letter-spacing: 4px;
-                margin-bottom: 15px;
-                color: #fff;
-                text-shadow: 0 0 20px rgba(255,255,255,0.15);
-            ">
-                WE WILL RETURN...
-            </div>
-
-            <div class="release-date-sub" style="
-                color: var(--neon-pink);
-                font-weight: 700;
-                margin-bottom: 35px;
-            ">
-                5 de Agosto, 2026
-            </div>
-
+            <div class="release-title" style="font-size: 2.8rem; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 15px; color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.15);">WE WILL RETURN...</div>
+            <div class="release-date-sub" style="color: var(--neon-pink); font-weight: 700; margin-bottom: 35px;">5 de Agosto, 2026</div>
             <div class="countdown-grid">
-                <div class="countdown-box">
-                    <div class="countdown-number" id="regreso-dias">00</div>
-                    <div class="countdown-label">Días</div>
-                </div>
-
-                <div class="countdown-box">
-                    <div class="countdown-number" id="regreso-horas">00</div>
-                    <div class="countdown-label">Hrs</div>
-                </div>
-
-                <div class="countdown-box">
-                    <div class="countdown-number" id="regreso-minutos">00</div>
-                    <div class="countdown-label">Min</div>
-                </div>
-
-                <div class="countdown-box">
-                    <div class="countdown-number" id="regreso-segundos">00</div>
-                    <div class="countdown-label">Seg</div>
-                </div>
+                <div class="countdown-box"><div class="countdown-number" id="regreso-dias">00</div><div class="countdown-label">Días</div></div>
+                <div class="countdown-box"><div class="countdown-number" id="regreso-horas">00</div><div class="countdown-label">Hrs</div></div>
+                <div class="countdown-box"><div class="countdown-number" id="regreso-minutos">00</div><div class="countdown-label">Min</div></div>
+                <div class="countdown-box"><div class="countdown-number" id="regreso-segundos">00</div><div class="countdown-label">Seg</div></div>
             </div>
-
         </div>
     </section>
 
-    <section class="upcoming-section" id="proximamente">
+    <section class="upcoming-section">
         <h2 class="section-title">Próximamente</h2>
         <div class="upcoming-container">
-            <div class="release-title">“Catarsis”</div>
+            <div class="release-title">"Catarsis"</div>
             <div class="release-author">By Inzxmnia!</div>
             <div class="release-date-sub">9 de Noviembre, 2026</div>
-            
             <div class="countdown-grid">
-                <div class="countdown-box">
-                    <div class="countdown-number" id="dias">00</div>
-                    <div class="countdown-label">Días</div>
-                </div>
-                <div class="countdown-box">
-                    <div class="countdown-number" id="horas">00</div>
-                    <div class="countdown-label">Hrs</div>
-                </div>
-                <div class="countdown-box">
-                    <div class="countdown-number" id="minutos">00</div>
-                    <div class="countdown-label">Min</div>
-                </div>
-                <div class="countdown-box">
-                    <div class="countdown-number" id="segundos">00</div>
-                    <div class="countdown-label">Seg</div>
-                </div>
+                <div class="countdown-box"><div class="countdown-number" id="dias">00</div><div class="countdown-label">Días</div></div>
+                <div class="countdown-box"><div class="countdown-number" id="horas">00</div><div class="countdown-label">Hrs</div></div>
+                <div class="countdown-box"><div class="countdown-number" id="minutos">00</div><div class="countdown-label">Min</div></div>
+                <div class="countdown-box"><div class="countdown-number" id="segundos">00</div><div class="countdown-label">Seg</div></div>
             </div>
         </div>
     </section>
@@ -872,9 +359,7 @@
                         <h3>@d3m.alt</h3>
                         <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">Web Designer & Developer</p>
                         <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/d3m.alt?igsh=MXQzZzlxZTB6ZnoyZQ%3D%3D&utm_source=qr" target="_blank" class="btn-back">
-                                <i class="fa-brands fa-instagram"></i> Instagram
-                            </a>
+                            <a href="https://www.instagram.com/d3m.alt?igsh=MXQzZzlxZTB6ZnoyZQ%3D%3D&utm_source=qr" target="_blank" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
                         </div>
                     </div>
                 </div>
@@ -885,12 +370,10 @@
     <section class="contact-section" id="demos">
         <div class="contact-container">
             <h2 class="section-title">Envía tu <span>Demo</span></h2>
-            
             <div class="deluxe-callout">
                 <h4>⚠️ ATENCIÓN ARTISTAS ⚠️</h4>
                 <p><strong>@ibiwis.chk</strong> está buscando talentos para el álbum <span>Sexy, Nasty and Pretty DELUXE</span> y <strong>@inzxmnia!</strong> está buscando colaboraciones para <span>Catarsis</span>.</p>
             </div>
-
             <form action="https://formspree.io/f/xaqgokvv" method="POST">
                 <div class="form-group"><input type="text" name="nombre" placeholder="Tu Nombre / AKA" required></div>
                 <div class="form-group"><input type="email" name="email" placeholder="Correo Electrónico" required></div>
@@ -903,14 +386,45 @@
     <footer><p>© 2026 Eazy Money Records <3$. Todos los derechos reservados.</p></footer>
 
     <script>
-        // CONFIGURACIÓN DE FECHAS OBJETIVO (Año 2026)
+        let currentPlayingAudio = null;
+
+        function togglePlay(audioId, button) {
+            const audio = document.getElementById(audioId);
+            if (currentPlayingAudio && currentPlayingAudio !== audio) {
+                currentPlayingAudio.pause();
+                document.querySelectorAll('.play-btn').forEach(btn => {
+                    if (btn !== button) btn.innerHTML = '<i class="fa-solid fa-play"></i>';
+                });
+            }
+            if (audio.paused) {
+                audio.play();
+                button.innerHTML = '<i class="fa-solid fa-pause"></i>';
+                currentPlayingAudio = audio;
+            } else {
+                audio.pause();
+                button.innerHTML = '<i class="fa-solid fa-play"></i>';
+            }
+        }
+
+        function updateProgress(audioId) {
+            const audio = document.getElementById(audioId);
+            const bar = document.getElementById('progress-' + audioId);
+            if (audio.duration) bar.style.width = (audio.currentTime / audio.duration) * 100 + '%';
+        }
+
+        function setProgress(e, audioId) {
+            const audio = document.getElementById(audioId);
+            const rect = e.currentTarget.getBoundingClientRect();
+            if (audio.duration) audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+        }
+
+        // CONTADORES REGRESIVOS
         const fechaRegresivaRegreso = new Date("Aug 5, 2026 00:00:00").getTime();
         const fechaObjetivoCatarsis = new Date("Nov 9, 2026 00:00:00").getTime();
 
         const cuentaRegresiva = setInterval(function() {
             const ahora = new Date().getTime();
 
-            // 1. Contador para el Regreso (5 de Agosto)
             const difRegreso = fechaRegresivaRegreso - ahora;
             const rDias = Math.floor(difRegreso / (1000 * 60 * 60 * 24));
             const rHoras = Math.floor((difRegreso % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -930,7 +444,6 @@
                 document.querySelector("#regreso .release-date-sub").innerHTML = "¡EL REGRESO HA COMENZADO!";
             }
 
-            // 2. Contador para Catarsis (9 de Noviembre)
             const difCatarsis = fechaObjetivoCatarsis - ahora;
             const dias = Math.floor(difCatarsis / (1000 * 60 * 60 * 24));
             const horas = Math.floor((difCatarsis % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -947,13 +460,11 @@
                 document.getElementById("horas").innerHTML = "00";
                 document.getElementById("minutos").innerHTML = "00";
                 document.getElementById("segundos").innerHTML = "00";
-                document.querySelector("#proximamente .release-date-sub").innerHTML = "¡YA DISPONIBLE!";
+                const proximamenteSection = document.querySelector(".upcoming-section:last-of-type .release-date-sub");
+                if (proximamenteSection) proximamenteSection.innerHTML = "¡YA DISPONIBLE!";
             }
 
-            // Frenar intervalo si ambos ya expiraron
-            if (difRegreso < 0 && difCatarsis < 0) {
-                clearInterval(cuentaRegresiva);
-            }
+            if (difRegreso < 0 && difCatarsis < 0) clearInterval(cuentaRegresiva);
         }, 1000);
     </script>
 

@@ -104,8 +104,8 @@
         .countdown-number { font-size: 2.2rem; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 5px; }
         .countdown-label { font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; font-weight: 700; }
 
-        .creator-section { padding: 60px 5%; max-width: 400px; margin: 0 auto; text-align: center; }
-        .creator-card-container { display: flex; justify-content: center; margin-top: 30px; }
+        .creator-section { padding: 60px 5%; max-width: 800px; margin: 0 auto; text-align: center; }
+        .creator-card-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 30px; }
 
         .contact-section { padding: 100px 5%; background: linear-gradient(180deg, var(--bg-color) 0%, #141416 100%); text-align: center; }
         .contact-container { max-width: 500px; margin: 0 auto; }
@@ -131,6 +131,7 @@
             nav a { margin-left: 0; font-size: 0.85rem; }
             .hero { padding-top: 180px; }
             .custom-player-container { grid-template-columns: 1fr; }
+            .creator-card-container { gap: 18px; }
         }
     </style>
 </head>
@@ -155,14 +156,13 @@
                     <img src="https://i.ibb.co/907TsVF/AF875-DFB-FA38-4-C28-873-F-EBE202-C606-CF.jpg" alt="Logo">
                 </div>
                 <div class="logo-back">
-                    <a href="https://www.instagram.com/eazymoneyrecords_?igsh=MWNlbXdjMnV1eWhqMA==" target="_blank" class="logo-insta-btn">
+                    <a href="https://www.instagram.com/eazymoneyrecords_?igsh=MWNlbXdjMnV1eWhqMA==" target="_blank" rel="noopener noreferrer" class="logo-insta-btn">
                         <i class="fa-brands fa-instagram"></i>
                         <span>Instagram</span>
                     </a>
                 </div>
             </div>
         </div>
-
         <h1>Eazy <span class="txt-pink">Money</span> <span class="txt-split">Records</span></h1>
         <p>Prod by: <span>@ibiwis.chk</span> — Web created by: <span>@d3m.alt</span> — <3$</p>
         
@@ -175,8 +175,8 @@
                 </div>
             </div>
             <div style="display: flex; gap: 10px;">
-                <a href="https://open.spotify.com/album/2Qe6BTJBSt9mzkMfmuetUC?si=HxF-BqBETEmz2nRHpByW5A" target="_blank" class="btn-back" style="flex: 1; background: #1DB954; color: #000; border: none;"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                <a href="https://music.apple.com/mx/album/sexy-nasty-and-pretty-ep/6775915800" target="_blank" class="btn-back" style="flex: 1; background: #fc3c44; color: #fff; border: none;"><i class="fa-brands fa-apple"></i> Apple</a>
+                <a href="https://open.spotify.com/album/2Qe6BTJBSt9mzkMfmuetUC?si=HxF-BqBETEmz2nRHpByW5A" target="_blank" rel="noopener noreferrer" class="btn-back" style="flex: 1; background: #1DB954; color: #000; border: none;"><i class="fa-brands fa-spotify"></i> Spotify</a>
+                <a href="https://music.apple.com/mx/album/sexy-nasty-and-pretty-ep/6775915800" target="_blank" rel="noopener noreferrer" class="btn-back" style="flex: 1; background: #fc3c44; color: #fff; border: none;"><i class="fa-brands fa-apple"></i> Apple</a>
             </div>
         </div>
     </section>
@@ -185,11 +185,10 @@
     <section class="player-section" id="previews">
         <h2 class="section-title">Escucha <span>Nuestros Tracks</span></h2>
         <div class="custom-player-container">
-            
             <div class="track-card">
                 <div class="track-cover-wrapper">
                     <img src="https://i.ibb.co/6cZ9PZkz/IMG-4295.jpg" alt="Sexy, Nasty and Pretty DELUXE">
-                    <button class="play-btn" onclick="togglePlay('audio1', this)" title="Reproducir"><i class="fa-solid fa-play"></i></button>
+                    <button class="play-btn" onclick="togglePlay('audio1', this)" title="Reproducir" aria-label="Reproducir audio 1"><i class="fa-solid fa-play"></i></button>
                 </div>
                 <div class="track-info">
                     <h4>Sexy, Nasty and Pretty DELUXE</h4>
@@ -200,11 +199,10 @@
                     </audio>
                 </div>
             </div>
-
             <div class="track-card">
                 <div class="track-cover-wrapper">
                     <img src="https://i.ibb.co/670mPt0Q/a778d08e-febf-422f-9b3b-b4f86d385342.jpg" alt="Catarsis Teaser">
-                    <button class="play-btn" onclick="togglePlay('audio2', this)" title="Reproducir"><i class="fa-solid fa-play"></i></button>
+                    <button class="play-btn" onclick="togglePlay('audio2', this)" title="Reproducir" aria-label="Reproducir audio 2"><i class="fa-solid fa-play"></i></button>
                 </div>
                 <div class="track-info">
                     <h4>Catarsis Teaser</h4>
@@ -215,7 +213,6 @@
                     </audio>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -260,25 +257,23 @@
         <div class="artists-grid">
             <div class="flip-card">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="https://i.ibb.co/gM4K3htq/5c07e44c-3f1e-4c8a-870a-b710b3070901.jpg" class="artist-img" alt="ibiwis.chk">
-                    </div>
+                    <div class="flip-card-front"><img src="https://i.ibb.co/gM4K3htq/5c07e44c-3f1e-4c8a-870a-b710b3070901.jpg" class="artist-img" alt="ibiwis.chk"></div>
                     <div class="flip-card-back">
                         <h3>@ibiwis.chk</h3>
                         <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/ibiwis.chk" target="_blank" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                            <a href="https://open.spotify.com/artist/5ufve6sBmwqI10dD7fF6c7?si=qm-J0Po1QZK9ZWvIkNlgRg" target="_blank" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                            <a href="https://music.apple.com/mx/artist/ibiwis-chk/1763376591" target="_blank" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a>
+                            <a href="https://www.instagram.com/ibiwis.chk" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                            <a href="https://open.spotify.com/artist/5ufve6sBmwqI10dD7fF6c7?si=qm-J0Po1QZK9ZWvIkNlgRg" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a>
+                            <a href="https://music.apple.com/mx/artist/ibiwis-chk/1763376591" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a>
                         </div>
                         <div style="margin-top: 10px; width: 100%;">
                             <p style="font-size: 0.8rem; margin-bottom: 6px; font-weight: 700; color: var(--text-muted);">
                                 🔥 CANCIÓN MÁS ESCUCHADA
                             </p>
                             <div style="display: flex; gap: 6px;">
-                                <a href="https://open.spotify.com/track/4v1zRy1EFUj1WOLkdh0hdZ?si=2-bqYxy-T7iZJt6HihgzyQ" target="_blank" class="btn-back" style="flex: 1; font-size: 0.75rem;">
+                                <a href="https://open.spotify.com/track/4v1zRy1EFUj1WOLkdh0hdZ?si=2-bqYxy-T7iZJt6HihgzyQ" target="_blank" rel="noopener noreferrer" class="btn-back" style="flex: 1; font-size: 0.75rem;">
                                     <i class="fa-brands fa-spotify"></i> Spotify
                                 </a>
-                                <a href="https://music.apple.com/mx/album/you-should-be-w-him/1823096369?i=1823096370" target="_blank" class="btn-back" style="flex: 1; font-size: 0.75rem;">
+                                <a href="https://music.apple.com/mx/album/you-should-be-w-him/1823096369?i=1823096370" target="_blank" rel="noopener noreferrer" class="btn-back" style="flex: 1; font-size: 0.75rem;">
                                     <i class="fa-brands fa-apple"></i> Apple
                                 </a>
                             </div>
@@ -289,25 +284,23 @@
 
             <div class="flip-card">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="https://i.ibb.co/1YP8hVNh/B979548-B-FAC7-42-A0-8-CDE-3-C6-BAC9-AB1-FE.jpg" class="artist-img" alt="inzxmnia">
-                    </div>
+                    <div class="flip-card-front"><img src="https://i.ibb.co/1YP8hVNh/B979548-B-FAC7-42-A0-8-CDE-3-C6-BAC9-AB1-FE.jpg" class="artist-img" alt="inzxmnia"></div>
                     <div class="flip-card-back">
                         <h3>@inzxmnia</h3>
                         <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/inzxmnia" target="_blank" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                            <a href="https://open.spotify.com/artist/0OORgu1s7MwAgfckt9znnm?si=qdYfhSqKTxK0QwokP-U7Vw" target="_blank" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                            <a href="https://music.apple.com/mx/artist/inzxmnia/1759769780" target="_blank" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a>
+                            <a href="https://www.instagram.com/inzxmnia" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                            <a href="https://open.spotify.com/artist/0OORgu1s7MwAgfckt9znnm?si=qdYfhSqKTxK0QwokP-U7Vw" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a>
+                            <a href="https://music.apple.com/mx/artist/inzxmnia/1759769780" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a>
                         </div>
                         <div style="margin-top: 10px; width: 100%;">
                             <p style="font-size: 0.8rem; margin-bottom: 6px; font-weight: 700; color: var(--text-muted);">
                                 🔥 CANCIÓN MÁS ESCUCHADA
                             </p>
                             <div style="display: flex; gap: 6px;">
-                                <a href="https://open.spotify.com/intl-es/track/60AfH9XqjGKSlfcy5PpFog?si=cf17dee81ce94683" target="_blank" class="btn-back" style="flex: 1; font-size: 0.75rem;">
+                                <a href="https://open.spotify.com/intl-es/track/60AfH9XqjGKSlfcy5PpFog?si=cf17dee81ce94683" target="_blank" rel="noopener noreferrer" class="btn-back" style="flex: 1; font-size: 0.75rem;">
                                     <i class="fa-brands fa-spotify"></i> Spotify
                                 </a>
-                                <a href="https://music.apple.com/bo/song/ayer/1872615649" target="_blank" class="btn-back" style="flex: 1; font-size: 0.75rem;">
+                                <a href="https://music.apple.com/bo/song/ayer/1872615649" target="_blank" rel="noopener noreferrer" class="btn-back" style="flex: 1; font-size: 0.75rem;">
                                     <i class="fa-brands fa-apple"></i> Apple
                                 </a>
                             </div>
@@ -348,18 +341,30 @@
     </section>
 
     <section class="creator-section">
-        <h2 class="section-title">Desarrollo <span>Web</span></h2>
+        <h2 class="section-title">Equipo <span>Oficial</span></h2>
         <div class="creator-card-container">
+            <!-- Manager (experimental) -->
             <div class="flip-card" style="max-width: 320px; height: 440px;">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="https://i.ibb.co/7NyVnpk4/3-EE2660-C-2-FF8-49-CB-8197-0256071-CA1-BD.jpg" class="artist-img" alt="Diseñador Web">
+                    <div class="flip-card-front"><img src="https://i.ibb.co/zWV09YhF/Chat-GPT-Image-10-jul-2026-12-00-49-a-m.png" class="artist-img" alt="Manager"></div>
+                    <div class="flip-card-back">
+                        <h3>@ToNy?</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Manager</p>
+                        <div class="music-links-vertical">
+                            <a href="https://www.instagram.com/tonyakayuk?igsh=d3Q1MWtjNXZiMWF1" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <!-- Web Dev -->
+            <div class="flip-card" style="max-width: 320px; height: 440px;">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front"><img src="https://i.ibb.co/7NyVnpk4/3-EE2660-C-2-FF8-49-CB-8197-0256071-CA1-BD.jpg" class="artist-img" alt="Diseñador Web"></div>
                     <div class="flip-card-back">
                         <h3>@d3m.alt</h3>
-                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">Web Designer & Developer</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Web Designer & Developer</p>
                         <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/d3m.alt?igsh=MXQzZzlxZTB6ZnoyZQ%3D%3D&utm_source=qr" target="_blank" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                            <a href="https://www.instagram.com/d3m.alt?igsh=MXQzZzlxZTB6ZnoyZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
                         </div>
                     </div>
                 </div>
@@ -386,80 +391,104 @@
     <footer><p>© 2026 Eazy Money Records, Ibiwis Chk, Inzxmnia! y d3m.alt <3$. Todos los derechos reservados.</p></footer>
 
     <script>
+        // Manejo robusto del reproductor: guardamos audio y su botón actual
         let currentPlayingAudio = null;
+        let currentPlayingButton = null;
 
         function togglePlay(audioId, button) {
             const audio = document.getElementById(audioId);
+            if (!audio) return;
+
+            // Si hay un audio distinto reproduciéndose, pausarlo y restaurar su botón
             if (currentPlayingAudio && currentPlayingAudio !== audio) {
                 currentPlayingAudio.pause();
-                document.querySelectorAll('.play-btn').forEach(btn => {
-                    if (btn !== button) btn.innerHTML = '<i class="fa-solid fa-play"></i>';
-                });
+                if (currentPlayingButton) currentPlayingButton.innerHTML = '<i class="fa-solid fa-play"></i>';
             }
+
             if (audio.paused) {
-                audio.play();
+                audio.play().catch(() => {
+                    // reproducción bloqueada (por políticas del navegador)
+                });
                 button.innerHTML = '<i class="fa-solid fa-pause"></i>';
                 currentPlayingAudio = audio;
+                currentPlayingButton = button;
             } else {
                 audio.pause();
                 button.innerHTML = '<i class="fa-solid fa-play"></i>';
+                if (currentPlayingAudio === audio) {
+                    currentPlayingAudio = null;
+                    currentPlayingButton = null;
+                }
             }
         }
 
         function updateProgress(audioId) {
             const audio = document.getElementById(audioId);
             const bar = document.getElementById('progress-' + audioId);
-            if (audio.duration) bar.style.width = (audio.currentTime / audio.duration) * 100 + '%';
+            if (audio && audio.duration && bar) {
+                bar.style.width = (audio.currentTime / audio.duration) * 100 + '%';
+            }
         }
 
         function setProgress(e, audioId) {
             const audio = document.getElementById(audioId);
+            if (!audio || !audio.duration) return;
             const rect = e.currentTarget.getBoundingClientRect();
-            if (audio.duration) audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+            const clickX = e.clientX - rect.left;
+            const ratio = Math.max(0, Math.min(1, clickX / rect.width));
+            audio.currentTime = ratio * audio.duration;
         }
 
-        // CONTADORES REGRESIVOS
+        // CONTADORES REGRESIVOS (unificado, con comportamiento de fallback cuando se cumple)
         const fechaRegresivaRegreso = new Date("Aug 5, 2026 00:00:00").getTime();
         const fechaObjetivoCatarsis = new Date("Nov 9, 2026 00:00:00").getTime();
 
         const cuentaRegresiva = setInterval(function() {
-            const ahora = new Date().getTime();
+            const ahora = Date.now();
 
+            // Regreso
             const difRegreso = fechaRegresivaRegreso - ahora;
-            const rDias = Math.floor(difRegreso / (1000 * 60 * 60 * 24));
-            const rHoras = Math.floor((difRegreso % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const rMinutos = Math.floor((difRegreso % (1000 * 60 * 60)) / (1000 * 60));
-            const rSegundos = Math.floor((difRegreso % (1000 * 60)) / 1000);
+            const rDias = Math.floor(Math.max(0, difRegreso) / (1000 * 60 * 60 * 24));
+            const rHoras = Math.floor((Math.max(0, difRegreso) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const rMinutos = Math.floor((Math.max(0, difRegreso) % (1000 * 60 * 60)) / (1000 * 60));
+            const rSegundos = Math.floor((Math.max(0, difRegreso) % (1000 * 60)) / 1000);
 
-            document.getElementById("regreso-dias").innerHTML = rDias < 10 ? "0" + rDias : rDias;
-            document.getElementById("regreso-horas").innerHTML = rHoras < 10 ? "0" + rHoras : rHoras;
-            document.getElementById("regreso-minutos").innerHTML = rMinutos < 10 ? "0" + rMinutos : rMinutos;
-            document.getElementById("regreso-segundos").innerHTML = rSegundos < 10 ? "0" + rSegundos : rSegundos;
+            document.getElementById("regreso-dias").textContent = String(rDias).padStart(2, '0');
+            document.getElementById("regreso-horas").textContent = String(rHoras).padStart(2, '0');
+            document.getElementById("regreso-minutos").textContent = String(rMinutos).padStart(2, '0');
+            document.getElementById("regreso-segundos").textContent = String(rSegundos).padStart(2, '0');
 
             if (difRegreso < 0) {
-                document.getElementById("regreso-dias").innerHTML = "00";
-                document.getElementById("regreso-horas").innerHTML = "00";
-                document.getElementById("regreso-minutos").innerHTML = "00";
-                document.getElementById("regreso-segundos").innerHTML = "00";
-                document.querySelector("#regreso .release-date-sub").innerHTML = "¡EL REGRESO HA COMENZADO!";
+                // indicar comienzo y poner en 00
+                document.getElementById("regreso-dias").textContent = "00";
+                document.getElementById("regreso-horas").textContent = "00";
+                document.getElementById("regreso-minutos").textContent = "00";
+                document.getElementById("regreso-segundos").textContent = "00";
+                const regresoSubtitle = document.querySelector("#regreso .release-date-sub");
+                if (regresoSubtitle) regresoSubtitle.innerHTML = "¡EL REGRESO HA COMENZADO!";
             }
 
+            // Catarsis
             const difCatarsis = fechaObjetivoCatarsis - ahora;
-            const dias = Math.floor(difCatarsis / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((difCatarsis % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((difCatarsis % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((difCatarsis % (1000 * 60)) / 1000);
+            const dias = Math.floor(Math.max(0, difCatarsis) / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((Math.max(0, difCatarsis) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((Math.max(0, difCatarsis) % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((Math.max(0, difCatarsis) % (1000 * 60)) / 1000);
 
-            document.getElementById("dias").innerHTML = dias < 10 ? "0" + dias : dias;
-            document.getElementById("horas").innerHTML = horas < 10 ? "0" + horas : horas;
-            document.getElementById("minutos").innerHTML = minutos < 10 ? "0" + minutos : minutos;
-            document.getElementById("segundos").innerHTML = segundos < 10 ? "0" + segundos : segundos;
+            const dElem = document.getElementById("dias");
+            const hElem = document.getElementById("horas");
+            const mElem = document.getElementById("minutos");
+            const sElem = document.getElementById("segundos");
+            if (dElem) dElem.textContent = String(dias).padStart(2, '0');
+            if (hElem) hElem.textContent = String(horas).padStart(2, '0');
+            if (mElem) mElem.textContent = String(minutos).padStart(2, '0');
+            if (sElem) sElem.textContent = String(segundos).padStart(2, '0');
 
             if (difCatarsis < 0) {
-                document.getElementById("dias").innerHTML = "00";
-                document.getElementById("horas").innerHTML = "00";
-                document.getElementById("minutos").innerHTML = "00";
-                document.getElementById("segundos").innerHTML = "00";
+                if (dElem) dElem.textContent = "00";
+                if (hElem) hElem.textContent = "00";
+                if (mElem) mElem.textContent = "00";
+                if (sElem) sElem.textContent = "00";
                 const proximamenteSection = document.querySelector(".upcoming-section:last-of-type .release-date-sub");
                 if (proximamenteSection) proximamenteSection.innerHTML = "¡YA DISPONIBLE!";
             }
@@ -467,6 +496,5 @@
             if (difRegreso < 0 && difCatarsis < 0) clearInterval(cuentaRegresiva);
         }, 1000);
     </script>
-
 </body>
 </html>

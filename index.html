@@ -15,18 +15,15 @@
             --text-main: #ffffff;
             --text-muted: #a1a1aa;
         }
-
         html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
-
         header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; position: fixed; width: 100%; top: 0; z-index: 100; background: rgba(11, 11, 12, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 0, 183, 0.15); }
         .logo-txt { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.5px; color: var(--text-main); }
         .txt-pink { color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-glow); }
         .txt-split { background: linear-gradient(to right, #ffffff 50%, var(--neon-pink) 50%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
         nav a { color: var(--text-muted); text-decoration: none; margin-left: 25px; font-weight: 500; font-size: 0.95rem; transition: color 0.3s, text-shadow 0.3s; }
         nav a:hover { color: var(--neon-pink); text-shadow: 0 0 8px var(--neon-glow); }
-
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 140px 20px 60px 20px; }
         .logo-flip-card { background-color: transparent; width: 180px; height: 180px; perspective: 1000px; margin-bottom: 30px; cursor: pointer; }
         .logo-flip-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
@@ -38,11 +35,8 @@
         .logo-insta-btn { color: #fff; text-decoration: none; font-size: 1.8rem; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; transition: background 0.3s; border-radius: 50%; }
         .logo-insta-btn:hover { background: rgba(255, 0, 183, 0.15); }
         .logo-insta-btn span { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--neon-pink); }
-        
         .hero h1 { font-size: 3.2rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 10px; }
         .hero p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; }
-        .hero p span { color: #ffffff; font-weight: 600; }
-
         .ep-section { width: 100%; max-width: 380px; margin-top: 20px; }
         .player-widget { background: rgba(20, 20, 22, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border-radius: 24px; padding: 16px; display: flex; align-items: center; gap: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); margin-bottom: 15px; }
         .player-cover { width: 60px; height: 60px; border-radius: 12px; overflow: hidden; }
@@ -50,11 +44,8 @@
         .player-info { flex-grow: 1; text-align: left; }
         .player-title { font-size: 0.95rem; font-weight: 600; color: var(--text-main); }
         .player-artist { font-size: 0.85rem; color: var(--text-muted); }
-
         .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 50px; text-align: center; }
         .section-title span { color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-glow); }
-
-        /* SECCIÓN PREVIEWS/PLAYER */
         .player-section { padding: 100px 5% 60px 5%; max-width: 1000px; margin: 0 auto; }
         .custom-player-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 25px; }
         .track-card { background: rgba(20, 20, 22, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 20px; display: flex; align-items: center; gap: 20px; transition: border-color 0.3s, box-shadow 0.3s; }
@@ -68,8 +59,6 @@
         .track-info p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
         .progress-container { width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; cursor: pointer; overflow: hidden; }
         .progress-bar { width: 0%; height: 100%; background: var(--neon-pink); border-radius: 10px; transition: width 0.1s linear; }
-        
-        /* SECCIÓN HISTORIA */
         .history-section { padding: 100px 5% 40px 5%; max-width: 900px; margin: 0 auto; }
         .timeline { position: relative; margin: 40px 0; padding-left: 30px; border-left: 2px solid rgba(255, 0, 183, 0.3); }
         .timeline-item { position: relative; margin-bottom: 40px; }
@@ -77,8 +66,6 @@
         .timeline-date { font-size: 0.85rem; font-weight: 700; color: var(--neon-pink); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
         .timeline-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: var(--text-main); }
         .timeline-desc { color: var(--text-muted); font-size: 0.95rem; }
-
-        /* SECCIÓN ROSTER */
         .artists-section { padding: 100px 5% 60px 5%; max-width: 1000px; margin: 0 auto; }
         .artists-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .flip-card { background-color: transparent; width: 100%; height: 440px; perspective: 1000px; cursor: pointer; }
@@ -92,8 +79,6 @@
         .music-links-vertical { display: flex; flex-direction: column; gap: 8px; width: 100%; }
         .btn-back { background: rgba(255, 255, 255, 0.05); color: white; padding: 10px; border-radius: 10px; text-decoration: none; font-size: 0.85rem; transition: background 0.3s, border-color 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; border: 1px solid rgba(255,255,255,0.08); }
         .btn-back:hover { background: rgba(255, 0, 183, 0.15); border-color: var(--neon-pink); }
-
-        /* SECCIÓN PRÓXIMAMENTE */
         .upcoming-section { padding: 60px 5% 60px 5%; max-width: 800px; margin: 0 auto; text-align: center; }
         .upcoming-container { background: rgba(20, 20, 22, 0.6); border: 1px solid rgba(255, 0, 183, 0.2); backdrop-filter: blur(15px); border-radius: 24px; padding: 40px 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 0, 183, 0.05); }
         .release-title { font-size: 3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0px; color: var(--text-main); text-shadow: 0 0 15px rgba(255, 255, 255, 0.1); }
@@ -103,28 +88,74 @@
         .countdown-box { background: rgba(11, 11, 12, 0.8); border: 1px solid rgba(255, 255, 255, 0.05); min-width: 90px; padding: 16px 10px; border-radius: 16px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
         .countdown-number { font-size: 2.2rem; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 5px; }
         .countdown-label { font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; font-weight: 700; }
-
         .creator-section { padding: 60px 5%; max-width: 800px; margin: 0 auto; text-align: center; }
         .creator-card-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 30px; }
-
         .contact-section { padding: 100px 5%; background: linear-gradient(180deg, var(--bg-color) 0%, #141416 100%); text-align: center; }
         .contact-container { max-width: 500px; margin: 0 auto; }
         .deluxe-callout { background: rgba(255, 0, 183, 0.05); border: 1px dashed var(--neon-pink); border-radius: 16px; padding: 20px; margin-bottom: 35px; text-align: center; box-shadow: 0 0 15px rgba(255, 0, 183, 0.05); }
         .deluxe-callout h4 { color: var(--neon-pink); font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; text-shadow: 0 0 8px var(--neon-glow); }
         .deluxe-callout p { font-size: 0.95rem; color: var(--text-main); }
         .deluxe-callout p span { font-weight: 700; color: #fff; }
-        
         .form-group { margin-bottom: 20px; text-align: left; }
         input { width: 100%; padding: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; color: #fff; outline: none; transition: border-color 0.3s, box-shadow 0.3s; }
         input:focus { border-color: var(--neon-pink); box-shadow: 0 0 10px rgba(255, 0, 183, 0.2); }
-        
         .btn-submit { width: 100%; padding: 14px; background: var(--text-main); color: #000; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: background 0.3s, color 0.3s, box-shadow 0.3s; }
         .btn-submit:hover { background: var(--neon-pink); color: #fff; box-shadow: 0 0 15px var(--neon-glow); }
-
         footer { padding: 40px 5%; text-align: center; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.03); background-color: #141416; }
-        
-        @media (max-width: 768px) { 
-            .hero h1 { font-size: 2.2rem; } 
+
+        /* Overlay cuando el usuario intenta copiar */
+        #copy-overlay {
+          position: fixed;
+          inset: 0;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          background: rgba(0,0,0,0.98);
+          z-index: 99999;
+          padding: 24px;
+          text-align: center;
+        }
+        #copy-overlay .copy-box {
+          max-width: 900px;
+          width: 100%;
+          margin: 0 16px;
+          border-radius: 12px;
+          padding: 30px;
+          background: rgba(0,0,0,0.0);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+        #copy-overlay h2 {
+          margin: 0 0 12px;
+          font-size: 2.2rem;
+          color: var(--neon-pink);
+          text-shadow: 0 0 14px var(--neon-glow);
+        }
+        #copy-overlay p {
+          margin: 0 0 18px;
+          color: var(--neon-pink);
+          font-size: 1.05rem;
+          line-height: 1.4;
+        }
+        #copy-overlay .copy-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+        #copy-overlay .btn-copy-close {
+          background: transparent;
+          color: var(--neon-pink);
+          border: 2px solid var(--neon-pink);
+          padding: 10px 16px;
+          border-radius: 10px;
+          font-weight: 700;
+          cursor: pointer;
+          transition: background 0.18s, color 0.18s;
+        }
+        #copy-overlay .btn-copy-close:hover {
+          background: var(--neon-pink);
+          color: #000;
+        }
+        #copy-overlay.show { display: flex; animation: fadeIn .18s ease; }
+        @keyframes fadeIn { from {opacity:0} to {opacity:1} }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
             .release-title { font-size: 2.2rem; }
             header { flex-direction: column; gap: 10px; padding: 15px 5%; }
             nav { display: flex; gap: 15px; justify-content: center; width: 100%; }
@@ -136,6 +167,17 @@
     </style>
 </head>
 <body>
+
+    <!-- Overlay que aparece al intentar copiar -->
+    <div id="copy-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="copy-box" role="document">
+        <h2>Copiado no permitido</h2>
+        <p>El contenido de este sitio está protegido. Si necesitas usar algún texto, contacta con el equipo para solicitar permiso.</p>
+        <div class="copy-actions">
+          <button class="btn-copy-close" id="copy-close-btn">Cerrar</button>
+        </div>
+      </div>
+    </div>
 
     <header>
         <div class="logo-txt">Eazy <span class="txt-pink">Money</span> <span class="txt-split">Records</span></div>
@@ -165,7 +207,6 @@
         </div>
         <h1>Eazy <span class="txt-pink">Money</span> <span class="txt-split">Records</span></h1>
         <p>Prod by: <span>@ibiwis.chk</span> — Web created by: <span>@d3m.alt</span> — <3$</p>
-        
         <div class="ep-section">
             <div class="player-widget">
                 <div class="player-cover"><img src="https://i.ibb.co/6cZ9PZkz/IMG-4295.jpg" alt="Cover"></div>
@@ -188,29 +229,25 @@
             <div class="track-card">
                 <div class="track-cover-wrapper">
                     <img src="https://i.ibb.co/6cZ9PZkz/IMG-4295.jpg" alt="Sexy, Nasty and Pretty DELUXE">
-                    <button class="play-btn" onclick="togglePlay('audio1', this)" title="Reproducir" aria-label="Reproducir audio 1"><i class="fa-solid fa-play"></i></button>
+                    <button class="play-btn" data-audio="audio1" title="Reproducir" aria-label="Reproducir audio 1"><i class="fa-solid fa-play"></i></button>
                 </div>
                 <div class="track-info">
                     <h4>Sexy, Nasty and Pretty DELUXE</h4>
                     <p>@ibiwis.chk</p>
-                    <div class="progress-container" onclick="setProgress(event, 'audio1')"><div class="progress-bar" id="progress-audio1"></div></div>
-                    <audio id="audio1" ontimeupdate="updateProgress('audio1')">
-                        <source src="./miranda%20khalifa.mp3" type="audio/mpeg">
-                    </audio>
+                    <div class="progress-container" data-audio="audio1"><div class="progress-bar" id="progress-audio1"></div></div>
+                    <audio id="audio1" data-src="https://raw.githubusercontent.com/zpmpg4whh4-ux/Eazy-Money-Records-/main/miranda%20khalifa.mp3" preload="none"></audio>
                 </div>
             </div>
             <div class="track-card">
                 <div class="track-cover-wrapper">
                     <img src="https://i.ibb.co/670mPt0Q/a778d08e-febf-422f-9b3b-b4f86d385342.jpg" alt="Catarsis Teaser">
-                    <button class="play-btn" onclick="togglePlay('audio2', this)" title="Reproducir" aria-label="Reproducir audio 2"><i class="fa-solid fa-play"></i></button>
+                    <button class="play-btn" data-audio="audio2" title="Reproducir" aria-label="Reproducir audio 2"><i class="fa-solid fa-play"></i></button>
                 </div>
                 <div class="track-info">
                     <h4>Catarsis Teaser</h4>
                     <p>@inzxmnia!</p>
-                    <div class="progress-container" onclick="setProgress(event, 'audio2')"><div class="progress-bar" id="progress-audio2"></div></div>
-                    <audio id="audio2" ontimeupdate="updateProgress('audio2')">
-                        <source src="./un%20beso.mp3" type="audio/mpeg">
-                    </audio>
+                    <div class="progress-container" data-audio="audio2"><div class="progress-bar" id="progress-audio2"></div></div>
+                    <audio id="audio2" data-src="https://raw.githubusercontent.com/zpmpg4whh4-ux/Eazy-Money-Records-/main/un%20beso.mp3" preload="none"></audio>
                 </div>
             </div>
         </div>
@@ -219,95 +256,20 @@
     <section class="history-section" id="historia">
         <h2 class="section-title">Nuestra <span>Historia</span></h2>
         <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">Fines de 2025</div>
-                <div class="timeline-title">Los Orígenes: VVS Sound</div>
-                <div class="timeline-desc">El proyecto da sus primeros pasos bajo el nombre original de VVS Sound, sentando las bases musicales y la visión del sello.</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Enero 2026</div>
-                <div class="timeline-title">El Nacimiento de Eazy Money Records</div>
-                <div class="timeline-desc">De la mano de @ibiwis.chk, el sello adopta oficialmente la identidad y la energía de Eazy Money Records para liderar la nueva escena.</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Febrero - Marzo 2026</div>
-                <div class="timeline-title">Expansión del Roster</div>
-                <div class="timeline-desc">Se une al equipo @inzxmnia!, aportando un sonido fresco y consolidando la fuerza del sello.</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">10 de Abril 2026</div>
-                <div class="timeline-title">Love, Death and Sexness (Deluxe)</div>
-                <div class="timeline-desc">@inzxmnia! rompe las plataformas con el lanzamiento de la versión deluxe de su álbum bajo el catálogo oficial de Eazy Money Records.</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">22 de Junio 2026</div>
-                <div class="timeline-title">Sexy, Nasty and Pretty EP</div>
-                <div class="timeline-desc">@ibiwis.chk firma el más reciente lanzamiento del sello con su contundente EP, marcando una pauta alta en la trayectoria del proyecto.</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">27 de Junio 2026</div>
-                <div class="timeline-title">Lanzamiento de la Plataforma Web</div>
-                <div class="timeline-desc">Se consolida el ecosistema digital del sello con el desarrollo y diseño oficial de la página web a cargo de @d3m.alt.</div>
-            </div>
+            <div class="timeline-item"><div class="timeline-date">Fines de 2025</div><div class="timeline-title">Los Orígenes: VVS Sound</div><div class="timeline-desc">El proyecto da sus primeros pasos bajo el nombre original de VVS Sound, sentando las bases musicales y la visión del sello.</div></div>
+            <div class="timeline-item"><div class="timeline-date">Enero 2026</div><div class="timeline-title">El Nacimiento de Eazy Money Records</div><div class="timeline-desc">De la mano de @ibiwis.chk, el sello adopta oficialmente la identidad y la energía de Eazy Money Records para liderar la nueva escena.</div></div>
+            <div class="timeline-item"><div class="timeline-date">Febrero - Marzo 2026</div><div class="timeline-title">Expansión del Roster</div><div class="timeline-desc">Se une al equipo @inzxmnia!, aportando un sonido fresco y consolidando la fuerza del sello.</div></div>
+            <div class="timeline-item"><div class="timeline-date">10 de Abril 2026</div><div class="timeline-title">Love, Death and Sexness (Deluxe)</div><div class="timeline-desc">@inzxmnia! rompe las plataformas con el lanzamiento de la versión deluxe de su álbum bajo el catálogo oficial de Eazy Money Records.</div></div>
+            <div class="timeline-item"><div class="timeline-date">22 de Junio 2026</div><div class="timeline-title">Sexy, Nasty and Pretty EP</div><div class="timeline-desc">@ibiwis.chk firma el más reciente lanzamiento del sello con su contundente EP, marcando una pauta alta en la trayectoria del proyecto.</div></div>
+            <div class="timeline-item"><div class="timeline-date">27 de Junio 2026</div><div class="timeline-title">Lanzamiento de la Plataforma Web</div><div class="timeline-desc">Se consolida el ecosistema digital del sello con el desarrollo y diseño oficial de la página web a cargo de @d3m.alt.</div></div>
         </div>
     </section>
 
     <section class="artists-section" id="artistas">
         <h2 class="section-title">Nuestro <span>Roster</span></h2>
         <div class="artists-grid">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front"><img src="https://i.ibb.co/gM4K3htq/5c07e44c-3f1e-4c8a-870a-b710b3070901.jpg" class="artist-img" alt="ibiwis.chk"></div>
-                    <div class="flip-card-back">
-                        <h3>@ibiwis.chk</h3>
-                        <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/ibiwis.chk" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                            <a href="https://open.spotify.com/artist/5ufve6sBmwqI10dD7fF6c7?si=qm-J0Po1QZK9ZWvIkNlgRg" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                            <a href="https://music.apple.com/mx/artist/ibiwis-chk/1763376591" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a>
-                        </div>
-                        <div style="margin-top: 10px; width: 100%;">
-                            <p style="font-size: 0.8rem; margin-bottom: 6px; font-weight: 700; color: var(--text-muted);">
-                                🔥 CANCIÓN MÁS ESCUCHADA
-                            </p>
-                            <div style="display: flex; gap: 6px;">
-                                <a href="https://open.spotify.com/track/4v1zRy1EFUj1WOLkdh0hdZ?si=2-bqYxy-T7iZJt6HihgzyQ" target="_blank" rel="noopener noreferrer" class="btn-back" style="flex: 1; font-size: 0.75rem;">
-                                    <i class="fa-brands fa-spotify"></i> Spotify
-                                </a>
-                                <a href="https://music.apple.com/mx/album/you-should-be-w-him/1823096369?i=1823096370" target="_blank" rel="noopener noreferrer" class="btn-back" style="flex: 1; font-size: 0.75rem;">
-                                    <i class="fa-brands fa-apple"></i> Apple
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front"><img src="https://i.ibb.co/1YP8hVNh/B979548-B-FAC7-42-A0-8-CDE-3-C6-BAC9-AB1-FE.jpg" class="artist-img" alt="inzxmnia"></div>
-                    <div class="flip-card-back">
-                        <h3>@inzxmnia</h3>
-                        <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/inzxmnia" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                            <a href="https://open.spotify.com/artist/0OORgu1s7MwAgfckt9znnm?si=qdYfhSqKTxK0QwokP-U7Vw" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a>
-                            <a href="https://music.apple.com/mx/artist/inzxmnia/1759769780" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a>
-                        </div>
-                        <div style="margin-top: 10px; width: 100%;">
-                            <p style="font-size: 0.8rem; margin-bottom: 6px; font-weight: 700; color: var(--text-muted);">
-                                🔥 CANCIÓN MÁS ESCUCHADA
-                            </p>
-                            <div style="display: flex; gap: 6px;">
-                                <a href="https://open.spotify.com/intl-es/track/60AfH9XqjGKSlfcy5PpFog?si=cf17dee81ce94683" target="_blank" rel="noopener noreferrer" class="btn-back" style="flex: 1; font-size: 0.75rem;">
-                                    <i class="fa-brands fa-spotify"></i> Spotify
-                                </a>
-                                <a href="https://music.apple.com/bo/song/ayer/1872615649" target="_blank" rel="noopener noreferrer" class="btn-back" style="flex: 1; font-size: 0.75rem;">
-                                    <i class="fa-brands fa-apple"></i> Apple
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://i.ibb.co/gM4K3htq/5c07e44c-3f1e-4c8a-870a-b710b3070901.jpg" class="artist-img" alt="ibiwis.chk"></div><div class="flip-card-back"><h3>@ibiwis.chk</h3><div class="music-links-vertical"><a href="https://www.instagram.com/ibiwis.chk" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a><a href="https://open.spotify.com/artist/5ufve6sBmwqI10dD7fF6c7?si=qm-J0Po1QZK9ZWvIkNlgRg" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a><a href="https://music.apple.com/mx/artist/ibiwis-chk/1763376591" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a></div></div></div></div>
+            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://i.ibb.co/1YP8hVNh/B979548-B-FAC7-42-A0-8-CDE-3-C6-BAC9-AB1-FE.jpg" class="artist-img" alt="inzxmnia"></div><div class="flip-card-back"><h3>@inzxmnia</h3><div class="music-links-vertical"><a href="https://www.instagram.com/inzxmnia" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a><a href="https://open.spotify.com/artist/0OORgu1s7MwAgfckt9znnm?si=qdYfhSqKTxK0QwokP-U7Vw" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-spotify"></i> Spotify</a><a href="https://music.apple.com/mx/artist/inzxmnia/1759769780" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-apple"></i> Apple Music</a></div></div></div></div>
         </div>
     </section>
 
@@ -325,60 +287,10 @@
         </div>
     </section>
 
-    <section class="upcoming-section">
-        <h2 class="section-title">Próximamente</h2>
-        <div class="upcoming-container">
-            <div class="release-title">"Catarsis"</div>
-            <div class="release-author">By Inzxmnia!</div>
-            <div class="release-date-sub">9 de Noviembre, 2026</div>
-            <div class="countdown-grid">
-                <div class="countdown-box"><div class="countdown-number" id="dias">00</div><div class="countdown-label">Días</div></div>
-                <div class="countdown-box"><div class="countdown-number" id="horas">00</div><div class="countdown-label">Hrs</div></div>
-                <div class="countdown-box"><div class="countdown-number" id="minutos">00</div><div class="countdown-label">Min</div></div>
-                <div class="countdown-box"><div class="countdown-number" id="segundos">00</div><div class="countdown-label">Seg</div></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="creator-section">
-        <h2 class="section-title">Equipo <span>Oficial</span></h2>
-        <div class="creator-card-container">
-            <!-- Manager (experimental) -->
-            <div class="flip-card" style="max-width: 320px; height: 440px;">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front"><img src="https://i.ibb.co/zWV09YhF/Chat-GPT-Image-10-jul-2026-12-00-49-a-m.png" class="artist-img" alt="Manager"></div>
-                    <div class="flip-card-back">
-                        <h3>@ToNy?</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Manager</p>
-                        <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/tonyakayuk?igsh=d3Q1MWtjNXZiMWF1" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Web Dev -->
-            <div class="flip-card" style="max-width: 320px; height: 440px;">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front"><img src="https://i.ibb.co/jPdtWbVC/IMG-4503.jpg" class="artist-img" alt="Diseñador Web"></div>
-                    <div class="flip-card-back">
-                        <h3>@d3m.alt</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Web Designer </p>
-                        <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/d3m.alt?igsh=MXQzZzlxZTB6ZnoyZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="contact-section" id="demos">
         <div class="contact-container">
             <h2 class="section-title">Envía tu <span>Demo</span></h2>
-            <div class="deluxe-callout">
-                <h4>⚠️ ATENCIÓN ARTISTAS ⚠️</h4>
-                <p><strong>@ibiwis.chk</strong> está buscando talentos para el álbum <span>Sexy, Nasty and Pretty DELUXE</span> y <strong>@inzxmnia!</strong> está buscando colaboraciones para <span>CATARSIS</span>.</p>
-            </div>
+            <div class="deluxe-callout"><h4>⚠️ ATENCIÓN ARTISTAS ⚠️</h4><p><strong>@ibiwis.chk</strong> está buscando talentos para el álbum <span>Sexy, Nasty and Pretty DELUXE</span> y <strong>@inzxmnia!</strong> está buscando colaboraciones para <span>CATARSIS</span>.</p></div>
             <form action="https://formspree.io/f/xaqgokvv" method="POST">
                 <div class="form-group"><input type="text" name="nombre" placeholder="Tu Nombre / AKA" required></div>
                 <div class="form-group"><input type="email" name="email" placeholder="Correo Electrónico" required></div>
@@ -388,46 +300,107 @@
         </div>
     </section>
 
-    <footer><p>© 2026 Eazy Money Records, Ibiwis Chk, Inzxmnia!, ToNy and d3m.alt <3$. Todos los derechos reservados.</p></footer>
+    <footer><p>© 2026 Eazy Money Records, Ibiwis Chk, Inzxmnia! y d3m.alt <3$. Todos los derechos reservados.</p></footer>
 
     <script>
-        // Manejo robusto del reproductor: guardamos audio y su botón actual
+        // Reproductor mejorado: carga src desde data-src, manejo de errores y progreso
         let currentPlayingAudio = null;
         let currentPlayingButton = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inicializar audios: asignar src desde data-src y detectar errores
+            document.querySelectorAll('audio[data-src]').forEach(audio => {
+                const src = audio.dataset.src;
+                if (src) {
+                    audio.src = src;
+                    audio.addEventListener('error', () => {
+                        const btn = document.querySelector('.play-btn[data-audio="' + audio.id + '"]');
+                        if (btn) { btn.disabled = true; btn.title = 'Audio no disponible'; btn.innerHTML = '<span style="font-size:0.8rem">N/D</span>'; }
+                    });
+                    audio.addEventListener('timeupdate', () => updateProgress(audio.id));
+                    audio.addEventListener('ended', () => {
+                        const btn = document.querySelector('.play-btn[data-audio="' + audio.id + '"]');
+                        if (btn) btn.innerHTML = '<i class="fa-solid fa-play"></i>';
+                        if (currentPlayingAudio === audio) { currentPlayingAudio = null; currentPlayingButton = null; }
+                    });
+                }
+            });
+
+            // Play buttons
+            document.querySelectorAll('.play-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const audioId = btn.dataset.audio;
+                    if (!audioId) return;
+                    togglePlay(audioId, btn);
+                });
+            });
+
+            // Progreso clickable
+            document.querySelectorAll('.progress-container').forEach(pc => {
+                pc.addEventListener('click', (e) => {
+                    const audioId = pc.dataset.audio;
+                    if (!audioId) return;
+                    setProgress(e, audioId);
+                });
+            });
+
+            // Overlay anti-copia: listeners
+            const overlay = document.getElementById('copy-overlay');
+            const closeBtn = document.getElementById('copy-close-btn');
+
+            function showCopyOverlay() {
+              if (!overlay) return;
+              overlay.classList.add('show');
+              overlay.setAttribute('aria-hidden', 'false');
+              document.documentElement.style.overflow = 'hidden';
+              document.body.style.overflow = 'hidden';
+            }
+
+            function hideCopyOverlay() {
+              if (!overlay) return;
+              overlay.classList.remove('show');
+              overlay.setAttribute('aria-hidden', 'true');
+              document.documentElement.style.overflow = '';
+              document.body.style.overflow = '';
+            }
+
+            document.addEventListener('copy', function(e) {
+              try { e.preventDefault(); } catch (err) {}
+              showCopyOverlay();
+            });
+
+            if (closeBtn) {
+              closeBtn.addEventListener('click', function() { hideCopyOverlay(); });
+            }
+            document.addEventListener('keydown', function(e) { if (e.key === 'Escape') hideCopyOverlay(); });
+            if (overlay) {
+              overlay.addEventListener('click', function(e) { if (e.target === overlay) hideCopyOverlay(); });
+            }
+        });
 
         function togglePlay(audioId, button) {
             const audio = document.getElementById(audioId);
             if (!audio) return;
-
-            // Si hay un audio distinto reproduciéndose, pausarlo y restaurar su botón
             if (currentPlayingAudio && currentPlayingAudio !== audio) {
                 currentPlayingAudio.pause();
                 if (currentPlayingButton) currentPlayingButton.innerHTML = '<i class="fa-solid fa-play"></i>';
             }
-
             if (audio.paused) {
-                audio.play().catch(() => {
-                    // reproducción bloqueada (por políticas del navegador)
-                });
+                audio.play().catch(() => {});
                 button.innerHTML = '<i class="fa-solid fa-pause"></i>';
                 currentPlayingAudio = audio;
                 currentPlayingButton = button;
             } else {
                 audio.pause();
                 button.innerHTML = '<i class="fa-solid fa-play"></i>';
-                if (currentPlayingAudio === audio) {
-                    currentPlayingAudio = null;
-                    currentPlayingButton = null;
-                }
+                if (currentPlayingAudio === audio) { currentPlayingAudio = null; currentPlayingButton = null; }
             }
         }
 
         function updateProgress(audioId) {
             const audio = document.getElementById(audioId);
             const bar = document.getElementById('progress-' + audioId);
-            if (audio && audio.duration && bar) {
-                bar.style.width = (audio.currentTime / audio.duration) * 100 + '%';
-            }
+            if (audio && audio.duration && bar) { bar.style.width = (audio.currentTime / audio.duration) * 100 + '%'; }
         }
 
         function setProgress(e, audioId) {
@@ -439,27 +412,21 @@
             audio.currentTime = ratio * audio.duration;
         }
 
-        // CONTADORES REGRESIVOS (unificado, con comportamiento de fallback cuando se cumple)
+        // Contadores regresivos
         const fechaRegresivaRegreso = new Date("Aug 5, 2026 00:00:00").getTime();
         const fechaObjetivoCatarsis = new Date("Nov 9, 2026 00:00:00").getTime();
-
         const cuentaRegresiva = setInterval(function() {
             const ahora = Date.now();
-
-            // Regreso
             const difRegreso = fechaRegresivaRegreso - ahora;
             const rDias = Math.floor(Math.max(0, difRegreso) / (1000 * 60 * 60 * 24));
             const rHoras = Math.floor((Math.max(0, difRegreso) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const rMinutos = Math.floor((Math.max(0, difRegreso) % (1000 * 60 * 60)) / (1000 * 60));
             const rSegundos = Math.floor((Math.max(0, difRegreso) % (1000 * 60)) / 1000);
-
-            document.getElementById("regreso-dias").textContent = String(rDias).padStart(2, '0');
-            document.getElementById("regreso-horas").textContent = String(rHoras).padStart(2, '0');
-            document.getElementById("regreso-minutos").textContent = String(rMinutos).padStart(2, '0');
-            document.getElementById("regreso-segundos").textContent = String(rSegundos).padStart(2, '0');
-
+            document.getElementById("regreso-dias").textContent = String(rDias).padStart(2,'0');
+            document.getElementById("regreso-horas").textContent = String(rHoras).padStart(2,'0');
+            document.getElementById("regreso-minutos").textContent = String(rMinutos).padStart(2,'0');
+            document.getElementById("regreso-segundos").textContent = String(rSegundos).padStart(2,'0');
             if (difRegreso < 0) {
-                // indicar comienzo y poner en 00
                 document.getElementById("regreso-dias").textContent = "00";
                 document.getElementById("regreso-horas").textContent = "00";
                 document.getElementById("regreso-minutos").textContent = "00";
@@ -467,23 +434,19 @@
                 const regresoSubtitle = document.querySelector("#regreso .release-date-sub");
                 if (regresoSubtitle) regresoSubtitle.innerHTML = "¡EL REGRESO HA COMENZADO!";
             }
-
-            // Catarsis
             const difCatarsis = fechaObjetivoCatarsis - ahora;
             const dias = Math.floor(Math.max(0, difCatarsis) / (1000 * 60 * 60 * 24));
             const horas = Math.floor((Math.max(0, difCatarsis) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutos = Math.floor((Math.max(0, difCatarsis) % (1000 * 60 * 60)) / (1000 * 60));
             const segundos = Math.floor((Math.max(0, difCatarsis) % (1000 * 60)) / 1000);
-
             const dElem = document.getElementById("dias");
             const hElem = document.getElementById("horas");
             const mElem = document.getElementById("minutos");
             const sElem = document.getElementById("segundos");
-            if (dElem) dElem.textContent = String(dias).padStart(2, '0');
-            if (hElem) hElem.textContent = String(horas).padStart(2, '0');
-            if (mElem) mElem.textContent = String(minutos).padStart(2, '0');
-            if (sElem) sElem.textContent = String(segundos).padStart(2, '0');
-
+            if (dElem) dElem.textContent = String(dias).padStart(2,'0');
+            if (hElem) hElem.textContent = String(horas).padStart(2,'0');
+            if (mElem) mElem.textContent = String(minutos).padStart(2,'0');
+            if (sElem) sElem.textContent = String(segundos).padStart(2,'0');
             if (difCatarsis < 0) {
                 if (dElem) dElem.textContent = "00";
                 if (hElem) hElem.textContent = "00";
@@ -492,7 +455,6 @@
                 const proximamenteSection = document.querySelector(".upcoming-section:last-of-type .release-date-sub");
                 if (proximamenteSection) proximamenteSection.innerHTML = "¡YA DISPONIBLE!";
             }
-
             if (difRegreso < 0 && difCatarsis < 0) clearInterval(cuentaRegresiva);
         }, 1000);
     </script>

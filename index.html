@@ -144,7 +144,6 @@
             <a href="#previews">Previews</a>
             <a href="#historia">Historia</a>
             <a href="#artistas">Artistas</a>
-            <a href="#regreso">Regreso</a>
             <a href="#demos">Demos</a>
         </nav>
     </header>
@@ -311,16 +310,17 @@
         </div>
     </section>
 
-    <section class="upcoming-section" id="regreso">
-        <h2 class="section-title">El Próximo <span>Capítulo</span></h2>
-        <div class="upcoming-container" style="border-color: rgba(255, 255, 255, 0.2); background: rgba(30, 30, 35, 0.4);">
-            <div class="release-title" style="font-size: 2.8rem; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 15px; color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.15);">WE WILL RETURN...</div>
-            <div class="release-date-sub" style="color: var(--neon-pink); font-weight: 700; margin-bottom: 35px;">5 de Agosto, 2026</div>
+    <section class="upcoming-section" id="sonando">
+        <h2 class="section-title">Próximamente</h2>
+        <div class="upcoming-container">
+            <div class="release-title">"Soñando sin dormir"</div>
+            <div class="release-author">By KaiKai</div>
+            <div class="release-date-sub" id="sonando-fecha-label">19 de Agosto, 2026</div>
             <div class="countdown-grid">
-                <div class="countdown-box"><div class="countdown-number" id="regreso-dias">00</div><div class="countdown-label">Días</div></div>
-                <div class="countdown-box"><div class="countdown-number" id="regreso-horas">00</div><div class="countdown-label">Hrs</div></div>
-                <div class="countdown-box"><div class="countdown-number" id="regreso-minutos">00</div><div class="countdown-label">Min</div></div>
-                <div class="countdown-box"><div class="countdown-number" id="regreso-segundos">00</div><div class="countdown-label">Seg</div></div>
+                <div class="countdown-box"><div class="countdown-number" id="sonando-dias">00</div><div class="countdown-label">Días</div></div>
+                <div class="countdown-box"><div class="countdown-number" id="sonando-horas">00</div><div class="countdown-label">Hrs</div></div>
+                <div class="countdown-box"><div class="countdown-number" id="sonando-minutos">00</div><div class="countdown-label">Min</div></div>
+                <div class="countdown-box"><div class="countdown-number" id="sonando-segundos">00</div><div class="countdown-label">Seg</div></div>
             </div>
         </div>
     </section>
@@ -439,33 +439,36 @@
             audio.currentTime = ratio * audio.duration;
         }
 
-        // CONTADORES REGRESIVOS (unificado, con comportamiento de fallback cuando se cumple)
-        const fechaRegresivaRegreso = new Date("Aug 5, 2026 00:00:00").getTime();
+        // CONTADORES REGRESIVOS
+        const fechaSonando = new Date("Aug 19, 2026 00:00:00").getTime();
         const fechaObjetivoCatarsis = new Date("Nov 9, 2026 00:00:00").getTime();
 
         const cuentaRegresiva = setInterval(function() {
             const ahora = Date.now();
 
-            // Regreso
-            const difRegreso = fechaRegresivaRegreso - ahora;
-            const rDias = Math.floor(Math.max(0, difRegreso) / (1000 * 60 * 60 * 24));
-            const rHoras = Math.floor((Math.max(0, difRegreso) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const rMinutos = Math.floor((Math.max(0, difRegreso) % (1000 * 60 * 60)) / (1000 * 60));
-            const rSegundos = Math.floor((Math.max(0, difRegreso) % (1000 * 60)) / 1000);
+            // Soñando sin dormir (KaiKai)
+            const difSonando = fechaSonando - ahora;
+            const soDias = Math.floor(Math.max(0, difSonando) / (1000 * 60 * 60 * 24));
+            const soHoras = Math.floor((Math.max(0, difSonando) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const soMinutos = Math.floor((Math.max(0, difSonando) % (1000 * 60 * 60)) / (1000 * 60));
+            const soSegundos = Math.floor((Math.max(0, difSonando) % (1000 * 60)) / 1000);
 
-            document.getElementById("regreso-dias").textContent = String(rDias).padStart(2, '0');
-            document.getElementById("regreso-horas").textContent = String(rHoras).padStart(2, '0');
-            document.getElementById("regreso-minutos").textContent = String(rMinutos).padStart(2, '0');
-            document.getElementById("regreso-segundos").textContent = String(rSegundos).padStart(2, '0');
+            const soDiasElem = document.getElementById("sonando-dias");
+            const soHorasElem = document.getElementById("sonando-horas");
+            const soMinutosElem = document.getElementById("sonando-minutos");
+            const soSegundosElem = document.getElementById("sonando-segundos");
+            if (soDiasElem) soDiasElem.textContent = String(soDias).padStart(2, '0');
+            if (soHorasElem) soHorasElem.textContent = String(soHoras).padStart(2, '0');
+            if (soMinutosElem) soMinutosElem.textContent = String(soMinutos).padStart(2, '0');
+            if (soSegundosElem) soSegundosElem.textContent = String(soSegundos).padStart(2, '0');
 
-            if (difRegreso < 0) {
-                // indicar comienzo y poner en 00
-                document.getElementById("regreso-dias").textContent = "00";
-                document.getElementById("regreso-horas").textContent = "00";
-                document.getElementById("regreso-minutos").textContent = "00";
-                document.getElementById("regreso-segundos").textContent = "00";
-                const regresoSubtitle = document.querySelector("#regreso .release-date-sub");
-                if (regresoSubtitle) regresoSubtitle.innerHTML = "¡EL REGRESO HA COMENZADO!";
+            if (difSonando < 0) {
+                if (soDiasElem) soDiasElem.textContent = "00";
+                if (soHorasElem) soHorasElem.textContent = "00";
+                if (soMinutosElem) soMinutosElem.textContent = "00";
+                if (soSegundosElem) soSegundosElem.textContent = "00";
+                const sonandoLabel = document.getElementById("sonando-fecha-label");
+                if (sonandoLabel) sonandoLabel.innerHTML = "¡YA DISPONIBLE!";
             }
 
             // Catarsis
@@ -493,7 +496,7 @@
                 if (proximamenteSection) proximamenteSection.innerHTML = "¡YA DISPONIBLE!";
             }
 
-            if (difRegreso < 0 && difCatarsis < 0) clearInterval(cuentaRegresiva);
+            if (difSonando < 0 && difCatarsis < 0) clearInterval(cuentaRegresiva);
         }, 1000);
     </script>
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eazy Money Records <3$</title>
+    <title>Eazy Money Records &lt;3$</title>
     <link rel="icon" href="https://i.ibb.co/907TsVF/AF875-DFB-FA38-4-C28-873-F-EBE202-C606-CF.jpg" type="image/jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -104,6 +104,27 @@
         .countdown-number { font-size: 2.2rem; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 5px; }
         .countdown-label { font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; font-weight: 700; }
 
+        /* SECCIÓN LANZAMIENTO d3m.alt */
+        .release-section { padding: 100px 5% 60px 5%; }
+        .release-section .container { max-width: 1000px; margin: 0 auto; }
+        .release-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .release-card { background: rgba(20, 20, 22, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.3s, box-shadow 0.3s; }
+        .release-card:hover { border-color: rgba(255, 0, 183, 0.2); box-shadow: 0 0 15px rgba(255, 0, 183, 0.1); }
+        .release-card h3 { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.3px; }
+        .release-artist { color: var(--neon-pink); font-weight: 700; font-size: 0.9rem; margin-top: -6px; }
+        .release-badge { align-self: flex-start; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 5px 12px; border-radius: 999px; }
+        .badge-out { background: rgba(255, 0, 183, 0.15); color: var(--neon-pink); border: 1px solid var(--neon-pink); box-shadow: 0 0 10px rgba(255, 0, 183, 0.2); }
+        .badge-soon { background: rgba(255, 255, 255, 0.06); color: var(--text-muted); border: 1px solid rgba(255, 255, 255, 0.12); }
+        .release-row { display: flex; align-items: center; gap: 18px; }
+        .release-row .track-info a { color: var(--neon-pink); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: text-shadow 0.3s; }
+        .release-row .track-info a:hover { text-shadow: 0 0 8px var(--neon-glow); }
+        .release-note { font-size: 0.85rem; color: var(--text-muted); }
+        .release-note a { color: var(--neon-pink); text-decoration: none; font-weight: 600; }
+        .release-note a:hover { text-shadow: 0 0 8px var(--neon-glow); }
+        .release-card.locked { border-style: dashed; border-color: rgba(255, 255, 255, 0.12); }
+        .locked-cover img { filter: blur(3px) grayscale(0.6) brightness(0.6); }
+        .lock-icon { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #fff; background: rgba(0, 0, 0, 0.45); }
+
         /* SECCIÓN EAZY MONEY FEST */
         .event-section { padding: 100px 5% 60px 5%; max-width: 900px; margin: 0 auto; text-align: center; }
         .event-container { background: rgba(20, 20, 22, 0.6); border: 1px solid rgba(255, 0, 183, 0.2); backdrop-filter: blur(15px); border-radius: 24px; padding: 40px 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 0, 183, 0.05); display: flex; flex-direction: column; align-items: center; gap: 22px; }
@@ -175,12 +196,12 @@
             </div>
         </div>
         <h1>Eazy <span class="txt-pink">Money</span> <span class="txt-split">Records</span></h1>
-        <p>Prod by: <span>@ibiwis.chk</span> — Web created by: <span>@d3m.alt</span> — <3$</p>
-        
+        <p>Prod by: <span>@ibiwis.chk</span> — Web created by: <span>@d3m.alt</span> — &lt;3$</p>
+    </section>
 
     <!-- SECCIÓN PREVIEWS -->
     <section class="player-section" id="previews">
-        <h2 class="section-title">Escucha <span>Nuestros Proximos Lanzamientos</span></h2>
+        <h2 class="section-title">Escucha <span>Nuestros Próximos Lanzamientos</span></h2>
         <div class="custom-player-container">
             <div class="track-card">
                 <div class="track-cover-wrapper">
@@ -211,12 +232,12 @@
 
             <div class="release-row">
               <div class="track-cover-wrapper">
-                <img src="https://i.ibb.co/DHJcP3hQ/871584c0-28b4-4a00-85d2-5d6f5395a962.jpg"" alt="Portada d3m.alt Vol. 1">
+                <img src="https://i.ibb.co/DHJcP3hQ/871584c0-28b4-4a00-85d2-5d6f5395a962.jpg" alt="Portada d3m.alt Vol. 1">
               </div>
 
               <div class="track-info">
                 <h4>Versión Instrumental</h4>
-                <a href="https://soundcloud.com/carlos-damian-alvarez-moncada/sets/d3m-alt-vol-1?si=1aff786fa0184e009b7190a034b646a6&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" rel="noopener noreferrer">Escuchar en SoundCloud</a>
+                <a href="https://soundcloud.com/carlos-damian-alvarez-moncada/sets/d3m-alt-vol-1?si=1aff786fa0184e009b7190a034b646a6&amp;utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing" target="_blank" rel="noopener noreferrer">Escuchar en SoundCloud</a>
               </div>
             </div>
 
@@ -243,7 +264,7 @@
             </div>
 
             <p class="release-note">
-              La versión normal llega pronto. Sigue a <a href="https://www.instagram.com/d3m.alt?igsh=MXQzZzlxZTB6ZnoyZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">@d3m.alt</a> para actualizaciones.
+              La versión normal llega pronto. Sigue a <a href="https://www.instagram.com/d3m.alt?igsh=MXQzZzlxZTB6ZnoyZQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">@d3m.alt</a> para actualizaciones.
             </p>
           </article>
         </div>
@@ -283,7 +304,6 @@
                 <div class="timeline-title">Lanzamiento de la Plataforma Web</div>
                 <div class="timeline-desc">Se consolida el ecosistema digital del sello con el desarrollo y diseño oficial de la página web a cargo de @d3m.alt.</div>
             </div>
-             </div>
             <div class="timeline-item">
                 <div class="timeline-date">25 de Agosto 2026</div>
                 <div class="timeline-title">Nueva Firma</div>
@@ -379,14 +399,16 @@
                 <div class="countdown-box"><div class="countdown-number" id="fest-horas">00</div><div class="countdown-label">Hrs</div></div>
                 <div class="countdown-box"><div class="countdown-number" id="fest-minutos">00</div><div class="countdown-label">Min</div></div>
                 <div class="countdown-box"><div class="countdown-number" id="fest-segundos">00</div><div class="countdown-label">Seg</div></div>
+            </div>
         </div>
+    </section>
 
     <section class="upcoming-section">
         <h2 class="section-title">Próximamente</h2>
         <div class="upcoming-container">
             <div class="release-title">"Sexy, Nasty &amp; Pretty DELUXE"</div>
             <div class="release-author">By Ibiwis Chk</div>
-            <div class="release-date-sub">10 de Octubre, 2026</div>
+            <div class="release-date-sub" id="deluxe-fecha">10 de Octubre, 2026</div>
             <div class="countdown-grid">
                 <div class="countdown-box"><div class="countdown-number" id="dias">00</div><div class="countdown-label">Días</div></div>
                 <div class="countdown-box"><div class="countdown-number" id="horas">00</div><div class="countdown-label">Hrs</div></div>
@@ -418,9 +440,9 @@
                     <div class="flip-card-front"><img src="https://i.ibb.co/tPYbSyX4/IMG-4503.jpg" class="artist-img" alt="Diseñador Web"></div>
                     <div class="flip-card-back">
                         <h3>@d3m.alt</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Web Designer & Developer</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Web Designer &amp; Developer</p>
                         <div class="music-links-vertical">
-                            <a href="https://www.instagram.com/d3m.alt?igsh=MXQzZzlxZTB6ZnoyZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                            <a href="https://www.instagram.com/d3m.alt?igsh=MXQzZzlxZTB6ZnoyZQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" class="btn-back"><i class="fa-brands fa-instagram"></i> Instagram</a>
                         </div>
                     </div>
                 </div>
@@ -444,7 +466,7 @@
         </div>
     </section>
 
-    <footer><p>© 2026 Eazy Money Records, Ibiwis Chk, nouvelle!, ToNy? and d3m.alt <3$. Todos los derechos reservados.</p></footer>
+    <footer><p>© 2026 Eazy Money Records, Ibiwis Chk, nouvelle!, ToNy? and d3m.alt &lt;3$. Todos los derechos reservados.</p></footer>
 
     <script>
         // Manejo robusto del reproductor: guardamos audio y su botón actual
@@ -496,9 +518,8 @@
         }
 
         // CONTADORES REGRESIVOS
-        const fechaFest = new Date("Oct 11, 2026 16:00:00").getTime();
-        const fechaSonando = new Date("Aug 19, 2026 00:00:00").getTime();
-        const fechaObjetivoCatarsis = new Date("Oct 10, 2026 00:00:00").getTime();
+        const fechaFest = new Date("2026-10-11T16:00:00-06:00").getTime();
+        const fechaDeluxe = new Date("2026-10-10T00:00:00-06:00").getTime();
 
         const cuentaRegresiva = setInterval(function() {
             const ahora = Date.now();
@@ -526,37 +547,12 @@
                 if (feSegundosElem) feSegundosElem.textContent = "00";
             }
 
-            // Soñando sin dormir (KaiKai)
-            const difSonando = fechaSonando - ahora;
-            const soDias = Math.floor(Math.max(0, difSonando) / (1000 * 60 * 60 * 24));
-            const soHoras = Math.floor((Math.max(0, difSonando) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const soMinutos = Math.floor((Math.max(0, difSonando) % (1000 * 60 * 60)) / (1000 * 60));
-            const soSegundos = Math.floor((Math.max(0, difSonando) % (1000 * 60)) / 1000);
-
-            const soDiasElem = document.getElementById("sonando-dias");
-            const soHorasElem = document.getElementById("sonando-horas");
-            const soMinutosElem = document.getElementById("sonando-minutos");
-            const soSegundosElem = document.getElementById("sonando-segundos");
-            if (soDiasElem) soDiasElem.textContent = String(soDias).padStart(2, '0');
-            if (soHorasElem) soHorasElem.textContent = String(soHoras).padStart(2, '0');
-            if (soMinutosElem) soMinutosElem.textContent = String(soMinutos).padStart(2, '0');
-            if (soSegundosElem) soSegundosElem.textContent = String(soSegundos).padStart(2, '0');
-
-            if (difSonando < 0) {
-                if (soDiasElem) soDiasElem.textContent = "00";
-                if (soHorasElem) soHorasElem.textContent = "00";
-                if (soMinutosElem) soMinutosElem.textContent = "00";
-                if (soSegundosElem) soSegundosElem.textContent = "00";
-                const sonandoLabel = document.getElementById("sonando-fecha-label");
-                if (sonandoLabel) sonandoLabel.innerHTML = "¡YA DISPONIBLE!";
-            }
-
-            // Catarsis
-            const difCatarsis = fechaObjetivoCatarsis - ahora;
-            const dias = Math.floor(Math.max(0, difCatarsis) / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((Math.max(0, difCatarsis) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((Math.max(0, difCatarsis) % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((Math.max(0, difCatarsis) % (1000 * 60)) / 1000);
+            // Sexy, Nasty & Pretty DELUXE
+            const difDeluxe = fechaDeluxe - ahora;
+            const dias = Math.floor(Math.max(0, difDeluxe) / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((Math.max(0, difDeluxe) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((Math.max(0, difDeluxe) % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((Math.max(0, difDeluxe) % (1000 * 60)) / 1000);
 
             const dElem = document.getElementById("dias");
             const hElem = document.getElementById("horas");
@@ -567,16 +563,16 @@
             if (mElem) mElem.textContent = String(minutos).padStart(2, '0');
             if (sElem) sElem.textContent = String(segundos).padStart(2, '0');
 
-            if (difCatarsis < 0) {
+            if (difDeluxe < 0) {
                 if (dElem) dElem.textContent = "00";
                 if (hElem) hElem.textContent = "00";
                 if (mElem) mElem.textContent = "00";
                 if (sElem) sElem.textContent = "00";
-                const proximamenteSection = document.querySelector(".upcoming-section:last-of-type .release-date-sub");
+                const proximamenteSection = document.getElementById("deluxe-fecha");
                 if (proximamenteSection) proximamenteSection.innerHTML = "¡YA DISPONIBLE!";
             }
 
-            if (difFest < 0 && difSonando < 0 && difCatarsis < 0) clearInterval(cuentaRegresiva);
+            if (difFest < 0 && difDeluxe < 0) clearInterval(cuentaRegresiva);
         }, 1000);
     </script>
 </body>

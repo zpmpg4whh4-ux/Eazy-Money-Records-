@@ -135,6 +135,15 @@
         .event-date { font-size: 1.05rem; font-weight: 700; color: var(--neon-pink); text-shadow: 0 0 8px var(--neon-glow); letter-spacing: 1px; }
         .event-location { font-size: 0.9rem; color: var(--text-muted); }
         .event-insta-btn { max-width: 260px; }
+        .event-ticket-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 300px; padding: 15px 24px; background: var(--neon-pink); color: #fff; border-radius: 14px; text-decoration: none; font-weight: 800; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 0 18px var(--neon-glow); transition: transform 0.3s, box-shadow 0.3s, background 0.3s; }
+        .event-ticket-btn:hover { transform: translateY(-3px); box-shadow: 0 0 28px var(--neon-pink); background: #ff2ac4; }
+        .coupon-box { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .coupon-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
+        .coupon-list { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+        .coupon-chip { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(255, 0, 183, 0.05); border: 1px dashed var(--neon-pink); border-radius: 12px; color: #fff; font-family: inherit; font-size: 0.95rem; font-weight: 800; letter-spacing: 1.5px; cursor: pointer; transition: background 0.3s, box-shadow 0.3s; }
+        .coupon-chip:hover { background: rgba(255, 0, 183, 0.15); box-shadow: 0 0 12px var(--neon-glow); }
+        .coupon-chip i { color: var(--neon-pink); font-size: 0.8rem; }
+        .coupon-hint { font-size: 0.75rem; color: var(--text-muted); }
 
         .creator-section { padding: 60px 5%; max-width: 800px; margin: 0 auto; text-align: center; }
         .creator-card-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 30px; }
@@ -303,6 +312,7 @@
                 <div class="timeline-date">27 de Junio 2026</div>
                 <div class="timeline-title">Lanzamiento de la Plataforma Web</div>
                 <div class="timeline-desc">Se consolida el ecosistema digital del sello con el desarrollo y diseño oficial de la página web a cargo de @d3m.alt.</div>
+            </div>
         </div>
     </section>
 
@@ -394,6 +404,15 @@
                 <div class="countdown-box"><div class="countdown-number" id="fest-minutos">00</div><div class="countdown-label">Min</div></div>
                 <div class="countdown-box"><div class="countdown-number" id="fest-segundos">00</div><div class="countdown-label">Seg</div></div>
             </div>
+            <a href="https://eazy-money-fest.boletia.com" target="_blank" rel="noopener noreferrer" class="event-ticket-btn"><i class="fa-solid fa-ticket"></i> Comprar boletos</a>
+            <div class="coupon-box">
+                <div class="coupon-title">Cupones disponibles</div>
+                <div class="coupon-list">
+                    <button type="button" class="coupon-chip" onclick="copiarCupon('EZMNY2', this)" aria-label="Copiar cupón EZMNY2"><span>EZMNY2</span><i class="fa-regular fa-copy"></i></button>
+                    <button type="button" class="coupon-chip" onclick="copiarCupon('EZMNY3', this)" aria-label="Copiar cupón EZMNY3"><span>EZMNY3</span><i class="fa-regular fa-copy"></i></button>
+                </div>
+                <div class="coupon-hint">Toca un cupón para copiarlo y úsalo al comprar</div>
+            </div>
         </div>
     </section>
 
@@ -462,6 +481,25 @@
         // Manejo robusto del reproductor: guardamos audio y su botón actual
         let currentPlayingAudio = null;
         let currentPlayingButton = null;
+
+        // Copiar cupón al portapapeles
+        function copiarCupon(codigo, boton) {
+            const icono = boton.querySelector("i");
+            const listo = () => {
+                icono.className = "fa-solid fa-check";
+                setTimeout(() => { icono.className = "fa-regular fa-copy"; }, 1500);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(codigo).then(listo).catch(() => {});
+            } else {
+                const t = document.createElement("textarea");
+                t.value = codigo;
+                document.body.appendChild(t);
+                t.select();
+                try { document.execCommand("copy"); listo(); } catch (e) {}
+                document.body.removeChild(t);
+            }
+        }
 
         function togglePlay(audioId, button) {
             const audio = document.getElementById(audioId);
@@ -566,4 +604,4 @@
         }, 1000);
     </script>
 </body>
-</html>
+</html> 

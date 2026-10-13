@@ -39,9 +39,15 @@ nav a{color:var(--muted);text-decoration:none;font-size:.92rem;white-space:nowra
 nav a:hover{color:var(--text)}
 
 .hero{padding:80px 0 70px}
-.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center}
 .hero img.logo{width:96px;height:96px;border-radius:50%;border:2px solid var(--pink);box-shadow:0 0 24px var(--glow);object-fit:cover;margin-bottom:28px}
-h1{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.08;letter-spacing:-.02em;margin-bottom:18px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,8.5vw,5rem);line-height:1.04;letter-spacing:-.03em;margin-bottom:22px}
+.banner{background:linear-gradient(90deg,rgba(255,0,183,.18),rgba(255,0,183,.06));border-bottom:1px solid rgba(255,0,183,.35)}
+.banner .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+.banner p{display:flex;align-items:baseline;gap:10px 16px;flex-wrap:wrap}
+.banner .tag{color:var(--pink);font-weight:700;font-size:.9rem}
+.banner .name{font-family:var(--display);font-weight:800;font-size:1.15rem}
+.banner .when{color:var(--muted);font-size:.95rem}
 h1 b{color:var(--pink);text-shadow:0 0 18px var(--glow)}
 .lead{color:var(--muted);font-size:1.1rem;max-width:46ch;margin-bottom:30px}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
@@ -122,6 +128,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 </header>
 
 <main>
+<div class="banner">
+  <div class="wrap">
+    <p><span class="tag">Próximo release</span><span class="name">dayz n nightz</span><span class="when">@ibiwis.chk &amp; @inzxmnia! · Marzo 2027</span></p>
+    <a class="btn sm" href="https://www.instagram.com/eazymoneyrecords_" target="_blank" rel="noopener noreferrer">Síguenos para enterarte</a>
+  </div>
+</div>
 <section class="hero" id="inicio" style="padding-bottom:70px">
   <div class="wrap">
     <div>
@@ -214,7 +226,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       </article>
 
       <article class="artist">
-        <img src="https://i.ibb.co/7xx4bbJP/kaikai.webp" alt="KaiKai" width="520" height="650" loading="lazy">
+        <img src="kaikai.webp" alt="KaiKai" width="520" height="650" loading="lazy">
         <h3>KaiKai</h3>
         <div class="links">
           <a class="btn sm" href="https://www.instagram.com/kaikai.luv" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -224,7 +236,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     </div>
   </div>
 </section>
- 
+
 <section id="historia">
   <div class="wrap">
     <h2>Historia</h2>

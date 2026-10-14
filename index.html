@@ -217,6 +217,11 @@
       .team-card img { width: 84px; }
       .footer-bottom { flex-direction: column; }
     }
+      .wall-wrap { padding-top: 10px; padding-bottom: 10px; }
+    .wall { margin: 0 0 0 auto; max-width: 400px; padding: 22px 24px; border: 1px solid var(--pink); background: var(--panel); transform: rotate(-2deg); box-shadow: 0 0 36px rgba(255,39,200,.16); }
+    .wall p { margin: 0 0 14px; font: 700 clamp(1.05rem,2.4vw,1.3rem)/1.25 var(--display); letter-spacing: -.05em; }
+    .wall footer { color: var(--pink); font: 500 .72rem var(--mono); text-transform: uppercase; letter-spacing: .12em; }
+    @media (max-width: 560px) { .wall { margin: 0 auto; transform: rotate(-1deg); } }
   </style>
 </head>
 <body>
@@ -348,8 +353,6 @@
             <div class="artist-body"><div class="artist-kicker">Artist</div><h3>KaiKai</h3><p>Artista del Roster</p><div class="actions"><a class="btn btn-small" href="https://www.instagram.com/kaikai.luv" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></div>
           </article>
         </div>
-      </div>
-    </section>
 
     <section id="historia">
       <div class="wrap history">
@@ -406,7 +409,17 @@
           <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
         </form>
       </div>
+   
+  </section>
+         </div>
     </section>
+
+        <div class="wrap wall-wrap">
+      <blockquote class="wall">
+        <p>Vod-K chingas a tu madre por puto hambreado we</p>
+        <footer>Ibiwis Chk, 2026</footer>
+      </blockquote>
+    </div>
   </main>
 
   <footer class="site-footer">

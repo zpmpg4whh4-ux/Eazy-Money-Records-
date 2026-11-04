@@ -8,11 +8,8 @@
   <meta property="og:title" content="Eazy Money Records &lt;3$">
   <meta property="og:description" content="Música independiente, identidad propia. Escucha lo último y envía tu demo.">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Eazy Money Records">
   <meta property="og:image" content="https://i.ibb.co/907TsVF/AF875-DFB-FA38-4-C28-873-F-EBE202-C606-CF.jpg">
-  <!-- TODO (tuyo): cuando tengas dominio, agrega:
-       <meta property="og:url" content="https://TU-DOMINIO/">
-       <link rel="canonical" href="https://TU-DOMINIO/">
-       y cambia og:image por una imagen 1200x630 para que se vea bien en WhatsApp/Instagram. -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Eazy Money Records &lt;3$">
   <meta name="twitter:description" content="Música independiente, identidad propia. Escucha lo último y envía tu demo.">
@@ -35,17 +32,10 @@
   <style>
     :root {
       color-scheme: dark;
-      --bg: #09090b;
-      --panel: #111114;
-      --panel-2: #17171b;
-      --ink: #f5f3f7;
-      --muted: #a5a1ad;
-      --line: rgba(255,255,255,.12);
+      --bg: #09090b; --panel: #111114; --panel-2: #17171b;
+      --ink: #f5f3f7; --muted: #a5a1ad; --line: rgba(255,255,255,.12);
       --pink: #ff27c8;
-      --pink-soft: rgba(255,39,200,.13);
-      /* Acento secundario (gris plata). Se unificaron los rgba que antes eran verde lima. */
-      --lime: #b8b8c2;
-      --lime-rgb: 184,184,194;
+      --accent: #b8b8c2; --accent-rgb: 184,184,194;
       --display: "Unbounded", "Arial Black", sans-serif;
       --body: "Space Grotesk", system-ui, sans-serif;
       --mono: "DM Mono", monospace;
@@ -54,28 +44,24 @@
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 100px; }
     body {
-      margin: 0; background:
-        radial-gradient(ellipse at 75% 0%, rgba(255,39,200,.09), transparent 32rem),
-        var(--bg);
-      color: var(--ink); font-family: var(--body); line-height: 1.55;
-      overflow-x: hidden;
+      margin: 0; background: radial-gradient(ellipse at 75% 0%, rgba(255,39,200,.09), transparent 32rem), var(--bg);
+      color: var(--ink); font-family: var(--body); line-height: 1.55; overflow-x: hidden;
     }
     body::before {
-      content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-      opacity: .12; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.17'/%3E%3C/svg%3E");
+      content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .12;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.17'/%3E%3C/svg%3E");
     }
     a { color: inherit; }
     img { max-width: 100%; display: block; }
     button, input, textarea { font: inherit; }
-    :focus-visible { outline: 2px solid var(--lime); outline-offset: 4px; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .skip-link { position: absolute; left: 16px; top: -60px; z-index: 100; padding: 10px 14px; background: var(--accent); color: var(--bg); font-weight: 700; text-decoration: none; }
+    .skip-link:focus { top: 12px; }
     .wrap { width: min(var(--max), 100% - 48px); margin-inline: auto; }
-    .mono { font-family: var(--mono); text-transform: uppercase; letter-spacing: .12em; }
-    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--lime); font: 500 .72rem var(--mono); text-transform: uppercase; letter-spacing: .14em; }
+    .dot { color: var(--pink); }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--accent); font: 500 .72rem var(--mono); text-transform: uppercase; letter-spacing: .14em; }
     .eyebrow::before { content: ""; width: 22px; height: 1px; background: currentColor; }
-    .site-header {
-      position: sticky; top: 0; z-index: 50; background: rgba(9,9,11,.82);
-      backdrop-filter: blur(18px); border-bottom: 1px solid var(--line);
-    }
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(9,9,11,.82); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
     .nav-wrap { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font: 700 .83rem var(--display); letter-spacing: -.045em; white-space: nowrap; }
     .brand-mark { width: 34px; height: 34px; border: 1px solid var(--pink); color: var(--pink); display: grid; place-items: center; font: 700 .78rem var(--mono); transform: rotate(-5deg); box-shadow: 0 0 22px rgba(255,39,200,.13); }
@@ -83,7 +69,7 @@
     .nav-links { display: flex; align-items: center; gap: clamp(14px,2.4vw,30px); }
     .nav-links a { color: var(--muted); text-decoration: none; font-size: .82rem; transition: color .2s; }
     .nav-links a:hover { color: var(--ink); }
-    .nav-links .nav-cta { color: var(--bg); background: var(--lime); padding: 10px 14px; font-weight: 700; }
+    .nav-links .nav-cta { color: var(--bg); background: var(--accent); padding: 10px 14px; font-weight: 700; }
     .menu-toggle { display: none; color: var(--ink); border: 1px solid var(--line); background: var(--panel); padding: 9px 12px; cursor: pointer; }
     .announcement { border-bottom: 1px solid rgba(255,39,200,.32); background: linear-gradient(90deg,rgba(255,39,200,.1),transparent 65%); }
     .announcement-inner { display: flex; align-items: center; justify-content: space-between; gap: 14px 24px; padding-block: 12px; }
@@ -91,62 +77,64 @@
     .announcement-label { color: var(--pink); font: 500 .68rem var(--mono); text-transform: uppercase; letter-spacing: .12em; }
     .announcement-title { font-weight: 700; font-size: .94rem; }
     .announcement-date { color: var(--muted); font-size: .83rem; }
-    .text-link { color: var(--lime); text-decoration: none; border-bottom: 1px solid rgba(var(--lime-rgb),.45); font-size: .8rem; white-space: nowrap; }
-    .text-link:hover { border-color: var(--lime); }
+    .text-link { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(var(--accent-rgb),.45); font-size: .8rem; white-space: nowrap; }
+    .text-link:hover { border-color: var(--accent); }
     .hero { padding: clamp(64px,9vw,124px) 0 82px; }
     .hero-grid { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(300px,.9fr); gap: clamp(34px,7vw,96px); align-items: center; }
     .hero-logo { width: 76px; height: 76px; object-fit: cover; border: 1px solid var(--pink); margin: 26px 0 25px; filter: saturate(.92); }
-    h1,h2,h3,p { margin-top: 0; }
+    h1, h2, h3, p { margin-top: 0; }
     h1 { margin-bottom: 24px; font: 800 clamp(2.8rem,7.6vw,6.5rem)/.98 var(--display); letter-spacing: -.05em; max-width: 800px; }
     h1 .accent { color: var(--pink); text-shadow: 0 0 36px rgba(255,39,200,.22); }
     .hero-note { display: flex; align-items: center; gap: 9px; margin-bottom: 22px; color: var(--muted); font: .72rem var(--mono); text-transform: uppercase; letter-spacing: .1em; }
-    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 12px var(--lime); }
+    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
     .lead { max-width: 50ch; color: #c0bbc7; font-size: clamp(1rem,1.5vw,1.13rem); margin-bottom: 30px; }
     .actions { display: flex; flex-wrap: wrap; gap: 10px; }
     .btn { min-height: 46px; display: inline-flex; justify-content: center; align-items: center; gap: 10px; padding: 12px 17px; border: 1px solid var(--line); background: rgba(255,255,255,.025); color: var(--ink); text-decoration: none; font-size: .84rem; font-weight: 700; transition: transform .2s,border-color .2s,background .2s; cursor: pointer; }
     .btn:hover { transform: translateY(-2px); border-color: var(--pink); }
     .btn-primary { background: var(--pink); border-color: var(--pink); color: #130812; }
     .btn-primary:hover { background: #ff70dc; border-color: #ff70dc; }
-    .btn-lime { background: var(--lime); border-color: var(--lime); color: #101108; }
-    .btn-small { min-height: 36px; padding: 8px 11px; font-size: .75rem; }
+    .btn-primary:disabled { opacity: .6; cursor: wait; transform: none; }
+    .btn-small { min-height: 40px; padding: 8px 12px; font-size: .75rem; }
     .btn-soon { color: var(--muted); border-style: dashed; cursor: default; font-weight: 500; }
     .btn-soon:hover { transform: none; border-color: var(--line); }
     .hero-side { position: relative; padding: 12px; border: 1px solid var(--line); background: linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.012)); }
-    .hero-side::before { content: "EMR / AUDIO FEED"; position: absolute; z-index: 2; top: -11px; left: 22px; padding: 3px 8px; background: var(--bg); color: var(--lime); font: .62rem var(--mono); letter-spacing: .12em; }
+    .hero-side::before { content: "EMR / AUDIO FEED"; position: absolute; z-index: 2; top: -11px; left: 22px; padding: 3px 8px; background: var(--bg); color: var(--accent); font: .62rem var(--mono); letter-spacing: .12em; }
     .player-label { display: flex; justify-content: space-between; gap: 12px; padding: 10px 5px 12px; color: var(--muted); font: .65rem var(--mono); text-transform: uppercase; letter-spacing: .1em; }
     .player iframe { width: 100%; height: 152px; display: block; border: 0; border-radius: 4px; margin-bottom: 10px; background: var(--panel); }
     .player iframe:last-of-type { margin-bottom: 0; }
     .player-foot { display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid var(--line); margin-top: 10px; padding: 12px 5px 3px; color: var(--muted); font: .65rem var(--mono); }
     .player-foot span:last-child { color: var(--pink); }
     .ticker { overflow: hidden; border-block: 1px solid var(--line); background: #0e0e11; }
-    .ticker-track { display: flex; width: max-content; margin: 0; gap: 24px; padding: 13px 0; color: #bdb7c3; font: .7rem var(--mono); text-transform: uppercase; letter-spacing: .13em; animation: ticker 32s linear infinite; }
-    .ticker-track span { display: inline-flex; align-items: center; gap: 24px; white-space: nowrap; }
-    .ticker-track b { color: var(--pink); font-weight: 500; }
-    @keyframes ticker { to { transform: translateX(calc(-50% - 12px)); } }
+    .ticker-track { display: flex; width: max-content; animation: ticker 60s linear infinite; }
+    .ticker-group { display: flex; flex-shrink: 0; gap: 24px; padding: 13px 24px 13px 0; color: #bdb7c3; font: .7rem var(--mono); text-transform: uppercase; letter-spacing: .13em; }
+    .ticker-group span { white-space: nowrap; }
+    .ticker-group b { color: var(--pink); font-weight: 500; }
+    @keyframes ticker { to { transform: translateX(-50%); } }
     section { padding: clamp(66px,9vw,112px) 0; }
     .section-head { display: flex; justify-content: space-between; align-items: end; gap: 22px; margin-bottom: 35px; }
-    .section-head h2 { margin: 13px 0 0; font: 700 clamp(1.7rem,4.3vw,3.1rem)/1.1 var(--display); letter-spacing: -.07em; }
+    .section-head h2 { margin: 13px 0 0; font: 700 clamp(1.7rem,4.3vw,3.1rem)/1.1 var(--display); letter-spacing: -.05em; }
     .section-index { color: #8d8794; font: .75rem var(--mono); }
     .section-desc { max-width: 40ch; color: var(--muted); font-size: .9rem; margin: 14px 0 0; }
     .release-list { border-top: 1px solid var(--line); }
     .release { display: grid; grid-template-columns: 68px minmax(0,1fr) auto; align-items: center; gap: 20px; padding: 21px 0; border-bottom: 1px solid var(--line); }
     .release-art { width: 68px; height: 68px; object-fit: cover; background: var(--panel-2); border: 1px solid var(--line); }
-    .release-art.placeholder { display: grid; place-items: center; color: var(--pink); font: 700 .8rem var(--mono); }
     .release-meta { color: var(--muted); font: .68rem var(--mono); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 5px; }
     .release h3 { margin: 0 0 4px; font-size: 1.02rem; letter-spacing: -.025em; }
     .release p { margin: 0; color: var(--muted); font-size: .82rem; }
     .release-actions { display: flex; flex-wrap: wrap; gap: 7px; justify-content: end; }
     .notice { display: flex; align-items: start; gap: 12px; margin-top: 20px; padding: 16px; border: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
     .notice strong { color: var(--ink); }
-    .notice-mark { color: var(--lime); font: 1rem var(--mono); }
+    .notice-mark { color: var(--accent); font: 1rem var(--mono); }
     .roster-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 17px; }
-    .artist-card { min-width: 0; border: 1px solid var(--line); background: var(--panel); transition: border-color .25s,transform .25s; }
-    .artist-card:hover { border-color: rgba(255,39,200,.55); transform: translateY(-4px); }
+    .artist-card { min-width: 0; border: 1px solid var(--line); background: var(--panel); transition: border-color .25s, transform .25s; }
+    .artist-card.reveal { transition: opacity .6s ease, transform .25s, border-color .25s; }
+    .artist-card:hover { border-color: rgba(255,39,200,.55); }
+    .artist-card.reveal.in-view:hover, .artist-card:not(.reveal):hover { transform: translateY(-4px); }
     .artist-photo { position: relative; aspect-ratio: 4/4.6; overflow: hidden; background: linear-gradient(135deg,#241322,#15151b); }
-    .artist-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s,filter .5s; filter: saturate(.78); }
+    .artist-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s, filter .5s; filter: saturate(.78); }
     .artist-card:hover .artist-photo img { transform: scale(1.04); filter: saturate(1); }
     .artist-photo.image-missing { background: radial-gradient(circle at 50% 40%,rgba(255,39,200,.25),transparent 50%),linear-gradient(135deg,#241322,#15151b); }
-    .artist-photo.image-missing::before { content: "KA I KAI"; position: absolute; inset: 0; display: grid; place-items: center; color: var(--pink); font: 700 clamp(1.2rem,3vw,2rem) var(--display); letter-spacing: -.08em; }
+    .artist-photo.image-missing::before { content: "KAIKAI"; position: absolute; inset: 0; display: grid; place-items: center; color: var(--pink); font: 700 clamp(1.2rem,3vw,2rem) var(--display); letter-spacing: -.05em; }
     .artist-photo::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent,rgba(0,0,0,.45)); pointer-events: none; }
     .artist-number { position: absolute; top: 12px; left: 12px; z-index: 1; padding: 5px 7px; background: rgba(9,9,11,.72); border: 1px solid rgba(255,255,255,.2); font: .62rem var(--mono); }
     .artist-body { padding: 18px; }
@@ -156,12 +144,13 @@
     .artist-body .actions { gap: 7px; }
     .history { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(28px,7vw,90px); }
     .history-intro { position: sticky; top: 115px; align-self: start; }
+    .history-intro h2 { font: 700 clamp(1.8rem,4.5vw,3.2rem)/1.08 var(--display); letter-spacing: -.05em; margin: 14px 0 0; }
     .history-intro p { max-width: 34ch; color: var(--muted); margin-top: 17px; }
     .timeline { border-left: 1px solid rgba(255,39,200,.45); padding-left: 28px; }
     .timeline-item { position: relative; padding: 0 0 32px; }
     .timeline-item:last-child { padding-bottom: 0; }
     .timeline-item::before { content: ""; position: absolute; left: -33px; top: 5px; width: 8px; height: 8px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 12px rgba(255,39,200,.5); }
-    .timeline-item time { color: var(--lime); font: .68rem var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+    .timeline-item time { color: var(--accent); font: .68rem var(--mono); text-transform: uppercase; letter-spacing: .1em; }
     .timeline-item h3 { font-size: 1rem; margin: 7px 0 6px; }
     .timeline-item p { color: var(--muted); font-size: .88rem; margin: 0; }
     .team-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
@@ -171,7 +160,7 @@
     .team-card p { margin: 0 0 14px; color: var(--muted); font-size: .82rem; }
     .demo-section { position: relative; overflow: hidden; border-block: 1px solid rgba(255,39,200,.25); background: radial-gradient(ellipse at 90% 50%,rgba(255,39,200,.1),transparent 36rem),#0d0d10; }
     .demo-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(30px,8vw,100px); align-items: start; }
-    .demo-copy h2 { margin: 14px 0 18px; font: 700 clamp(2rem,5vw,4rem)/1.04 var(--display); letter-spacing: -.08em; }
+    .demo-copy h2 { margin: 14px 0 18px; font: 700 clamp(2rem,5vw,4rem)/1.04 var(--display); letter-spacing: -.05em; }
     .demo-copy h2 span { color: var(--pink); }
     .demo-copy p { max-width: 42ch; color: var(--muted); }
     .demo-aside { margin-top: 27px; color: var(--muted); font: .7rem/1.8 var(--mono); }
@@ -187,7 +176,7 @@
     .form-privacy { color: var(--muted); font-size: .72rem; margin: 12px 0 0; }
     .demo-form .btn { width: 100%; }
     .form-message { min-height: 1.5em; margin: 13px 0 0; font-size: .82rem; }
-    .form-message.success { color: var(--lime); }
+    .form-message.success { color: #9be7b0; }
     .form-message.error { color: #ff9090; }
     .form-message.info { color: var(--muted); }
     .site-footer { padding: 30px 0; color: var(--muted); font-size: .75rem; }
@@ -197,34 +186,33 @@
     .footer-links a { color: var(--muted); text-decoration: none; }
     .footer-links a:hover { color: var(--pink); }
     .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 17px; margin-top: 22px; border-top: 1px solid var(--line); font: .64rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-    .to-top { position: fixed; right: 20px; bottom: 20px; z-index: 20; width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line); background: rgba(17,17,20,.9); color: var(--lime); text-decoration: none; opacity: 0; pointer-events: none; transform: translateY(8px); transition: .2s; }
-    .to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
-    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease,transform .6s ease; }
+    .to-top { position: fixed; right: 20px; bottom: 20px; z-index: 20; width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line); background: rgba(17,17,20,.9); color: var(--accent); text-decoration: none; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(8px); transition: opacity .2s, transform .2s, visibility .2s; }
+    .to-top.visible { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.in-view { opacity: 1; transform: translateY(0); }
     .wall-wrap { padding-top: 10px; padding-bottom: 10px; }
     .wall { margin: 0 0 0 auto; max-width: 400px; padding: 22px 24px; border: 1px solid var(--pink); background: var(--panel); transform: rotate(-2deg); box-shadow: 0 0 36px rgba(255,39,200,.16); }
     .wall p { margin: 0 0 14px; font: 700 clamp(1.05rem,2.4vw,1.3rem)/1.25 var(--display); letter-spacing: -.05em; }
     .wall footer { color: var(--pink); font: 500 .72rem var(--mono); text-transform: uppercase; letter-spacing: .12em; }
     @media (prefers-reduced-motion: reduce) {
-      *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation: none !important; }
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation: none !important; }
       .reveal { opacity: 1; transform: none; }
     }
     @media (max-width: 850px) {
       .nav-wrap { min-height: 68px; }
-      .menu-toggle { display: inline-flex; align-items: center; gap: 8px; }
+      .site-header { backdrop-filter: none; background: rgba(9,9,11,.97); }
+      .menu-toggle { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; }
       .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 18px 24px 22px; background: rgba(9,9,11,.98); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
       .nav-links.open { display: flex; }
       .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--line); }
       .nav-links .nav-cta { padding: 12px; margin-top: 12px; text-align: center; border: 0; }
-      .hero-grid { grid-template-columns: 1fr; }
+      .hero-grid, .history, .demo-grid { grid-template-columns: 1fr; }
       .hero-side { max-width: 680px; }
       .roster-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-      .history { grid-template-columns: 1fr; }
       .history-intro { position: static; }
-      .demo-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) {
-      .wrap { width: min(var(--max),100% - 32px); }
+      .wrap { width: min(var(--max), 100% - 32px); }
       .brand { font-size: .7rem; gap: 8px; }
       .brand-mark { width: 30px; height: 30px; }
       .announcement-inner { align-items: flex-start; flex-direction: column; }
@@ -236,12 +224,9 @@
       .release { grid-template-columns: 54px minmax(0,1fr); gap: 13px; }
       .release-art { width: 54px; height: 54px; }
       .release-actions { grid-column: 2; justify-content: start; }
-      .roster-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-      .artist-body { padding: 12px; }
-      .artist-body h3 { font-size: .76rem; }
-      .artist-body p { font-size: .75rem; margin-bottom: 12px; }
-      .artist-body .btn { padding: 7px 8px; min-height: 32px; font-size: .68rem; }
-      .artist-photo { aspect-ratio: 4/4.8; }
+      .roster-grid { grid-template-columns: 1fr; gap: 14px; }
+      .artist-photo { aspect-ratio: 4/3.4; }
+      .artist-body .btn { min-height: 44px; }
       .team-grid { grid-template-columns: 1fr; }
       .team-card { grid-template-columns: 84px minmax(0,1fr); gap: 13px; padding: 11px; }
       .team-card img { width: 84px; }
@@ -251,6 +236,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="site-header">
     <div class="wrap nav-wrap">
       <a class="brand" href="#inicio" aria-label="Eazy Money Records, inicio">
@@ -272,22 +258,21 @@
   <div class="announcement">
     <div class="wrap announcement-inner">
       <div class="announcement-copy">
-        <span class="announcement-label">Próximo release ↗</span>
+        <span class="announcement-label">Próximo release</span>
         <span class="announcement-title">dayz n nightz</span>
-        <!-- TODO (tuyo): confirma que "Marzo 2027" es la fecha que quieres mostrar -->
         <span class="announcement-date">@ibiwis.chk &amp; @inzxmnia! · Marzo 2027</span>
       </div>
       <a class="text-link" href="https://www.instagram.com/eazymoneyrecords_" target="_blank" rel="noopener noreferrer">Sigue el movimiento en Instagram</a>
     </div>
   </div>
 
-  <main>
+  <main id="contenido">
     <section class="hero" id="inicio">
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">Independent sound / Est. 2026</div>
           <img class="hero-logo" src="https://i.ibb.co/907TsVF/AF875-DFB-FA38-4-C28-873-F-EBE202-C606-CF.jpg" alt="Logo de Eazy Money Records" width="76" height="76">
-          <h1>Eazy Money<br><span class="accent">Records<span aria-hidden="true">®</span></span></h1>
+          <h1>Eazy Money<br><span class="accent">Records<span aria-hidden="true">™</span></span></h1>
           <div class="hero-note"><span class="live-dot"></span> Sello independiente · CDMX / MX</div>
           <p class="lead">Un espacio para sonidos propios, ideas sin filtro y artistas que están construyendo algo diferente. Escucha el catálogo y mándanos tu demo.</p>
           <div class="actions">
@@ -301,22 +286,32 @@
             <iframe title="Escucha a @ibiwis.chk en Spotify" loading="lazy" src="https://open.spotify.com/embed/artist/5ufve6sBmwqI10dD7fF6c7" allow="encrypted-media; clipboard-write; fullscreen"></iframe>
             <iframe title="Escucha a @inzxmnia! en Spotify" loading="lazy" src="https://open.spotify.com/embed/artist/0OORgu1s7MwAgfckt9znnm" allow="encrypted-media; clipboard-write; fullscreen"></iframe>
           </div>
-          <div class="player-foot"><span>Roster rotation</span><span>Play it loud ↗</span></div>
+          <div class="player-foot"><span>Roster</span><span>Play it loud</span></div>
         </aside>
       </div>
     </section>
 
     <div class="ticker" aria-label="Identidad del sello">
       <div class="ticker-track" aria-hidden="true">
-        <span>Independent by nature <b>✳</b> No shortcuts <b>✳</b> Eazy Money Records <b>✳</b> Built from the ground up <b>✳</b></span>
-        <span>Independent by nature <b>✳</b> No shortcuts <b>✳</b> Eazy Money Records <b>✳</b> Built from the ground up <b>✳</b></span>
+        <div class="ticker-group">
+          <span>Independent by nature <b>✳</b> No shortcuts <b>✳</b> Eazy Money Records <b>✳</b> Built from the ground up <b>✳</b></span>
+          <span>Independent by nature <b>✳</b> No shortcuts <b>✳</b> Eazy Money Records <b>✳</b> Built from the ground up <b>✳</b></span>
+          <span>Independent by nature <b>✳</b> No shortcuts <b>✳</b> Eazy Money Records <b>✳</b> Built from the ground up <b>✳</b></span>
+          <span>Independent by nature <b>✳</b> No shortcuts <b>✳</b> Eazy Money Records <b>✳</b> Built from the ground up <b>✳</b></span>
+        </div>
+        <div class="ticker-group">
+          <span>Independent by nature <b>✳</b> No shortcuts <b>✳</b> Eazy Money Records <b>✳</b> Built from the ground up <b>✳</b></span>
+          <span>Independent by nature <b>✳</b> No shortcuts <b>✳</b> Eazy Money Records <b>✳</b> Built from the ground up <b>✳</b></span>
+          <span>Independent by nature <b>✳</b> No shortcuts <b>✳</b> Eazy Money Records <b>✳</b> Built from the ground up <b>✳</b></span>
+          <span>Independent by nature <b>✳</b> No shortcuts <b>✳</b> Eazy Money Records <b>✳</b> Built from the ground up <b>✳</b></span>
+        </div>
       </div>
     </div>
 
     <section id="lanzamientos">
       <div class="wrap">
         <div class="section-head">
-          <div><div class="eyebrow">Del catálogo</div><h2>Lanzamientos<span style="color:var(--pink)">.</span></h2><p class="section-desc">Proyectos, singles y sonidos publicados por la familia Eazy Money.</p></div>
+          <div><div class="eyebrow">Del catálogo</div><h2>Lanzamientos<span class="dot">.</span></h2><p class="section-desc">Proyectos y sonidos publicados por la familia Eazy Money.</p></div>
           <span class="section-index">01 / RELEASES</span>
         </div>
         <div class="release-list">
@@ -356,29 +351,28 @@
             </div>
           </article>
         </div>
-        <div class="notice"><span class="notice-mark">↗</span><div><strong>En camino:</strong> la versión con voz de <em>d3m.alt: Vol. 1</em> llega pronto, sin fecha anunciada. <a class="text-link" href="https://www.instagram.com/d3m.alt" target="_blank" rel="noopener noreferrer">@d3m.alt en Instagram</a>.</div></div>
+        <div class="notice"><span class="notice-mark" aria-hidden="true">↗</span><div><strong>En camino:</strong> la versión con voz de <em>d3m.alt: Vol. 1</em> llega pronto, sin fecha anunciada. <a class="text-link" href="https://www.instagram.com/d3m.alt" target="_blank" rel="noopener noreferrer">@d3m.alt en Instagram</a>.</div></div>
       </div>
     </section>
 
     <section id="artistas">
       <div class="wrap">
         <div class="section-head">
-          <div><div class="eyebrow">Quién está detrás del sonido</div><h2>Roster<span style="color:var(--pink)">.</span></h2><p class="section-desc">Conoce a los artistas que forman parte del universo Eazy Money.</p></div>
+          <div><div class="eyebrow">Quién está detrás del sonido</div><h2>Roster<span class="dot">.</span></h2><p class="section-desc">Conoce a los artistas que forman parte del universo Eazy Money.</p></div>
           <span class="section-index">02 / ARTISTS</span>
         </div>
         <div class="roster-grid">
           <article class="artist-card">
             <div class="artist-photo"><span class="artist-number">ARTIST / 001</span><img src="https://i.ibb.co/gM4K3htq/5c07e44c-3f1e-4c8a-870a-b710b3070901.jpg" alt="Retrato de @ibiwis.chk" width="520" height="598" loading="lazy"></div>
-            <!-- TODO (tuyo): agrega una línea sobre el sonido de cada artista (ej. "Hyperpop / rap melódico") -->
-            <div class="artist-body"><div class="artist-kicker">Founder · Artist</div><h3>@ibiwis.chk</h3><p>Fundador del sello</p><div class="actions"><a class="btn btn-small" href="https://open.spotify.com/track/4v1zRy1EFUj1WOLkdh0hdZ" target="_blank" rel="noopener noreferrer">Spotify ↗</a><a class="btn btn-small" href="https://music.apple.com/mx/album/you-should-be-w-him/1823096369?i=1823096370" target="_blank" rel="noopener noreferrer">Apple Music ↗</a><a class="btn btn-small" href="https://www.instagram.com/ibiwis.chk" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></div>
+            <div class="artist-body"><div class="artist-kicker">Founder · Artist</div><h3>@ibiwis.chk</h3><p>Fundador del sello</p><div class="actions"><a class="btn btn-small" href="https://open.spotify.com/artist/5ufve6sBmwqI10dD7fF6c7" target="_blank" rel="noopener noreferrer">Spotify ↗</a><a class="btn btn-small" href="https://music.apple.com/mx/artist/ibiwis-chk/1763376591" target="_blank" rel="noopener noreferrer">Apple Music ↗</a><a class="btn btn-small" href="https://www.instagram.com/ibiwis.chk" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></div>
           </article>
           <article class="artist-card">
             <div class="artist-photo"><span class="artist-number">ARTIST / 002</span><img src="https://i.ibb.co/j7jQNKV/5d86e6c9-fac9-4899-a3f3-8244f3696802.jpg" alt="Retrato de @inzxmnia!" width="520" height="598" loading="lazy"></div>
-            <div class="artist-body"><div class="artist-kicker">Artist</div><h3>@inzxmnia!</h3><p>Artista del Roster</p><div class="actions"><a class="btn btn-small" href="https://open.spotify.com/album/6xU1kFyz9aylG7w1x8fJuL" target="_blank" rel="noopener noreferrer">Spotify ↗</a><a class="btn btn-small" href="https://music.apple.com/mx/album/no-t-veo-single/6808378812" target="_blank" rel="noopener noreferrer">Apple Music ↗</a><a class="btn btn-small" href="https://www.instagram.com/muuulaaaaan" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></div>
+            <div class="artist-body"><div class="artist-kicker">Artist</div><h3>@inzxmnia!</h3><p>Artista del roster</p><div class="actions"><a class="btn btn-small" href="https://open.spotify.com/album/6xU1kFyz9aylG7w1x8fJuL" target="_blank" rel="noopener noreferrer">Spotify ↗</a><a class="btn btn-small" href="https://music.apple.com/mx/album/no-t-veo-single/6808378812" target="_blank" rel="noopener noreferrer">Apple Music ↗</a><a class="btn btn-small" href="https://www.instagram.com/muuulaaaaan" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></div>
           </article>
           <article class="artist-card">
             <div class="artist-photo"><span class="artist-number">ARTIST / 003</span><img src="https://i.ibb.co/7xx4bbJP/kaikai.webp" alt="Retrato de KaiKai" width="520" height="598" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-missing')"></div>
-            <div class="artist-body"><div class="artist-kicker">Artist</div><h3>KaiKai</h3><p>Artista del Roster</p><div class="actions"><span class="btn btn-small btn-soon">Música próximamente</span><a class="btn btn-small" href="https://www.instagram.com/kaikai.luv" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></div>
+            <div class="artist-body"><div class="artist-kicker">Artist</div><h3>KaiKai</h3><p>Artista del roster</p><div class="actions"><span class="btn btn-small btn-soon">Música próximamente</span><a class="btn btn-small" href="https://www.instagram.com/kaikai.luv" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></div>
           </article>
         </div>
       </div>
@@ -388,7 +382,7 @@
       <div class="wrap history">
         <div class="history-intro">
           <div class="eyebrow">Desde el principio</div>
-          <h2 style="font:700 clamp(1.8rem,4.5vw,3.2rem)/1.08 var(--display);letter-spacing:-.07em;margin:14px 0 0">Una historia<br>en movimiento<span style="color:var(--pink)">.</span></h2>
+          <h2>Una historia<br>en movimiento<span class="dot">.</span></h2>
           <p>De una idea inicial a una plataforma para compartir música, construir comunidad y abrir espacio a nuevas voces.</p>
           <span class="section-index">03 / TIMELINE</span>
         </div>
@@ -396,7 +390,6 @@
           <article class="timeline-item"><time>Fines de 2025</time><h3>Los orígenes: VVS Sound</h3><p>El proyecto da sus primeros pasos bajo el nombre original de VVS Sound, sentando las bases musicales y la visión del sello.</p></article>
           <article class="timeline-item"><time>Enero 2026</time><h3>El nacimiento de Eazy Money Records</h3><p>De la mano de @ibiwis.chk, el sello adopta oficialmente la identidad y la energía de Eazy Money Records.</p></article>
           <article class="timeline-item"><time>Febrero – Marzo 2026</time><h3>Expansión del roster</h3><p>Se une al equipo @inzxmnia!, aportando un sonido fresco y ampliando la familia del sello.</p></article>
-          <article class="timeline-item"><time>10 de abril de 2026</time><h3>Love, Death and Sexness (Deluxe)</h3><p>@inzxmnia! publica la versión deluxe de su álbum dentro del catálogo del sello.</p></article>
           <article class="timeline-item"><time>22 de junio de 2026</time><h3>Sexy, Nasty and Pretty EP</h3><p>@ibiwis.chk presenta su EP, sumando un nuevo capítulo al catálogo de Eazy Money Records.</p></article>
           <article class="timeline-item"><time>27 de junio de 2026</time><h3>Lanzamiento de la plataforma web</h3><p>Se consolida el ecosistema digital del sello con el desarrollo y diseño de la web a cargo de @d3m.alt.</p></article>
         </div>
@@ -406,7 +399,7 @@
     <section id="equipo">
       <div class="wrap">
         <div class="section-head">
-          <div><div class="eyebrow">La gente detrás del proyecto</div><h2>Equipo<span style="color:var(--pink)">.</span></h2></div>
+          <div><div class="eyebrow">La gente detrás del proyecto</div><h2>Equipo<span class="dot">.</span></h2></div>
           <span class="section-index">04 / CREW</span>
         </div>
         <div class="team-grid">
@@ -419,8 +412,7 @@
             <div><h3>@d3m.alt</h3><p>Diseño y desarrollo web</p><a class="btn btn-small" href="https://www.instagram.com/d3m.alt" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div>
           </article>
         </div>
-        <!-- TODO (tuyo): agrega aquí un correo de contacto para bookings, prensa y colaboraciones
-             (ej. un bloque con mailto:contacto@TU-DOMINIO). No puse uno para no inventar un correo. -->
+        <div class="notice contact-note"><span class="notice-mark" aria-hidden="true">@</span><div><strong>Bookings, prensa y colaboraciones:</strong> escríbenos a <a class="text-link" href="mailto:eazymoneyrec@gmail.com">eazymoneyrec@gmail.com</a>.</div></div>
       </div>
     </section>
 
@@ -432,25 +424,25 @@
           <p>¿Tienes algo que debería escucharse? Mándanos tu demo. Comparte un enlace accesible y el equipo de Eazy Money Records podrá revisarlo.</p>
           <div class="demo-aside">01 — Comparte tu información<br>02 — Añade un enlace que funcione<br>03 — Dale al equipo tiempo para escuchar</div>
         </div>
-        <form class="demo-form" id="demoForm" action="https://formspree.io/f/xaqgokvv" method="POST">
-          <div class="field"><label for="nombre">Nombre o AKA</label><input id="nombre" type="text" name="nombre" autocomplete="name" placeholder="¿Cómo te llamas artísticamente?" required maxlength="100"></div>
+        <form class="demo-form" id="demoForm" action="https://formspree.io/f/xaqgokvv" method="POST" novalidate>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+          <input type="hidden" name="_subject" value="Nueva demo — Eazy Money Records">
+          <div class="field"><label for="nombre">Nombre o AKA</label><input id="nombre" type="text" name="nombre" autocomplete="nickname" placeholder="¿Cómo te llamas artísticamente?" required maxlength="100"></div>
           <div class="field"><label for="email">Correo electrónico</label><input id="email" type="email" name="email" autocomplete="email" placeholder="tu@correo.com" required maxlength="160"></div>
           <div class="field"><label for="genero">Género o estilo <span class="opt">(opcional)</span></label><input id="genero" type="text" name="genero" placeholder="Ej. trap, hyperpop, R&amp;B…" maxlength="80"></div>
-          <div class="field"><label for="demo">Link a tu track</label><input id="demo" type="url" name="demo_link" placeholder="https://soundcloud.com/..." required>
+          <div class="field"><label for="demo">Link a tu track</label><input id="demo" type="text" inputmode="url" name="demo_link" placeholder="soundcloud.com/tu-track" required maxlength="300">
             <p class="form-hint">Asegúrate de que el enlace se pueda abrir sin pedir permisos.</p></div>
           <div class="field"><label for="mensaje">Mensaje <span class="opt">(opcional)</span></label><textarea id="mensaje" name="mensaje" placeholder="Cuéntanos algo sobre ti o sobre el track" maxlength="600"></textarea></div>
           <button class="btn btn-primary" id="submitDemo" type="submit">Enviar demo <span aria-hidden="true">↗</span></button>
-          <!-- TODO (tuyo): ajusta estos dos textos a tu política real (tiempos de respuesta y uso de datos) -->
           <p class="form-privacy">Si tu demo encaja con el sello, el equipo se pondrá en contacto contigo. Usaremos tu correo solo para responder sobre tu envío.</p>
           <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
 
-    <!-- Frase del sello. Cámbiala por tu manifiesto cuando quieras. -->
     <div class="wrap wall-wrap">
       <blockquote class="wall">
-        <p>Eazy Money, El Dinero Facil.</p>
+        <p>Eazy Money, El Dinero Fácil.</p>
         <footer>Eazy Money Records, 2026</footer>
       </blockquote>
     </div>
@@ -459,18 +451,21 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-main">
-        <span class="footer-brand">Eazy Money Records <span style="color:var(--pink)">&lt;3$</span></span>
+        <span class="footer-brand">Eazy Money Records <span class="dot">&lt;3$</span></span>
         <div class="footer-links">
           <a href="https://www.instagram.com/eazymoneyrecords_" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
           <a href="#lanzamientos">Lanzamientos</a>
           <a href="#artistas">Artistas</a>
+          <a href="#historia">Historia</a>
+          <a href="#equipo">Equipo</a>
           <a href="#demos">Enviar demo</a>
+          <a href="mailto:eazymoneyrec@gmail.com">Contacto</a>
         </div>
       </div>
       <div class="footer-bottom"><span>© <span id="year">2026</span> Eazy Money Records</span><span>Independent sound / Built with intention</span><span>Web by @d3m.alt</span></div>
     </div>
   </footer>
-  <a class="to-top" href="#inicio" id="toTop" aria-label="Volver al inicio">↑</a>
+  <a class="to-top" href="#inicio" id="toTop" aria-label="Volver al inicio" tabindex="-1">↑</a>
 
   <script>
     (() => {
@@ -479,25 +474,20 @@
       const form = document.getElementById('demoForm');
       const message = document.getElementById('formMessage');
       const submitButton = document.getElementById('submitDemo');
+      const demoInput = document.getElementById('demo');
       const toTop = document.getElementById('toTop');
 
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Accessible mobile navigation.
-      menuToggle.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('open');
-        menuToggle.setAttribute('aria-expanded', String(isOpen));
-        menuToggle.querySelector('span').textContent = isOpen ? '×' : '☰';
-      });
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('open');
-          menuToggle.setAttribute('aria-expanded', 'false');
-          menuToggle.querySelector('span').textContent = '☰';
-        });
-      });
+      const setMenu = open => {
+        navLinks.classList.toggle('open', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+        menuToggle.querySelector('span').textContent = open ? '×' : '☰';
+      };
+      menuToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
-      // Reveal content only when motion is allowed.
       if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const revealObserver = new IntersectionObserver(entries => {
           entries.forEach(entry => {
@@ -513,39 +503,46 @@
         });
       }
 
-      // Back-to-top visibility.
-      const updateToTop = () => toTop.classList.toggle('visible', window.scrollY > 500);
+      const updateToTop = () => {
+        const show = window.scrollY > 500;
+        toTop.classList.toggle('visible', show);
+        toTop.tabIndex = show ? 0 : -1;
+      };
       window.addEventListener('scroll', updateToTop, { passive: true });
       updateToTop();
 
-      // Formspree submission with clear success/error states.
+      const showMessage = (type, text) => { message.className = 'form-message ' + type; message.textContent = text; };
+
       form.addEventListener('submit', async event => {
         event.preventDefault();
         if (!form.reportValidity()) return;
+
+        let link = demoInput.value.trim();
+        if (!/^https?:\/\//i.test(link)) link = 'https://' + link;
+        try {
+          const parsed = new URL(link);
+          if (!parsed.hostname.includes('.')) throw new Error('host');
+        } catch (_) {
+          showMessage('error', 'Revisa el link de tu track: no parece una dirección válida.');
+          demoInput.focus();
+          return;
+        }
+        demoInput.value = link;
+
         submitButton.disabled = true;
         submitButton.setAttribute('aria-busy', 'true');
-        message.className = 'form-message info';
-        message.textContent = 'Enviando tu demo…';
+        showMessage('info', 'Enviando tu demo…');
         try {
           const response = await fetch(form.action, {
             method: 'POST',
             body: new FormData(form),
             headers: { Accept: 'application/json' }
           });
-          if (!response.ok) {
-            let detail = '';
-            try {
-              const data = await response.json();
-              if (data && data.errors && data.errors.length) detail = ' ' + data.errors.map(item => item.message).join(' ');
-            } catch (_) {}
-            throw new Error(detail || 'El servicio no aceptó el envío.');
-          }
+          if (!response.ok) throw new Error('send');
           form.reset();
-          message.className = 'form-message success';
-          message.textContent = '¡Listo! El formulario confirmó el envío de tu demo.';
-        } catch (error) {
-          message.className = 'form-message error';
-          message.textContent = 'No pudimos confirmar el envío. Revisa tu conexión o intenta de nuevo desde el formulario. ' + (error.message || '');
+          showMessage('success', '¡Listo! Recibimos tu demo.');
+        } catch (_) {
+          showMessage('error', 'No pudimos enviar tu demo. Intenta de nuevo en un momento.');
         } finally {
           submitButton.disabled = false;
           submitButton.removeAttribute('aria-busy');

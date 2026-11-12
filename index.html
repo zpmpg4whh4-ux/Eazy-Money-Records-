@@ -66,7 +66,7 @@ h2{font:400 clamp(2.6rem,8vw,6.5rem)/.9 var(--d);text-transform:uppercase}
 .ch button{background:none;border:1px solid var(--g3);padding:8px 14px;min-height:40px;font:400 .72rem var(--m);letter-spacing:.1em;text-transform:uppercase}
 .ch button[aria-pressed=true]{background:var(--w);color:var(--bg);border-color:var(--w)}
 .roster{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:18px}
-.ar{background:var(--g1);border:1px solid var(--g2);text-align:left;padding:0;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.ar{background:var(--g1);border:1px solid var(--g2);text-align:left;padding:0;display:flex;flex-direction:column;text-decoration:none;transition:transform .3s,border-color .3s}
 .ar:hover{border-color:var(--neon);transform:translateY(-4px)}
 .ar .ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--g2);display:grid;place-items:center;font:400 6rem var(--d);color:var(--g3)}
 .ar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);transition:filter .5s,transform .6s}
@@ -82,6 +82,10 @@ h2{font:400 clamp(2.6rem,8vw,6.5rem)/.9 var(--d);text-transform:uppercase}
 .rel h3{font:400 clamp(1.4rem,3vw,2.2rem)/1 var(--d);text-transform:uppercase;margin:4px 0}
 .rel .l{display:flex;flex-wrap:wrap;gap:8px;justify-content:end}
 .rel.next{border-left:3px solid var(--neon);padding-left:16px}
+.last{display:grid;grid-template-columns:96px 1fr auto;gap:22px;align-items:center;max-width:820px;margin-top:clamp(28px,4vw,48px);padding:16px;border:1px solid var(--g2);border-left:3px solid var(--neon);background:var(--g1)}
+.last h3{font:400 clamp(1.4rem,3vw,2.2rem)/1 var(--d);text-transform:uppercase;margin:4px 0}
+.last .l{display:flex;flex-wrap:wrap;gap:8px;justify-content:end}
+.last .mono a{text-decoration:none;border-bottom:1px solid var(--g3)}
 .sp{margin-top:28px}.sp .gr{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px;margin-top:16px}
 .sp iframe{width:100%;height:152px;border:0;border-radius:4px}
 .ab{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,7vw,100px)}
@@ -128,6 +132,7 @@ nav ul.open{display:flex}nav li a{display:block;padding:14px 0;border-bottom:1px
 header{backdrop-filter:none;background:var(--bg)}
 .hero-grid,.ab,.dm,.pf{grid-template-columns:1fr}.meta{text-align:left}
 .rel{grid-template-columns:72px 1fr}.cv{width:72px}.rel .l{grid-column:2;justify-content:start}
+.last{grid-template-columns:72px 1fr}.last .l{grid-column:1/-1;justify-content:start}
 .evi{grid-template-columns:1fr}
 .ar:nth-child(even){margin-top:0}.roster{grid-template-columns:1fr 1fr;gap:10px}.ar .ph{aspect-ratio:4/5!important}
 .ar h3{font-size:1.3rem}.pf .ph{aspect-ratio:4/3;font-size:5rem}}
@@ -149,6 +154,7 @@ header{backdrop-filter:none;background:var(--bg)}
 <div class="meta mono"><span>Independent sound</span><span>Est. 2026</span><span>CDMX / MX</span><span>&lt;3$</span></div></div>
 <p class="lead">Un espacio para sonidos propios, ideas sin filtro y artistas que están construyendo algo diferente.</p>
 <div class="btns"><a class="btn p" href="#roster">Ver roster ↘</a><a class="btn" href="#lanzamientos">Lanzamientos</a><a class="btn" href="#demos">Enviar demo</a></div>
+<div id="ult"></div>
 </div></section>
 <div class="tick" aria-hidden="true"><div class="tk mono" id="tk"></div></div>
 
@@ -157,7 +163,6 @@ header{backdrop-filter:none;background:var(--bg)}
 <section id="lanzamientos"><div class="wrap"><div class="sh"><h2 class="rv">Lanzamientos</h2>
 <div class="ch" role="group" aria-label="Filtrar lanzamientos"><button aria-pressed="true" data-f="all">Todos</button><button aria-pressed="false" data-f="sencillo">Sencillos</button><button aria-pressed="false" data-f="largo">EPs y álbumes</button></div></div>
 <div class="rl" id="rl"></div>
-<p class="mono" style="margin-top:18px">En camino: la versión con voz de d3m.alt: Vol. 1, sin fecha anunciada.</p>
 <div class="sp"><button class="btn" id="spb">Cargar reproductores de Spotify</button><div class="gr" id="spg"></div></div>
 </div></section>
 
@@ -168,7 +173,11 @@ header{backdrop-filter:none;background:var(--bg)}
 <li><span class="mono">Enero 2026</span><h3>Nace Eazy Money Records</h3><p>De la mano de @ibiwis.chk, el sello adopta su identidad.</p></li>
 <li><span class="mono">Feb – Mar 2026</span><h3>Expansión del roster</h3><p>Se une @inzxmnia!, ampliando la familia del sello.</p></li>
 <li><span class="mono">22 jun 2026</span><h3>Sexy, Nasty and Pretty EP</h3><p>@ibiwis.chk presenta su EP.</p></li>
-<li><span class="mono">27 jun 2026</span><h3>Lanzamiento de la web</h3><p>Desarrollo y diseño a cargo de @d3m.alt.</p></li></ol>
+<li><span class="mono">27 jun 2026</span><h3>Lanzamiento de la web</h3><p>Desarrollo y diseño a cargo de @d3m.alt.</p></li>
+<li><span class="mono">3 sep 2026</span><h3>No T Veo</h3><p>@inzxmnia! lanza su sencillo.</p></li>
+<li><span class="mono">26 sep 2026</span><h3>santa maria</h3><p>Nuevo sencillo de @inzxmnia!</p></li>
+<li><span class="mono">9 oct 2026</span><h3>Sexy, Nasty and Pretty (Deluxe)</h3><p>@ibiwis.chk amplía su EP con la versión deluxe.</p></li>
+<li><span class="mono">Marzo 2027</span><h3>Próximo: dayz n nightz</h3><p>@ibiwis.chk &amp; @inzxmnia! juntos.</p></li></ol>
 </div></section>
 
 <section id="eventos"><div class="wrap"><div class="sh"><h2 class="rv">Eventos</h2><span class="mono">03 / Proyectos</span></div><div class="fest rv"><div><span class="mono">Eazy Money Fest · Última edición</span><h3>Revive la última edición</h3><p>Vuelve a la publicación oficial de la última edición de Eazy Money Fest.</p><div class="btns"><button class="btn p" id="igb">Ver publicación aquí</button><a class="btn" href="https://www.instagram.com/p/DekoGi7jlL-/" target="_blank" rel="noopener noreferrer">Abrir en Instagram ↗</a></div></div><div class="igw" id="igw"><span class="mono">Vista previa de Instagram</span></div></div>
@@ -178,7 +187,7 @@ header{backdrop-filter:none;background:var(--bg)}
 <div class="cr">
 <article class="cc rv"><img src="https://i.ibb.co/FkKGKspJ/ED698336-4241-43-DA-A032-9047-C82-E9-D41.jpg" alt="@d3m.alt" width="110" height="110" loading="lazy"><div><h3>@d3m.alt</h3><p>Diseño y desarrollo web</p><a class="btn" href="https://www.instagram.com/d3m.alt" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></article>
 <article class="cc rv"><img src="https://i.ibb.co/gM4K3htq/5c07e44c-3f1e-4c8a-870a-b710b3070901.jpg" alt="@ibiwis.chk" width="110" height="110" loading="lazy"><div><h3>@ibiwis.chk</h3><p>Producción · Fundador</p><a class="btn" href="https://www.instagram.com/ibiwis.chk" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></article>
-<article class="cc rv"><img src="https://i.ibb.co/JRQqMhGQ/6517633a-aa11-4977-9312-36c29d47339b.jpg" alt="@ToNy?" width="110" height="110" loading="lazy"><div><h3>@ToNy?</h3><p>Manager</p><a class="btn" href="https://www.instagram.com/tonyakayuk" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></article>
+<article class="cc rv"><img src="https://i.ibb.co/JRQqMhGQ/6517633a-aa11-4977-9312-36c29d47339b.jpg" alt="@tonyakayuk" width="110" height="110" loading="lazy"><div><h3>@tonyakayuk</h3><p>Manager</p><a class="btn" href="https://www.instagram.com/tonyakayuk" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></article>
 </div></div></section>
 
 <section id="demos" style="border:0"><div class="wrap dm">
@@ -201,7 +210,7 @@ header{backdrop-filter:none;background:var(--bg)}
 const IB='https://i.ibb.co/';
 const ARTISTAS=[
 {id:'ibiwis-chk',n:'@ibiwis.chk',rol:'Fundador · Producción',img:IB+'gM4K3htq/5c07e44c-3f1e-4c8a-870a-b710b3070901.jpg',txt:'Fundador del sello. En enero de 2026 el proyecto adopta la identidad de Eazy Money Records de su mano.',ig:'https://www.instagram.com/ibiwis.chk',links:[['Spotify','https://open.spotify.com/artist/5ufve6sBmwqI10dD7fF6c7'],['Apple Music','https://music.apple.com/mx/artist/ibiwis-chk/1763376591']]},
-{id:'inzxmnia',n:'@inzxmnia!',rol:'Artista',img:IB+'j7jQNKV/5d86e6c9-fac9-4899-a3f3-8244f3696802.jpg',txt:'Se une al sello entre febrero y marzo de 2026, aportando un sonido fresco.',ig:'https://www.instagram.com/muuulaaaaan',links:[['Spotify','https://open.spotify.com/album/6xU1kFyz9aylG7w1x8fJuL'],['Apple Music','https://music.apple.com/mx/album/no-t-veo-single/6808378812']]},
+{id:'inzxmnia',n:'@inzxmnia!',rol:'Artista',img:IB+'j7jQNKV/5d86e6c9-fac9-4899-a3f3-8244f3696802.jpg',txt:'Se une al sello entre febrero y marzo de 2026, aportando un sonido fresco.',ig:'https://www.instagram.com/muuulaaaaan',links:[['Spotify','https://open.spotify.com/artist/0OORgu1s7MwAgfckt9znnm'],['Apple Music','https://music.apple.com/mx/album/no-t-veo-single/6808378812']]},
 {id:'kaikai',n:'KaiKai',rol:'Artista',img:IB+'7xx4bbJP/kaikai.webp',txt:'Artista del roster. Música próximamente.',ig:'https://www.instagram.com/kaikai.luv',links:[]}];
 /* f = fecha ISO (opcional). g = sencillo | largo | prox */
 const LANZ=[
@@ -210,8 +219,7 @@ const LANZ=[
 {t:'Sexy, Nasty and Pretty (Deluxe)',a:'@ibiwis.chk',aid:'ibiwis-chk',tipo:'Deluxe',g:'largo',f:'2026-10-09',img:IB+'Nd1Y6CGQ/3000x3000bb.jpg',links:[['Spotify','https://open.spotify.com/album/7leK357DE12fqFUjSInuSC'],['Apple Music','https://music.apple.com/mx/album/sexy-nasty-and-pretty-deluxe/6815563151']]},
 {t:'santa maria',a:'@inzxmnia!',aid:'inzxmnia',tipo:'Sencillo',g:'sencillo',f:'2026-09-26',img:'https://i.ibb.co/S7QN2LNP/Captura-de-pantalla-2026-11-05-171214.png',links:[['Spotify','https://open.spotify.com/album/1041ONmwmDL6pBh92qrWii']]},
 {t:'You Should Be W Him',a:'@ibiwis.chk',aid:'ibiwis-chk',tipo:'Sencillo',g:'sencillo',f: '2025-07-18',img:'https://i.ibb.co/N0mzPY6/Captura-de-pantalla-2026-11-05-163214.png',links:[['Spotify','https://open.spotify.com/track/4v1zRy1EFUj1WOLkdh0hdZ'],['Apple Music','https://music.apple.com/mx/album/you-should-be-w-him/1823096369?i=1823096370']]},
-{t:'No T Veo',a:'@inzxmnia!',aid:'inzxmnia',tipo:'Sencillo',g:'sencillo',f:'2026-09-03',img:'https://i.ibb.co/S4zH6sFh/316x316bb.webp',links:[['Apple Music','https://music.apple.com/mx/album/no-t-veo-single/6808378812']]},
-{t:'d3m.alt: Vol. 1 (Instrumental)',a:'@d3m.alt',tipo:'Instrumental',g:'largo',img:IB+'DHJcP3hQ/871584c0-28b4-4a00-85d2-5d6f5395a962.jpg',links:[['SoundCloud','https://soundcloud.com/carlos-damian-alvarez-moncada/sets/d3m-alt-vol-1']]}];
+{t:'No T Veo',a:'@inzxmnia!',aid:'inzxmnia',tipo:'Sencillo',g:'sencillo',f:'2026-09-03',img:'https://i.ibb.co/S4zH6sFh/316x316bb.webp',links:[['Apple Music','https://music.apple.com/mx/album/no-t-veo-single/6808378812']]}];
 /* Para anunciar un evento agrega: {f:'2027-01-15',t:'Nombre',lugar:'Lugar',url:'https://...'} */
 const EVENTOS=[];
 
@@ -223,7 +231,11 @@ $('yr').textContent=new Date().getFullYear();
 const tk=Array(5).fill('Independent by nature ✳ No shortcuts ✳ Built from the ground up ✳ Built with intention ✳').join(' ');$('tk').innerHTML=`<div>${tk}</div><div>${tk}</div>`;
 
 // Roster
-$('ro').innerHTML=ARTISTAS.map((a,i)=>`<button class="ar rv" data-id="${a.id}" aria-label="Ver perfil de ${a.n}"><div class="ph">${ini(a.n)}${a.img?`<img src="${a.img}" alt="Retrato de ${a.n}" loading="lazy" onerror="this.remove()">`:''}<span class="n">0${i+1}</span></div><div class="t"><span class="mono">${a.rol}</span><h3>${a.n}</h3><p>${a.txt?a.txt.split('.')[0]+'.':'Perfil en construcción.'}</p></div></button>`).join('');
+$('ro').innerHTML=ARTISTAS.map((a,i)=>`<a class="ar rv" href="#artista-${a.id}" data-id="${a.id}" aria-label="Ver perfil de ${a.n}"><div class="ph">${ini(a.n)}${a.img?`<img src="${a.img}" alt="Retrato de ${a.n}" loading="lazy" onerror="this.remove()">`:''}<span class="n">0${i+1}</span></div><div class="t"><span class="mono">${a.rol}</span><h3>${a.n}</h3><p>${a.txt?a.txt.split('.')[0]+'.':'Perfil en construcción.'}</p></div></a>`).join('');
+
+// Último lanzamiento (hero): el más reciente ya publicado con enlaces
+const hoy=new Date().toISOString().slice(0,10),ul=[...LANZ].filter(r=>r.g!=='prox'&&r.f&&r.f<=hoy&&r.links.length).sort((a,b)=>b.f.localeCompare(a.f))[0];
+if(ul)$('ult').innerHTML=`<article class="last">${ul.img?`<img class="cv" src="${ul.img}" alt="Portada de ${ul.t}" width="96" height="96">`:`<div class="cv" aria-hidden="true">${ul.t}</div>`}<div><span class="mono">Último lanzamiento · ${fmt(ul.f)}</span><h3>${ul.t}</h3><span class="mono">${ul.aid?`<a href="#artista-${ul.aid}">${ul.a}</a>`:ul.a}</span></div><div class="l">${ext(ul.links)}</div></article>`;
 
 // Lanzamientos
 const ord=[...LANZ].sort((a,b)=>(a.g==='prox'?-1:b.g==='prox'?1:0)||(b.f?1:0)-(a.f?1:0)||(b.f||'').localeCompare(a.f||''));
@@ -247,7 +259,6 @@ function perfil(id){const a=ARTISTAS.find(x=>x.id===id);if(!a)return;const rs=LA
 $('pb').innerHTML=`<div class="pf"><div class="ph">${ini(a.n)}${a.img?`<img src="${a.img}" alt="Retrato de ${a.n}" onerror="this.remove()">`:''}</div><div class="bd"><span class="mono">${a.rol}</span><h2>${a.n}</h2><p style="color:var(--g5)">${a.txt||'Perfil en construcción.'}</p><dl><dt>Géneros</dt><dd>Por confirmar</dd><dt>Lanzamientos</dt><dd>${rs.length?rs.map(r=>r.t).join('<br>'):'—'}</dd></dl><div class="btns">${ext(a.links)}${a.ig?`<a class="btn" href="${a.ig}" target="_blank" rel="noopener noreferrer">Instagram ↗</a>`:''}</div></div></div>`;
 if(!dlg.open)dlg.showModal()}
 const route=()=>{const h=location.hash;if(h.startsWith('#artista-'))perfil(h.slice(9));else if(dlg.open)dlg.close()};
-$('ro').addEventListener('click',e=>{const b=e.target.closest('.ar');if(b)location.hash='artista-'+b.dataset.id});
 $('px').onclick=()=>dlg.close();
 dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
 dlg.addEventListener('close',()=>{if(location.hash.startsWith('#artista-'))history.replaceState(null,'',location.pathname+location.search)});
